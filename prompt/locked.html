@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Series II — Image Alchemy · Chezar Library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Space+Mono:wght@400;700&family=Karla:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+
+    /* ── RESET ───────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    /* ── TOKENS ──────────────────────────────────────────── */
+    :root {
+      --ink:        #0a0a0a;
+      --ink-soft:   #2e2e2e;
+      --ink-mute:   #787878;
+      --paper:      #f5f2ed;
+      --paper-warm: #ede9e2;
+      --line:       rgba(14,14,14,0.10);
+
+      --cyber:      #00e5a0;
+      --cyber-dim:  rgba(0,229,160,0.07);
+      --cyber-line: rgba(0,229,160,0.22);
+
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --mono:  'Space Mono', monospace;
+      --sans:  'Karla', sans-serif;
+    }
+
+    /* ── BASE ────────────────────────────────────────────── */
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 300;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ─────────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.4rem 3rem;
+      background: rgba(245,242,237,0.92);
+      border-bottom: 0.5px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.05rem; font-weight: 300;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--ink); text-decoration: none;
+    }
+    .nav-tag {
+      font-family: var(--mono);
+      font-size: 0.58rem; color: var(--cyber);
+      letter-spacing: 0.1em;
+      border: 0.5px solid var(--cyber-line);
+      padding: 3px 8px; border-radius: 2px;
+      background: var(--cyber-dim);
+    }
+    .nav-cta {
+      font-family: var(--mono);
+      font-size: 0.62rem; letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 0.5px solid var(--ink);
+      padding-bottom: 1px;
+      transition: opacity 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.45; }
+
+    /* ── HERO ────────────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: 8rem 2rem 6rem;
+      position: relative; overflow: hidden;
+    }
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: 0.45; pointer-events: none;
+    }
+    .hero-scan {
+      position: absolute; inset: 0; pointer-events: none;
+      background: linear-gradient(to bottom,
+        transparent 0%, rgba(0,229,160,0.025) 50%, transparent 100%);
+      animation: scanline 8s linear infinite;
+    }
+    @keyframes scanline {
+      0%   { transform: translateY(-100%); }
+      100% { transform: translateY(100%); }
+    }
+
+    .series-badge {
+      font-family: var(--mono);
+      font-size: 0.58rem; letter-spacing: 0.22em;
+      color: var(--cyber);
+      border: 0.5px solid var(--cyber-line);
+      padding: 5px 14px; border-radius: 2px;
+      background: var(--cyber-dim);
+      margin-bottom: 2.5rem; display: inline-block;
+      animation: fadeUp 0.8s ease both;
+      position: relative; z-index: 1;
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(3.8rem, 11vw, 9.5rem);
+      font-weight: 300; line-height: 0.9;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      animation: fadeUp 0.8s ease both 0.15s;
+      position: relative; z-index: 1;
+      margin-bottom: 0.15em;
+    }
+    .hero-title em {
+      display: block; font-style: italic;
+      color: var(--ink-soft);
+    }
+    .hero-title .accent { color: var(--cyber); font-style: normal; }
+
+    .hero-divider {
+      width: 1px; height: 50px;
+      background: linear-gradient(to bottom, var(--cyber), transparent);
+      margin: 2.8rem auto;
+      animation: fadeUp 0.8s ease both 0.3s;
+      position: relative; z-index: 1;
+    }
+
+    .hero-sub {
+      font-family: var(--mono);
+      font-size: 0.72rem; letter-spacing: 0.06em;
+      color: var(--ink-mute); max-width: 420px;
+      line-height: 1.9;
+      animation: fadeUp 0.8s ease both 0.4s;
+      position: relative; z-index: 1;
+    }
+
+    /* ── STATS ROW ───────────────────────────────────────── */
+    .stats-row {
+      display: flex; align-items: center;
+      gap: 2.5rem; margin-top: 3.5rem;
+      animation: fadeUp 0.8s ease both 0.55s;
+      position: relative; z-index: 1;
+      flex-wrap: wrap; justify-content: center;
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      font-family: var(--mono);
+      font-size: 1.6rem; color: var(--cyber);
+      display: block; line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.58rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--ink-mute);
+      margin-top: 4px; display: block;
+    }
+    .stat-sep { width: 0.5px; height: 30px; background: var(--line); }
+
+    /* ── BUY BUTTON (hero) ───────────────────────────────── */
+    .hero-buy {
+      margin-top: 3rem;
+      animation: fadeUp 0.8s ease both 0.65s;
+      position: relative; z-index: 1;
+    }
+    .btn-buy {
+      display: inline-flex; align-items: center; gap: 0.8rem;
+      font-family: var(--mono);
+      font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--ink);
+      background: var(--cyber);
+      border: none; padding: 14px 32px;
+      cursor: pointer; text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
+      border-radius: 2px;
+    }
+    .btn-buy:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-buy .btn-arrow {
+      display: inline-block; width: 18px; height: 0.5px;
+      background: var(--ink); position: relative;
+      transition: width 0.2s;
+    }
+    .btn-buy:hover .btn-arrow { width: 26px; }
+
+    .hero-note {
+      font-family: var(--mono);
+      font-size: 0.55rem; color: var(--ink-mute);
+      letter-spacing: 0.1em; margin-top: 1rem;
+      position: relative; z-index: 1;
+      animation: fadeUp 0.8s ease both 0.75s;
+    }
+
+    /* ── WHAT YOU GET ────────────────────────────────────── */
+    .what-strip {
+      background: var(--ink);
+      padding: 5rem 3rem;
+    }
+    .what-inner {
+      max-width: 1000px; margin: 0 auto;
+    }
+    .strip-label {
+      font-family: var(--mono);
+      font-size: 0.58rem; color: var(--cyber);
+      letter-spacing: 0.22em; text-transform: uppercase;
+      margin-bottom: 3rem; display: block;
+    }
+    .what-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2.5rem;
+    }
+    .what-item { display: flex; gap: 1.2rem; align-items: flex-start; }
+    .what-num {
+      font-family: var(--mono);
+      font-size: 0.58rem; color: var(--cyber);
+      flex-shrink: 0; margin-top: 3px;
+    }
+    .what-text h3 {
+      font-family: var(--serif);
+      font-size: 1.15rem; font-weight: 300;
+      color: var(--paper); margin-bottom: 0.5rem; line-height: 1.2;
+    }
+    .what-text p {
+      font-size: 0.73rem; line-height: 1.75;
+      color: rgba(245,242,237,0.42);
+    }
+
+    /* ── PREVIEW SECTION ─────────────────────────────────── */
+    .preview-section {
+      padding: 7rem 3rem;
+      max-width: 1200px; margin: 0 auto;
+    }
+    .section-header {
+      display: flex; align-items: baseline;
+      gap: 1.5rem; margin-bottom: 5rem;
+      border-top: 0.5px solid var(--line);
+      padding-top: 2rem;
+    }
+    .section-num {
+      font-family: var(--serif);
+      font-size: 0.75rem; color: var(--ink-mute);
+      letter-spacing: 0.1em;
+    }
+    .section-title {
+      font-size: 0.65rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--ink-soft);
+    }
+    .section-sub {
+      font-family: var(--mono);
+      font-size: 0.62rem; color: var(--ink-mute);
+      letter-spacing: 0.06em; margin-left: auto;
+    }
+
+    /* ── PROMPT CARDS (locked) ───────────────────────────── */
+    .prompts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 0;
+      position: relative;
+    }
+
+    .prompt-card {
+      border: 0.5px solid var(--line);
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      margin: -0.25px;
+      user-select: none;
+      transition: background 0.2s;
+    }
+    .prompt-card:hover { background: var(--paper-warm); }
+
+    /* lock overlay on locked cards */
+    .prompt-card.locked::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        transparent 38%,
+        rgba(245,242,237,0.82) 62%,
+        rgba(245,242,237,0.98) 100%
+      );
+      pointer-events: none;
+      z-index: 2;
+    }
+    /* blurred prompt text on locked cards */
+    .prompt-card.locked .card-body {
+      filter: blur(3.5px);
+      pointer-events: none;
+    }
+    .prompt-card.locked .card-top { filter: none; }
+
+    .lock-badge {
+      position: absolute; bottom: 1.2rem; left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex; align-items: center; gap: 6px;
+      font-family: var(--mono);
+      font-size: 0.55rem; letter-spacing: 0.15em;
+      color: var(--ink-mute);
+      white-space: nowrap;
+    }
+    .lock-icon {
+      width: 12px; height: 12px;
+      border: 0.5px solid var(--ink-mute);
+      border-radius: 2px;
+      position: relative; display: flex;
+      align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .lock-icon::before {
+      content: '';
+      position: absolute; top: -5px;
+      left: 50%; transform: translateX(-50%);
+      width: 6px; height: 5px;
+      border: 0.5px solid var(--ink-mute);
+      border-bottom: none;
+      border-radius: 3px 3px 0 0;
+    }
+    .lock-icon::after {
+      content: '';
+      width: 3px; height: 3px;
+      background: var(--ink-mute);
+      border-radius: 50%;
+    }
+
+    .card-top {
+      display: flex; align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+    .card-index {
+      font-family: var(--mono);
+      font-size: 0.58rem; color: var(--cyber);
+      letter-spacing: 0.1em;
+    }
+    .card-category {
+      font-family: var(--mono);
+      font-size: 0.52rem; color: var(--ink-mute);
+      letter-spacing: 0.12em; text-transform: uppercase;
+      border: 0.5px solid var(--line);
+      padding: 2px 7px; border-radius: 2px;
+    }
+    .card-title {
+      font-family: var(--serif);
+      font-size: 1.25rem; font-weight: 300;
+      color: var(--ink); margin-bottom: 0.6rem;
+      line-height: 1.25;
+    }
+    .card-preview {
+      font-size: 0.76rem; color: var(--ink-soft);
+      line-height: 1.75;
+    }
+    .card-footer {
+      display: flex; align-items: center;
+      justify-content: space-between;
+      margin-top: 1.5rem;
+    }
+    .card-level {
+      font-size: 0.58rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--ink-mute);
+    }
+    .card-dots {
+      display: flex; gap: 4px;
+    }
+    .card-dot {
+      width: 4px; height: 4px; border-radius: 50%;
+      background: var(--line);
+    }
+    .card-dot.filled { background: var(--cyber); }
+
+    /* ── FADE-OUT ROW (last visible row fades to CTA) ──── */
+    .fade-curtain {
+      position: relative;
+      margin-top: -180px;
+      height: 220px;
+      background: linear-gradient(to bottom, transparent 0%, var(--paper) 100%);
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    /* ── CTA BLOCK ───────────────────────────────────────── */
+    .cta-block {
+      padding: 0 3rem 7rem;
+      max-width: 1200px; margin: 0 auto;
+      text-align: center;
+    }
+    .cta-inner {
+      border: 0.5px solid var(--cyber-line);
+      background: var(--ink);
+      padding: 4rem 3rem;
+      position: relative; overflow: hidden;
+    }
+    .cta-grid-bg {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(0,229,160,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,229,160,0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+    .cta-scan {
+      position: absolute; inset: 0; pointer-events: none;
+      background: linear-gradient(to bottom,
+        transparent 0%, rgba(0,229,160,0.03) 50%, transparent 100%);
+      animation: scanline 5s linear infinite;
+    }
+
+    .cta-label {
+      font-family: var(--mono);
+      font-size: 0.58rem; color: var(--cyber);
+      letter-spacing: 0.22em; text-transform: uppercase;
+      margin-bottom: 1.5rem; display: block;
+      position: relative; z-index: 1;
+    }
+    .cta-title {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 300; color: var(--paper);
+      line-height: 1.1; margin-bottom: 1.2rem;
+      position: relative; z-index: 1;
+    }
+    .cta-title em { font-style: italic; color: var(--cyber); }
+    .cta-desc {
+      font-family: var(--mono);
+      font-size: 0.68rem; color: rgba(245,242,237,0.45);
+      line-height: 1.9; max-width: 500px;
+      margin: 0 auto 2.5rem;
+      position: relative; z-index: 1;
+    }
+
+    /* price */
+    .price-row {
+      display: flex; align-items: baseline;
+      justify-content: center; gap: 1rem;
+      margin-bottom: 2.5rem;
+      position: relative; z-index: 1;
+    }
+    .price-main {
+      font-family: var(--mono);
+      font-size: 3rem; color: var(--cyber);
+      line-height: 1;
+    }
+    .price-note {
+      font-size: 0.65rem; color: rgba(245,242,237,0.35);
+      letter-spacing: 0.12em; text-transform: uppercase;
+    }
+
+    .btn-gumroad {
+      display: inline-flex; align-items: center; gap: 0.9rem;
+      font-family: var(--mono);
+      font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--ink);
+      background: var(--cyber);
+      border: none; padding: 16px 38px;
+      cursor: pointer; text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
+      border-radius: 2px;
+      position: relative; z-index: 1;
+    }
+    .btn-gumroad:hover { opacity: 0.88; transform: translateY(-2px); }
+    .btn-gumroad .g-arrow {
+      display: inline-block; width: 20px; height: 0.5px;
+      background: var(--ink);
+      transition: width 0.2s;
+    }
+    .btn-gumroad:hover .g-arrow { width: 30px; }
+
+    .cta-reassure {
+      margin-top: 1.4rem;
+      display: flex; align-items: center;
+      justify-content: center; gap: 2rem;
+      flex-wrap: wrap;
+      position: relative; z-index: 1;
+    }
+    .reassure-item {
+      display: flex; align-items: center; gap: 6px;
+      font-family: var(--mono);
+      font-size: 0.55rem; color: rgba(245,242,237,0.28);
+      letter-spacing: 0.1em;
+    }
+    .reassure-dot {
+      width: 4px; height: 4px; border-radius: 50%;
+      background: var(--cyber); opacity: 0.5;
+      flex-shrink: 0;
+    }
+
+    /* ── WHAT'S INSIDE LIST ──────────────────────────────── */
+    .includes-section {
+      padding: 7rem 3rem;
+      max-width: 900px; margin: 0 auto;
+    }
+    .includes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 0.5px solid var(--line);
+    }
+    @media (max-width: 600px) {
+      .includes-grid { grid-template-columns: 1fr; }
+    }
+    .include-item {
+      padding: 1.8rem 2rem;
+      border-bottom: 0.5px solid var(--line);
+      border-right: 0.5px solid var(--line);
+      display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .include-item:nth-child(even) { border-right: none; }
+    .include-check {
+      font-family: var(--mono);
+      font-size: 0.6rem; color: var(--cyber);
+      flex-shrink: 0; margin-top: 2px;
+    }
+    .include-text {
+      font-size: 0.78rem; line-height: 1.65; color: var(--ink-soft);
+    }
+    .include-text strong {
+      font-weight: 400; color: var(--ink);
+      display: block; margin-bottom: 2px;
+    }
+
+    /* ── PHILOSOPHY ──────────────────────────────────────── */
+    .philosophy {
+      padding: 7rem 3rem;
+      background: var(--ink); text-align: center;
+    }
+    .philosophy blockquote {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 3.5vw, 2.6rem);
+      font-weight: 300; font-style: italic;
+      line-height: 1.4; max-width: 620px;
+      margin: 0 auto; color: var(--paper); opacity: 0.85;
+    }
+    .philosophy cite {
+      display: block; margin-top: 2rem;
+      font-family: var(--mono); font-size: 0.58rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--cyber); opacity: 0.55; font-style: normal;
+    }
+    .philosophy .phil-cta {
+      margin-top: 3rem;
+    }
+    .btn-buy-alt {
+      display: inline-flex; align-items: center; gap: 0.8rem;
+      font-family: var(--mono);
+      font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--ink);
+      background: var(--cyber);
+      padding: 13px 28px; text-decoration: none;
+      border-radius: 2px;
+      transition: opacity 0.2s;
+    }
+    .btn-buy-alt:hover { opacity: 0.85; }
+
+    /* ── FOOTER ──────────────────────────────────────────── */
+    footer {
+      padding: 3rem;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      border-top: 0.5px solid var(--line);
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-brand {
+      font-family: var(--serif);
+      font-size: 0.9rem; letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    .footer-copy {
+      font-family: var(--mono);
+      font-size: 0.58rem; letter-spacing: 0.1em;
+      color: var(--ink-mute);
+    }
+
+    /* ── ANIMATIONS ──────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .reveal {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── MOBILE ──────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      nav { padding: 1.2rem 1.5rem; }
+      .preview-section,
+      .cta-block,
+      .includes-section { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .what-strip { padding: 4rem 1.5rem; }
+      .cta-inner { padding: 3rem 1.5rem; }
+      .philosophy { padding: 5rem 1.5rem; }
+      footer { padding: 2rem 1.5rem; }
+    }
+
+
+    /* ── OPENABLE CARDS ──────────────────────────────────── */
+    .prompt-card.openable {
+      cursor: pointer;
+    }
+    .prompt-card.openable::before {
+      content: '';
+      position: absolute; top: 0; left: 0;
+      width: 2px; height: 0;
+      background: var(--cyber);
+      transition: height 0.3s ease;
+    }
+    .prompt-card.openable:hover::before { height: 100%; }
+    .prompt-card.openable.active-card {
+      background: var(--cyber-dim);
+      border-color: var(--cyber-line) !important;
+    }
+    .prompt-card.openable.active-card::before { height: 100%; }
+
+    .card-cta {
+      font-family: var(--mono);
+      font-size: 0.58rem; color: var(--cyber);
+      display: flex; align-items: center; gap: 5px;
+      opacity: 0; transition: opacity 0.2s;
+    }
+    .prompt-card.openable:hover .card-cta,
+    .prompt-card.openable.active-card .card-cta { opacity: 1; }
+    .card-arrow {
+      display: inline-block; width: 14px; height: 0.5px;
+      background: var(--cyber); position: relative;
+      transition: width 0.2s;
+    }
+    .prompt-card.openable:hover .card-arrow { width: 22px; }
+
+    /* ── DETAIL PANEL ────────────────────────────────────── */
+    .detail-panel {
+      display: none;
+      border: 0.5px solid var(--cyber-line);
+      background: var(--ink);
+      padding: 3rem;
+      position: relative;
+      animation: slideDown 0.35s ease;
+      grid-column: 1 / -1;
+    }
+    .detail-panel.open { display: block; }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .panel-close {
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      background: none; border: none;
+      font-family: var(--mono); font-size: 0.7rem;
+      color: rgba(245,242,237,0.35); cursor: pointer;
+      letter-spacing: 0.1em; transition: color 0.2s;
+    }
+    .panel-close:hover { color: var(--cyber); }
+
+    .panel-top {
+      display: flex; align-items: flex-start;
+      gap: 3rem; flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    .panel-meta { flex: 1; min-width: 220px; }
+    .panel-index {
+      font-family: var(--mono);
+      font-size: 0.6rem; color: var(--cyber);
+      letter-spacing: 0.1em; margin-bottom: 0.8rem;
+      display: block;
+    }
+    .panel-title {
+      font-family: var(--serif);
+      font-size: 2.2rem; font-weight: 300;
+      color: var(--paper); line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+    .panel-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .panel-tag {
+      font-family: var(--mono);
+      font-size: 0.55rem; color: var(--cyber);
+      border: 0.5px solid var(--cyber-line);
+      padding: 2px 8px; border-radius: 2px;
+      background: rgba(0,229,160,0.06);
+    }
+
+    .panel-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+    @media (max-width: 700px) { .panel-body { grid-template-columns: 1fr; } }
+
+    .panel-prompt-box {
+      background: rgba(255,255,255,0.04);
+      border: 0.5px solid rgba(255,255,255,0.08);
+      border-radius: 2px; padding: 1.5rem;
+      position: relative;
+    }
+    .box-label {
+      font-family: var(--mono);
+      font-size: 0.55rem; color: var(--cyber);
+      letter-spacing: 0.12em; text-transform: uppercase;
+      margin-bottom: 0.8rem; display: block;
+    }
+    .prompt-text {
+      font-family: var(--mono);
+      font-size: 0.68rem; color: rgba(245,242,237,0.75);
+      line-height: 1.8; white-space: pre-wrap;
+    }
+    .copy-btn {
+      position: absolute; top: 1rem; right: 1rem;
+      background: none; border: 0.5px solid rgba(255,255,255,0.1);
+      font-family: var(--mono); font-size: 0.55rem;
+      color: rgba(245,242,237,0.4); cursor: pointer;
+      padding: 4px 10px; border-radius: 2px;
+      transition: all 0.2s; letter-spacing: 0.1em;
+    }
+    .copy-btn:hover { border-color: var(--cyber-line); color: var(--cyber); }
+    .copy-btn.copied { color: var(--cyber); border-color: var(--cyber-line); }
+
+    .tips-title {
+      font-family: var(--mono);
+      font-size: 0.55rem; color: var(--cyber);
+      letter-spacing: 0.12em; text-transform: uppercase;
+      margin-bottom: 1rem; display: block;
+    }
+    .tip-item {
+      display: flex; gap: 0.8rem;
+      margin-bottom: 0.8rem; align-items: flex-start;
+    }
+    .tip-dot {
+      width: 4px; height: 4px; border-radius: 50%;
+      background: var(--cyber); flex-shrink: 0;
+      margin-top: 6px;
+    }
+    .tip-text {
+      font-size: 0.73rem; color: rgba(245,242,237,0.55);
+      line-height: 1.7;
+    }
+
+    .result-visual {
+      margin-top: 2rem;
+      border: 0.5px solid rgba(255,255,255,0.06);
+      border-radius: 2px; overflow: hidden;
+    }
+    .result-label {
+      font-family: var(--mono);
+      font-size: 0.55rem; color: var(--cyber);
+      letter-spacing: 0.12em; padding: 0.6rem 1rem;
+      background: rgba(0,229,160,0.05);
+      border-bottom: 0.5px solid rgba(0,229,160,0.1);
+    }
+    .result-placeholder {
+      padding: 3rem;
+      text-align: center;
+    }
+    .result-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .result-hint {
+      font-family: var(--mono);
+      font-size: 0.65rem; color: rgba(245,242,237,0.4);
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="index.html">Chezar Library</a>
+    <span class="nav-tag">Series II</span>
+    <!-- ↓ REPLACE # WITH YOUR GUMROAD LINK -->
+    <a class="nav-cta" href="YOUR_GUMROAD_LINK_HERE" target="_blank">Get Access</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-scan"></div>
+
+    <span class="series-badge">// SERIES II — IMAGE ALCHEMY</span>
+
+    <h1 class="hero-title">
+      Turn Your Face<br>
+      <em>Into <span class="accent">Art</span></em>
+    </h1>
+
+    <div class="hero-divider"></div>
+
+    <p class="hero-sub">
+      39 proven ChatGPT prompts.<br>
+      Upload your photo. Paste the prompt.<br>
+      Watch yourself become anything.
+    </p>
+
+    <div class="stats-row">
+      <div class="stat">
+        <span class="stat-num">39</span>
+        <span class="stat-label">Prompts</span>
+      </div>
+      <div class="stat-sep"></div>
+      <div class="stat">
+        <span class="stat-num">08</span>
+        <span class="stat-label">Style Categories</span>
+      </div>
+      <div class="stat-sep"></div>
+      <div class="stat">
+        <span class="stat-num">∞</span>
+        <span class="stat-label">Possibilities</span>
+      </div>
+    </div>
+
+    <div class="hero-buy">
+      <!-- ↓ REPLACE # WITH YOUR GUMROAD LINK -->
+      <a class="btn-buy" href="YOUR_GUMROAD_LINK_HERE" target="_blank">
+        Get Full Access <span class="btn-arrow"></span>
+      </a>
+    </div>
+    <p class="hero-note">// One-time payment · Instant access · No subscription</p>
+  </section>
+
+  <!-- WHAT YOU GET -->
+  <div class="what-strip reveal">
+    <div class="what-inner">
+      <span class="strip-label">// What's included</span>
+      <div class="what-grid">
+        <div class="what-item">
+          <span class="what-num">01</span>
+          <div class="what-text">
+            <h3>40 Tested Prompts</h3>
+            <p>Every prompt has been tested and refined. Copy, paste, and generate — no trial and error needed.</p>
+          </div>
+        </div>
+        <div class="what-item">
+          <span class="what-num">02</span>
+          <div class="what-text">
+            <h3>8 Style Categories</h3>
+            <p>Cinematic, Editorial, Fantasy, Artistic, Retro, Futuristic, Nature, and Portrait — a full creative range.</p>
+          </div>
+        </div>
+        <div class="what-item">
+          <span class="what-num">03</span>
+          <div class="what-text">
+            <h3>Pro Tips Per Prompt</h3>
+            <p>Each prompt comes with 4 specific tips to fine-tune your result and customize the output to your style.</p>
+          </div>
+        </div>
+        <div class="what-item">
+          <span class="what-num">04</span>
+          <div class="what-text">
+            <h3>Works With Free ChatGPT</h3>
+            <p>All prompts are designed for ChatGPT's image upload feature — no extra tools or subscriptions required.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PREVIEW SECTION -->
+  <section class="preview-section">
+    <div class="section-header reveal">
+      <span class="section-num">01</span>
+      <span class="section-title">A Glimpse Inside</span>
+      <span class="section-sub">Preview — 3 of 39 prompts</span>
+    </div>
+
+    <div class="prompts-grid" id="previewGrid">
+
+      <!-- CARD 1 — Unlocked preview (clickable) -->
+      <div class="prompt-card openable reveal" data-id="01">
+        <div class="card-top">
+          <span class="card-index">// 01</span>
+          <span class="card-category">Cinematic</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Neo-Noir Night Driver</h3>
+          <p class="card-preview">Place yourself in a rain-soaked, neon-drenched car interior at midnight. Deep blue and magenta light bleeds through the window onto your face.</p>
+          <div class="card-footer">
+            <span class="card-level">Beginner</span>
+            <span class="card-cta">View prompt <span class="card-arrow"></span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 — Unlocked preview (clickable) -->
+      <div class="prompt-card openable reveal" data-id="02">
+        <div class="card-top">
+          <span class="card-index">// 02</span>
+          <span class="card-category">Futuristic</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Cyberpunk Street Portrait</h3>
+          <p class="card-preview">Neon city, holographic overlays, rain — you as a cyberpunk protagonist walking through a rain-slicked street at night with holograms in the background.</p>
+          <div class="card-footer">
+            <span class="card-level">Intermediate</span>
+            <span class="card-cta">View prompt <span class="card-arrow"></span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3 — Unlocked preview (clickable) -->
+      <div class="prompt-card openable reveal" data-id="03">
+        <div class="card-top">
+          <span class="card-index">// 03</span>
+          <span class="card-category">Editorial</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Vogue Magazine Cover</h3>
+          <p class="card-preview">High-fashion editorial. You on the cover of a luxury magazine with elegant typography, cover lines, and cinematic studio lighting.</p>
+          <div class="card-footer">
+            <span class="card-level">Beginner</span>
+            <span class="card-cta">View prompt <span class="card-arrow"></span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 4 — Locked -->
+      <div class="prompt-card locked reveal">
+        <div class="card-top">
+          <span class="card-index">// 04</span>
+          <span class="card-category">Fantasy</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Dark Fantasy Warrior</h3>
+          <p class="card-preview">Ancient armor, dramatic storm lighting, epic battle-ready portrait. You on a cliff at dusk with lightning on the horizon.</p>
+          <div class="card-footer">
+            <span class="card-level">Intermediate</span>
+            <div class="card-dots">
+              <div class="card-dot filled"></div>
+              <div class="card-dot filled"></div>
+              <div class="card-dot"></div>
+            </div>
+          </div>
+        </div>
+        <div class="lock-badge">
+          <div class="lock-icon"></div>
+          Full prompt locked
+        </div>
+      </div>
+
+      <!-- CARD 5 — Locked -->
+      <div class="prompt-card locked reveal">
+        <div class="card-top">
+          <span class="card-index">// 05</span>
+          <span class="card-category">Retro</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">90s Paparazzi Film Shot</h3>
+          <p class="card-preview">Expired Kodak film, heavy grain, harsh flash. You caught mid-action on a shag carpet — accidental celebrity energy from the 1990s.</p>
+          <div class="card-footer">
+            <span class="card-level">Beginner</span>
+            <div class="card-dots">
+              <div class="card-dot filled"></div>
+              <div class="card-dot"></div>
+              <div class="card-dot"></div>
+            </div>
+          </div>
+        </div>
+        <div class="lock-badge">
+          <div class="lock-icon"></div>
+          Full prompt locked
+        </div>
+      </div>
+
+      <!-- CARD 6 — Locked -->
+      <div class="prompt-card locked reveal">
+        <div class="card-top">
+          <span class="card-index">// 06</span>
+          <span class="card-category">Portrait</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Soft Studio Portrait</h3>
+          <p class="card-preview">Clean, polished professional portrait with cinematic Rembrandt studio lighting. Perfect for LinkedIn and personal branding.</p>
+          <div class="card-footer">
+            <span class="card-level">Beginner</span>
+            <div class="card-dots">
+              <div class="card-dot filled"></div>
+              <div class="card-dot"></div>
+              <div class="card-dot"></div>
+            </div>
+          </div>
+        </div>
+        <div class="lock-badge">
+          <div class="lock-icon"></div>
+          Full prompt locked
+        </div>
+      </div>
+
+
+      <!-- DETAIL PANEL -->
+      <div class="detail-panel" id="detailPanel">
+        <button class="panel-close" id="panelClose">[ close ]</button>
+        <div class="panel-top">
+          <div class="panel-meta">
+            <span class="panel-index" id="panelIndex"></span>
+            <h2 class="panel-title" id="panelTitle"></h2>
+            <div class="panel-tags" id="panelTags"></div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="panel-prompt-box">
+            <span class="box-label">// FULL PROMPT — COPY & PASTE INTO CHATGPT</span>
+            <button class="copy-btn" id="copyBtn">COPY</button>
+            <pre class="prompt-text" id="panelPrompt"></pre>
+          </div>
+          <div class="panel-tips">
+            <span class="tips-title">// TIPS FOR BEST RESULTS</span>
+            <div id="panelTips"></div>
+            <div class="result-visual">
+              <div class="result-label">// EXPECTED RESULT</div>
+              <div class="result-placeholder">
+                <div class="result-icon" id="panelEmoji"></div>
+                <p class="result-hint" id="panelResultHint"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fade curtain -->
+    <div class="fade-curtain"></div>
+  </section>
+
+  <!-- CTA BLOCK -->
+  <section class="cta-block">
+    <div class="cta-inner reveal">
+      <div class="cta-grid-bg"></div>
+      <div class="cta-scan"></div>
+
+      <span class="cta-label">// Unlock the full collection</span>
+      <h2 class="cta-title">
+        36 more prompts.<br>
+        <em>All yours.</em>
+      </h2>
+      <p class="cta-desc">
+        Get instant access to all 39 prompts — complete with full copy-paste text, pro tips for each style, and result previews. One payment. Yours forever.
+      </p>
+
+      <div class="price-row">
+        <span class="price-main">$9</span>
+        <span class="price-note">One-time · No subscription</span>
+      </div>
+
+      <!-- ↓ REPLACE # WITH YOUR GUMROAD LINK -->
+      <a class="btn-gumroad" href="YOUR_GUMROAD_LINK_HERE" target="_blank">
+        Buy on Gumroad <span class="g-arrow"></span>
+      </a>
+
+      <div class="cta-reassure">
+        <div class="reassure-item">
+          <div class="reassure-dot"></div>
+          Instant delivery
+        </div>
+        <div class="reassure-item">
+          <div class="reassure-dot"></div>
+          Works with free ChatGPT
+        </div>
+        <div class="reassure-item">
+          <div class="reassure-dot"></div>
+          Lifetime access
+        </div>
+        <div class="reassure-item">
+          <div class="reassure-dot"></div>
+          Gumroad buyer protection
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INCLUDES CHECKLIST -->
+  <section class="includes-section">
+    <div class="section-header reveal">
+      <span class="section-num">02</span>
+      <span class="section-title">Everything Inside</span>
+    </div>
+    <div class="includes-grid reveal">
+      <div class="include-item">
+        <span class="include-check">✓</span>
+        <div class="include-text">
+          <strong>39 Full Prompts</strong>
+          Complete, copy-paste ready text for every prompt in the collection.
+        </div>
+      </div>
+      <div class="include-item">
+        <span class="include-check">✓</span>
+        <div class="include-text">
+          <strong>8 Style Categories</strong>
+          Cinematic, Fantasy, Editorial, Artistic, Retro, Futuristic, Nature, Portrait.
+        </div>
+      </div>
+      <div class="include-item">
+        <span class="include-check">✓</span>
+        <div class="include-text">
+          <strong>4 Tips Per Prompt</strong>
+          Specific refinement advice so every result comes out exactly right.
+        </div>
+      </div>
+      <div class="include-item">
+        <span class="include-check">✓</span>
+        <div class="include-text">
+          <strong>Result Descriptions</strong>
+          Know what to expect before you generate — no guesswork.
+        </div>
+      </div>
+      <div class="include-item">
+        <span class="include-check">✓</span>
+        <div class="include-text">
+          <strong>Difficulty Labels</strong>
+          Each prompt is rated Beginner / Intermediate / Advanced.
+        </div>
+      </div>
+      <div class="include-item">
+        <span class="include-check">✓</span>
+        <div class="include-text">
+          <strong>Lifetime Access</strong>
+          Pay once. Access the collection forever on any device.
+        </div>
+      </div>
+      <div class="include-item">
+        <span class="include-check">✓</span>
+        <div class="include-text">
+          <strong>No Extra Tools</strong>
+          Only ChatGPT required — no subscriptions, no plugins, no APIs.
+        </div>
+      </div>
+      <div class="include-item">
+        <span class="include-check">✓</span>
+        <div class="include-text">
+          <strong>Future Updates</strong>
+          New prompts added as trends evolve. Access updates automatically.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section class="philosophy">
+    <blockquote>
+      "Your face is the input.<br>Your imagination is the only limit."
+    </blockquote>
+    <cite>— Chezar Library, Series II</cite>
+    <div class="phil-cta">
+      <!-- ↓ REPLACE # WITH YOUR GUMROAD LINK -->
+      <a class="btn-buy-alt" href="YOUR_GUMROAD_LINK_HERE" target="_blank">
+        Get Full Access →
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-brand">Chezar Library</span>
+    <span class="footer-copy">&copy; 2025 — All rights reserved</span>
+  </footer>
+
+<script>
+  /* Scroll reveal */
+  const obs = new IntersectionObserver(
+    entries => entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    }),
+    { threshold: 0.1 }
+  );
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  /* ── PROMPT DATA (preview prompts only) ─────────────────── */
+  const previewPrompts = {
+    "01": {
+      title: "Neo-Noir Night Driver",
+      category: "cinematic",
+      tags: ["noir", "neon", "car", "night"],
+      emoji: "🎬",
+      full: `Using the uploaded photo of my face, create a hyper-realistic neo-noir portrait of me in the driver's seat of a car at night.
+
+Deep blue and magenta neon lights bleed through the rain-streaked window onto my face. Keep my exact facial features — same eyes, nose, mouth, bone structure. I grip the steering wheel with a serious, partially shadowed expression.
+
+Shot through the car window with shallow depth of field. High contrast, cinematic photography. Add subtle text at the bottom: "IN THE NIGHT" in an elegant serif font.
+
+Ratio: 9:16 vertical. Ultra-realistic.`,
+      tips: [
+        "Use a clear front-facing selfie for best face preservation.",
+        "Ask ChatGPT to 'keep my exact facial features unchanged'.",
+        "Try: change 'blue and magenta' to 'amber and crimson' for a warmer tone.",
+        "Generate 3 times — the rain streaks vary each run."
+      ],
+      resultHint: "Cinematic, dark, moody. Looks like a movie poster or a thriller album cover. Strong contrast between neon colors and dark interior."
+    },
+    "02": {
+      title: "Cyberpunk Street Portrait",
+      category: "futuristic",
+      tags: ["cyberpunk", "neon", "sci-fi", "city"],
+      emoji: "⚡",
+      full: `Transform this image into a cyberpunk aesthetic portrait of me.
+
+Keep my exact facial features identical to the uploaded photo. Place me on a rain-slicked city street at night: neon signs in Japanese and English reflect off the wet pavement, holographic advertisements glow in the background. 
+
+I am wearing a high-collar tech jacket with LED accents. Misty rain surrounds me. Moody shadows and neon light reflections on metal surfaces. My expression is sharp, focused.
+
+Cinematic 9:16 portrait, ultra-realistic, shallow depth of field. Heavy atmosphere.`,
+      tips: [
+        "A photo with good facial lighting yields sharper face preservation.",
+        "Try replacing 'Japanese signs' with 'Arabic or Korean' for different vibes.",
+        "Add 'a glowing cybernetic tattoo on my neck' for extra edge.",
+        "Generate at 16:9 for a desktop wallpaper format."
+      ],
+      resultHint: "Dark, electric, futuristic. Heavy neon blues and purples contrasting against your face. Immersive cinematic atmosphere."
+    },
+    "03": {
+      title: "Vogue Magazine Cover",
+      category: "editorial",
+      tags: ["fashion", "editorial", "luxury", "magazine"],
+      emoji: "👁️",
+      full: `Using the uploaded photo of my face, design a luxury magazine cover featuring me as the cover model.
+
+Keep my facial features exactly as they appear in the uploaded image. Style: high-fashion editorial — glossy texture, cinematic color grading, softbox studio lighting. 
+
+Include elegant cover typography: a bold serif masthead at top reading "ÉCLAT", cover lines in fine print, issue date, barcode. Clean white space margins. Inspired by the visual language of Vogue or i-D magazine.
+
+Ultra-realistic photography style. My expression: confident, slightly away from camera.`,
+      tips: [
+        "Wear (or describe) a simple outfit — let the magazine design do the talking.",
+        "Ask to change the magazine name for a more personal touch.",
+        "Try: 'Replace the background with a solid deep burgundy' for drama.",
+        "Great for personal branding content."
+      ],
+      resultHint: "Polished, professional, luxurious. Looks like an actual editorial shoot. Perfect for social media bios and digital portfolios."
+    }
+  };
+
+  /* ── PANEL LOGIC ─────────────────────────────────────────── */
+  const panel = document.getElementById('detailPanel');
+  const grid = document.getElementById('previewGrid');
+  let activeCard = null;
+
+  document.querySelectorAll('.prompt-card.openable').forEach(card => {
+    card.addEventListener('click', () => {
+      const id = card.dataset.id;
+      const p = previewPrompts[id];
+      if (!p) return;
+
+      // Toggle close if same card
+      if (activeCard === card) {
+        panel.classList.remove('open');
+        card.classList.remove('active-card');
+        activeCard = null;
+        return;
+      }
+
+      // Deactivate previous
+      if (activeCard) activeCard.classList.remove('active-card');
+      activeCard = card;
+      card.classList.add('active-card');
+
+      // Populate panel
+      document.getElementById('panelIndex').textContent = `// PROMPT ${id} · ${p.category.toUpperCase()}`;
+      document.getElementById('panelTitle').textContent = p.title;
+      document.getElementById('panelEmoji').textContent = p.emoji;
+      document.getElementById('panelResultHint').textContent = p.resultHint;
+      document.getElementById('panelPrompt').textContent = p.full;
+
+      const tagsEl = document.getElementById('panelTags');
+      tagsEl.innerHTML = p.tags.map(t => `<span class="panel-tag">${t}</span>`).join('');
+
+      const tipsEl = document.getElementById('panelTips');
+      tipsEl.innerHTML = p.tips.map(t => `
+        <div class="tip-item">
+          <div class="tip-dot"></div>
+          <p class="tip-text">${t}</p>
+        </div>
+      `).join('');
+
+      // Move panel after card
+      card.after(panel);
+      panel.classList.add('open');
+
+      // Reset copy btn
+      document.getElementById('copyBtn').textContent = 'COPY';
+      document.getElementById('copyBtn').classList.remove('copied');
+
+      setTimeout(() => {
+        panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 100);
+    });
+  });
+
+  document.getElementById('panelClose').addEventListener('click', () => {
+    panel.classList.remove('open');
+    if (activeCard) { activeCard.classList.remove('active-card'); activeCard = null; }
+  });
+
+  document.getElementById('copyBtn').addEventListener('click', () => {
+    const text = document.getElementById('panelPrompt').textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.getElementById('copyBtn');
+      btn.textContent = 'COPIED ✓';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = 'COPY';
+        btn.classList.remove('copied');
+      }, 2000);
+    });
+  });
+</script>
+
+</body>
+</html>

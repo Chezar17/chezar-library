@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Series II — Image Alchemy · Chezar Library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Space+Mono:wght@400;700&family=Karla:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="vision.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="index.html">Chezar Library</a>
+    <span class="nav-tag">Series II</span>
+    <a class="nav-back" href="index.html">← Home</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-scan"></div>
+
+    <span class="series-badge">// SERIES II — IMAGE ALCHEMY</span>
+    <h1 class="hero-title">
+      Face to<br>
+      <em><span class="hero-accent">Vision</span></em>
+    </h1>
+    <div class="hero-divider"></div>
+    <p class="hero-sub">
+      Upload your photo to ChatGPT.<br>
+      These prompts do the rest.
+    </p>
+
+    <div class="hero-meta">
+      <div class="hero-stat">
+        <span class="hero-stat-num">50</span>
+        <span class="hero-stat-label">Prompts</span>
+      </div>
+      <div class="meta-sep"></div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">08</span>
+        <span class="hero-stat-label">Categories</span>
+      </div>
+      <div class="meta-sep"></div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">∞</span>
+        <span class="hero-stat-label">Styles</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO USE -->
+  <div class="intro-strip">
+    <div class="intro-item">
+      <span class="intro-num">01</span>
+      <div class="intro-text">
+        <h3>Upload Your Photo</h3>
+        <p>Open ChatGPT and attach a clear, well-lit front-facing photo of yourself — no heavy filters.</p>
+      </div>
+    </div>
+    <div class="intro-item">
+      <span class="intro-num">02</span>
+      <div class="intro-text">
+        <h3>Copy a Prompt</h3>
+        <p>Pick any prompt below and paste it into the chat alongside your image. Tap to see the full prompt.</p>
+      </div>
+    </div>
+    <div class="intro-item">
+      <span class="intro-num">03</span>
+      <div class="intro-text">
+        <h3>Iterate &amp; Refine</h3>
+        <p>Generate 3–5 variations. Use the tips inside each prompt to fine-tune until perfect.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROMPT LIBRARY -->
+  <section class="prompts-section">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <span class="section-title">The Prompt Library</span>
+    </div>
+
+    <!-- FILTERS -->
+    <div class="filter-row">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="cinematic">Cinematic</button>
+      <button class="filter-btn" data-filter="artistic">Artistic</button>
+      <button class="filter-btn" data-filter="fantasy">Fantasy</button>
+      <button class="filter-btn" data-filter="editorial">Editorial</button>
+      <button class="filter-btn" data-filter="retro">Retro</button>
+      <button class="filter-btn" data-filter="futuristic">Futuristic</button>
+      <button class="filter-btn" data-filter="nature">Nature</button>
+      <button class="filter-btn" data-filter="portrait">Portrait</button>
+    </div>
+
+    <!-- GRID -->
+    <div class="prompts-grid" id="promptGrid">
+      <!-- injected by JS -->
+    </div>
+
+    <!-- DETAIL PANEL -->
+    <div class="detail-panel" id="detailPanel">
+      <button class="panel-close" id="panelClose">[ close ]</button>
+      <div class="panel-top">
+        <div class="panel-meta">
+          <span class="panel-index" id="panelIndex"></span>
+          <h2 class="panel-title" id="panelTitle"></h2>
+          <div class="panel-tags" id="panelTags"></div>
+        </div>
+      </div>
+      <div class="panel-body">
+        <div class="panel-prompt-box">
+          <span class="box-label">// FULL PROMPT — COPY &amp; PASTE INTO CHATGPT</span>
+          <button class="copy-btn" id="copyBtn">COPY</button>
+          <pre class="prompt-text" id="panelPrompt"></pre>
+        </div>
+        <div class="panel-tips">
+          <span class="tips-title">// TIPS FOR BEST RESULTS</span>
+          <div id="panelTips"></div>
+          <div class="result-visual">
+            <div class="result-label">// EXPECTED RESULT</div>
+            <div class="result-placeholder" id="resultPreview" onclick="loadResultIframe()">
+              <div class="result-icon" id="panelEmoji"></div>
+              <p class="result-hint" id="panelResultHint"></p>
+              <span class="result-cta">&#9654; Preview live result</span>
+            </div>
+            <div class="result-iframe-wrap" id="resultIframeWrap">
+              <div class="iframe-loading" id="iframeLoading">
+                <div class="iframe-spinner"></div>
+                <span class="iframe-loading-text">LOADING RESULT...</span>
+              </div>
+              <iframe id="resultIframe" src="about:blank" sandbox="allow-scripts allow-same-origin allow-popups" title="Expected Result Preview"></iframe>
+              <div class="result-iframe-bar">
+                <span class="iframe-url" id="iframeUrlDisplay"></span>
+                <button class="iframe-close-btn" onclick="closeResultIframe()">[ collapse ]</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section class="philosophy">
+    <blockquote>
+      "Your face is the input. Your imagination is the only limit."
+    </blockquote>
+    <cite>— Chezar Library, Series II</cite>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-brand">Chezar Library</span>
+    <span class="footer-copy">&copy; 2025 — All rights reserved</span>
+  </footer>
+
+  <script src="vision.js"></script>
+</body>
+</html>
