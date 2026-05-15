@@ -1093,6 +1093,579 @@ Style: hyper-realistic conceptual photography. Not cartoony — the floating obj
       "The shadow and lighting consistency is what makes this surreal — ask ChatGPT to be precise."
     ],
     resultHint: "Conceptual, warm, surprising. The mundane objects floating with you make it deeply personal. Both whimsical and genuinely striking as art."
+  },
+  {
+    id: "51", category: "cinematic", level: "Beginner",
+    title: "Midnight Rooftop Silhouette",
+    preview: "You on a rooftop edge — city glow below, stars above, wind in your hair.",
+    tags: ["rooftop", "city", "silhouette", "night"],
+    emoji: "🌃",
+    full: `Using my uploaded photo, create a cinematic rooftop portrait of me at midnight.
+
+Keep my exact facial features. I am standing on the edge of a city rooftop — the skyline behind and below me, lit office windows stretching to the horizon. Warm amber and white city light glows upward onto my face from below, creating a dramatic under-lighting effect.
+
+My hair moves slightly in the wind. I am wearing a simple dark jacket. Expression: contemplative, free, slightly looking down at the city below.
+
+Style: cinematic urban photography — wide angle slight distortion, rich contrast between the dark sky and glowing city. Deep blues, warm ambers. 9:16 portrait format.`,
+    tips: [
+      "Any photo works — the environment is entirely replaced.",
+      "Try: 'replace the city with a mountain range at night' for a wilderness version.",
+      "Add: 'the rooftop has a water tower and a flickering neon sign nearby'.",
+      "Powerful as a music artist or creative professional banner image."
+    ],
+    resultHint: "Dramatic, free, cinematic. The upward city glow creates a unique lighting effect that feels both grounded and limitless."
+  },
+  {
+    id: "52", category: "portrait", level: "Intermediate",
+    title: "Mirror Reflection Duality",
+    preview: "You and your reflection — but the reflection shows a different version of you.",
+    tags: ["mirror", "duality", "concept", "portrait"],
+    emoji: "🪞",
+    full: `Using my uploaded photo, create a conceptual portrait showing me and my mirror reflection — but the reflection is different.
+
+Keep my exact facial features on both sides. Left: me in everyday, casual appearance — natural, soft light, relaxed. Right (in the mirror): a dramatically different version — perhaps in formal attire, or with an intense editorial look, or rendered in a different artistic style.
+
+The mirror frame: ornate antique gold. My expression looking at the mirror: curious, perhaps slightly unsettled or amused. The background behind me: simple, dark, intimate.
+
+The lighting difference between the two versions should feel deliberate — warm natural on my side, cool dramatic on the reflection's side.
+
+Style: fine art conceptual photography. Rich, considered. 4:5 portrait.`,
+    tips: [
+      "Decide the contrast: 'casual vs formal', 'natural vs dark', 'present vs aged'.",
+      "Try: 'the reflection shows me in 30 years' for a powerful time-concept piece.",
+      "Add: 'a crack running through the center of the mirror' for symbolic tension.",
+      "One of the most philosophically interesting portrait formats."
+    ],
+    resultHint: "Thought-provoking, elegant, personal. The duality invites questions. A portrait that people study rather than just glance at."
+  },
+  {
+    id: "53", category: "fantasy", level: "Advanced",
+    title: "Fire & Ice Elemental",
+    preview: "Half engulfed in flame, half encased in ice — the duality of elements.",
+    tags: ["elemental", "fire", "ice", "fantasy"],
+    emoji: "🔥",
+    full: `Using my uploaded photo, create a fantasy elemental portrait of me embodying both fire and ice.
+
+Keep my exact facial features. Split the image vertically — left half: my face and body engulfed in living flame, hot orange and deep red tongues of fire crawling across my skin and hair, ember sparks drifting upward. Right half: me encased in jagged ice formations — crystalline, cold blue-white, frost patterns across my skin.
+
+At the center split: the two elements clash — steam rising where fire meets ice, creating a dramatic glowing boundary.
+
+My expression: powerful, composed — completely in control of both forces.
+
+Style: cinematic fantasy digital art — ultra-detailed, 8K quality. Bold and elemental. Epic vertical portrait format.`,
+    tips: [
+      "A neutral, forward-facing expression sells the 'controlled power' feeling.",
+      "Try: 'replace fire/ice with lightning and void darkness' for a different elemental pair.",
+      "Add: 'glowing runes appearing on my arms in both elements'.",
+      "Request 'earth and wind' or 'light and shadow' for more variations."
+    ],
+    resultHint: "Epic, visually explosive, powerful. The split elements create an image of extraordinary fantasy impact. Looks like a game character concept art."
+  },
+  {
+    id: "54", category: "retro", level: "Beginner",
+    title: "Vintage Soviet Cosmonaut",
+    preview: "Space suit patches, CCCP badge, Gagarin-era energy — you as a retro cosmonaut.",
+    tags: ["soviet", "space", "cosmonaut", "retro"],
+    emoji: "🚀",
+    full: `Using my uploaded photo, create a portrait of me as a Soviet-era cosmonaut from the 1960s.
+
+Keep my exact facial features. Dress me in an authentic Vostok-era space suit — orange pressure suit, white helmet ring, CCCP patch on the chest, mission patches on the sleeves. Expression: stoic, proud, slightly heroic — the face on a propaganda poster.
+
+Style: authentic 1960s Soviet documentary photography — slightly desaturated warm tones, heavy grain, high contrast black shadows. Feel of archival news photography.
+
+Optional: a framed photo of Earth visible in a small porthole behind me. A Cyrillic caption at the bottom in period typography.`,
+    tips: [
+      "A direct, forward-looking expression gives the most 'official portrait' energy.",
+      "Try: 'NASA Apollo-era astronaut instead' for the American counterpart.",
+      "Add: 'the reflection of Earth visible in my helmet visor'.",
+      "Ask ChatGPT to add an official-looking mission number and date."
+    ],
+    resultHint: "Iconic, historical, deeply atmospheric. The heavy film grain and Soviet color palette transport you completely to the Space Race era."
+  },
+  {
+    id: "55", category: "editorial", level: "Intermediate",
+    title: "Luxury Perfume Campaign",
+    preview: "Soft skin, golden light, abstract shapes — you as a high-end fragrance campaign star.",
+    tags: ["perfume", "luxury", "campaign", "fashion"],
+    emoji: "✨",
+    full: `Using my uploaded photo, create a luxury perfume advertisement campaign image featuring me.
+
+Keep my exact facial features. Render me with flawless, luminous skin — soft diffused studio lighting from the left, a warm golden back glow. My expression: sensual, slightly away from camera, eyes half-closed in a moment of contemplation.
+
+Overlay: a beautiful abstract gold liquid shape drifting across the composition — not a bottle, but a suggestion of scent: movement, warmth, mystery. A fictional perfume name in elegant minimal serif typography: "DUSK — EAU DE PARFUM" in the lower corner.
+
+Background: deep charcoal or soft ivory gradient.
+
+Style: the visual language of Chanel, Dior, or YSL campaigns. Clean, iconic, expensive.`,
+    tips: [
+      "A close-up, well-lit face photo gives the most editorial result.",
+      "Customize the perfume name to something personal or evocative.",
+      "Try: 'make the campaign style more avant-garde — abstract and editorial'.",
+      "Pairs beautifully with a matching body shot for a full campaign set."
+    ],
+    resultHint: "Luxurious, refined, aspirational. Feels like a genuine high-fashion campaign. Instantly elevates any professional portfolio or social presence."
+  },
+  {
+    id: "56", category: "artistic", level: "Beginner",
+    title: "Mosaic Tile Portrait",
+    preview: "Ancient Rome meets modern you — a mosaic of thousands of tiny tiles.",
+    tags: ["mosaic", "roman", "tiles", "ancient"],
+    emoji: "🟦",
+    full: `Using my uploaded photo as a reference, create a portrait of me rendered entirely as an ancient Roman-style mosaic.
+
+Keep my face clearly recognizable — the mosaic should capture my likeness faithfully. Build the entire image from small square tesserae tiles — each tile a single flat color, the face built from thousands of them in varying warm skin tones, cool shadow blues, rich hair colors.
+
+The mosaic should have the texture of genuine stone and glass tesserae — slight irregularity in placement, visible grout lines. Background: a simple geometric mosaic border pattern in terracotta and ochre, suggesting a Roman floor or wall.
+
+Style: authentic Pompeian or Byzantine mosaic aesthetic — flat, iconic, timeless. Not pixelated digital art — genuine mosaic texture.`,
+    tips: [
+      "A simple, front-facing photo with high contrast gives the clearest mosaic result.",
+      "Try: 'Byzantine gold-background style' for a more ornate religious icon feel.",
+      "Add: 'a mosaic inscription of my name in Latin letters below the portrait'.",
+      "Printed on stone-textured paper, this looks like a genuine archaeological artifact."
+    ],
+    resultHint: "Ancient, textured, timeless. The tessera tiles give it genuine material weight. Simultaneously classical and contemporary."
+  },
+  {
+    id: "57", category: "nature", level: "Intermediate",
+    title: "Thunderstorm Portrait",
+    preview: "Lightning at your back, wind in your face — you at the center of a storm.",
+    tags: ["storm", "lightning", "dramatic", "weather"],
+    emoji: "⛈️",
+    full: `Using my uploaded photo, create a dramatic portrait of me at the center of a thunderstorm.
+
+Keep my exact facial features. I am standing outdoors on open ground — a flat plain or clifftop. Behind me: a massive, churning supercell thunderstorm with multiple lightning bolts branching across the dark sky. The storm is close — the air itself seems electric.
+
+The wind is hitting my face — hair blowing back, slight squint. Rain beginning to fall. The light is dramatic pre-storm light: a strange, sickly yellow-green glow on my face contrasted against the near-black sky behind me.
+
+My expression: completely calm — unafraid, in awe.
+
+Style: fine art storm photography — ultra-realistic, dramatic. The storm is the protagonist; I am its subject.`,
+    tips: [
+      "A slightly upward-looking expression maximizes the storm's imposing scale.",
+      "Try: 'I am standing on the bow of a ship in a sea storm instead'.",
+      "Change the season: 'winter blizzard with horizontal snow' for a different drama.",
+      "The yellow-green storm light is the key — ask for that specific color if it's missing."
+    ],
+    resultHint: "Awe-inspiring, raw, elemental. The strange storm light on the face against the black sky is visually stunning and genuinely dramatic."
+  },
+  {
+    id: "58", category: "futuristic", level: "Advanced",
+    title: "Neural Interface Upload",
+    preview: "Data streaming from your mind — the moment of human-AI connection.",
+    tags: ["neural", "data", "sci-fi", "concept"],
+    emoji: "🧠",
+    full: `Using my uploaded photo, create a conceptual sci-fi portrait of me in the moment of neural interface activation.
+
+Keep my exact facial features. My eyes are open but glowing with soft blue-white light from within — data streams are visible as thin luminous threads flowing from my temples into the surrounding space, dissolving into floating code and geometric data structures.
+
+My expression: completely still, transcendent — not pained, but deeply focused, as if experiencing something beyond human language.
+
+Background: absolute darkness, making the data streams and neural glow the only light sources. A faint holographic circular interface visible around my head like a halo made of code.
+
+Style: high-concept sci-fi concept art — part cinematic photography, part digital illustration. Monochrome with electric blue accents. Ultra-detailed.`,
+    tips: [
+      "A still, neutral expression sells the 'transcendent focus' concept best.",
+      "Try: 'the data streams are green — Matrix aesthetic' for a different palette.",
+      "Add: 'binary code reflected in my eyes' for extra depth.",
+      "Try a different color palette: 'warm gold data streams' for a more spiritual feel."
+    ],
+    resultHint: "Visually stunning, conceptually powerful. The data-stream glow gives it a spiritual quality that transcends typical sci-fi aesthetics."
+  },
+  {
+    id: "59", category: "cinematic", level: "Intermediate",
+    title: "Rainy Café Window Portrait",
+    preview: "You behind glass, rain streaming down — the feeling of watching the world pass.",
+    tags: ["rain", "café", "window", "intimate"],
+    emoji: "☕",
+    full: `Using my uploaded photo, create a cinematic portrait of me sitting inside a café, seen through the rain-streaked window from the outside.
+
+Keep my exact facial features. I am sitting at the café window, looking out — or perhaps reading, slightly distracted. The glass between the camera and me: heavy rain streaks running vertically down the pane, slight reflection of the street behind the camera.
+
+The café interior light: warm amber, flickering candle on the table. My expression: thoughtful, content, inward.
+
+Outside: dark, wet, the street slightly blurred. The contrast between the warm interior and cold exterior rain is the soul of the image.
+
+Style: intimate cinematic photography — French New Wave, melancholic but warm. Shallow depth of field. 4:5 ratio.`,
+    tips: [
+      "A contemplative, inward expression sells the mood completely.",
+      "Try: 'nighttime — the street outside has neon reflections in the puddles'.",
+      "Add: 'a cup of coffee and an open book visible on the table'.",
+      "Works beautifully in black and white — ask for a B&W version as well."
+    ],
+    resultHint: "Intimate, cinematic, emotionally resonant. The rain-on-glass texture creates immediate atmosphere. Feels like a film still from a quiet European movie."
+  },
+  {
+    id: "60", category: "portrait", level: "Beginner",
+    title: "Dramatic Smoke Portrait",
+    preview: "Soft smoke curling around your face — mysterious, sensual, atmospheric.",
+    tags: ["smoke", "dramatic", "atmospheric", "portrait"],
+    emoji: "💨",
+    full: `Using my uploaded photo, create a dramatic smoke portrait of me.
+
+Keep my exact facial features. Soft, organic white and pale grey smoke curls naturally around my face — not covering it, but framing it, drifting across one side, rising gently above my head. The smoke is beautifully lit against a completely black background.
+
+My face: lit by a single, clean studio softbox light from slightly above and to the left. Skin luminous against the dark. Expression: calm, direct eye contact, slightly mysterious.
+
+Style: fine art portrait photography — the kind of smoke portrait achieved with long exposure and actual incense smoke in studio. Ultra-realistic texture. 4:5 portrait.`,
+    tips: [
+      "A clean, direct expression works best — the smoke provides all the atmosphere.",
+      "Try: 'the smoke is backlit, creating a silhouette of my face within it'.",
+      "Change smoke color: 'deep blue smoke' or 'golden smoke' for a different tone.",
+      "Striking in a large print format — the smoke texture rewards close inspection."
+    ],
+    resultHint: "Mysterious, refined, atmospheric. The smoke creates an almost supernatural quality. Intimate yet slightly otherworldly."
+  },
+  {
+    id: "61", category: "fantasy", level: "Intermediate",
+    title: "Celestial Astrologer",
+    preview: "Stars mapped across your skin — you as a living constellation chart.",
+    tags: ["stars", "celestial", "astrology", "mystical"],
+    emoji: "🌠",
+    full: `Using my uploaded photo, create a mystical portrait of me as a celestial astrologer with constellations mapped across my skin and surroundings.
+
+Keep my exact facial features. My skin has a faint luminous quality — and across my face, neck, and shoulders, thin gold constellation lines are drawn, connecting faint star-points to form zodiac patterns. The effect is subtle: my face is still fully readable, but I am also a star chart.
+
+I am wearing a deep midnight blue robe. Behind me: an enormous antique celestial globe and stacks of star maps. The room is lit by candlelight and the blue-silver glow of moonlight from a tall window.
+
+My expression: wise, knowing, deeply calm.
+
+Style: painterly baroque meets mystical illustration. Rich, detailed, warm candlelight against cool cosmic silver. 2:3 portrait.`,
+    tips: [
+      "Specify your zodiac or a meaningful constellation: 'the Orion belt runs across my cheekbone'.",
+      "Try: 'the constellations glow brighter — more visible, more dramatic'.",
+      "Add: 'I am holding a brass armillary sphere in my hands'.",
+      "Works beautifully combined with the Tarot Card prompt (42) for a mystical art series."
+    ],
+    resultHint: "Mystical, elegant, deeply beautiful. The constellation overlay on skin is a poetic visual concept that feels both personal and cosmic."
+  },
+  {
+    id: "62", category: "editorial", level: "Advanced",
+    title: "Architectural Background Portrait",
+    preview: "Brutal concrete, perfect symmetry — you as a point of humanity in a designed world.",
+    tags: ["architecture", "symmetry", "concrete", "editorial"],
+    emoji: "🏛️",
+    full: `Using my uploaded photo, create an editorial portrait of me set against a dramatic architectural background.
+
+Keep my exact facial features. Place me at the center of a perfectly symmetrical architectural scene: an enormous brutalist concrete staircase or corridor stretching behind me, vanishing point precisely centered behind my head. I am the only warm human element in a cold, designed space.
+
+I am dressed simply — dark minimal clothing that recedes, letting the architecture speak. My expression: direct, composed, inhabiting this designed world with complete confidence.
+
+Lighting: cool diffused grey architectural light. The concrete texture is rich and detailed. My skin warm by contrast.
+
+Style: high-fashion editorial architecture photography — Andreas Gursky meets Irving Penn. 4:5 portrait format. Rigorous and considered.`,
+    tips: [
+      "Try different architectural styles: 'Gothic cathedral interior' or 'minimalist Tokyo stairwell'.",
+      "Change the symmetry: 'diagonal composition — I am off-center, the architecture dominates'.",
+      "Add: 'a single shaft of harsh sunlight cutting across the scene'.",
+      "One of the most distinctly editorial portrait formats — ideal for portfolios."
+    ],
+    resultHint: "Rigorous, dramatic, powerful. The human figure against the architectural scale creates a portrait of enormous compositional strength."
+  },
+  {
+    id: "63", category: "retro", level: "Intermediate",
+    title: "1980s Yearbook Glamour Shot",
+    preview: "Laser background, big hair, feathered lighting — the quintessential '80s school photo.",
+    tags: ["80s", "yearbook", "kitsch", "nostalgic"],
+    emoji: "📸",
+    full: `Using my uploaded photo, create an authentic 1980s school or yearbook glamour photo of me.
+
+Keep my facial features. Style me in the iconic 1980s glamour photography tradition: hair with volume and light feathering, soft-focus portrait lens look, a classic brushed-side pose at a slight angle.
+
+Background: the quintessential '80s laser portrait background — deep blue-purple gradient with crossing colored laser beams and geometric shapes. The light quality: slightly warm, slightly blown-out, deeply nostalgic.
+
+Expression: the formal-but-trying-to-look-natural smile of every school photo ever taken.
+
+Optional bottom strip: a name placard in '80s yearbook typography.
+
+Style: completely authentic period photography. No modern digital polish. Grain, color shift, and all.`,
+    tips: [
+      "This prompt produces immediate recognition and laughter — great for social content.",
+      "Try: '1990s school photo' for a slightly less extreme, still nostalgic version.",
+      "Specify the background color: 'classic blue laser' or 'the green and pink version'.",
+      "Add your actual name to the yearbook placard for maximum authenticity."
+    ],
+    resultHint: "Instantly nostalgic, perfectly kitsch, completely committed. Feels like you found it in an actual '80s yearbook. High-comedy, high-craft."
+  },
+  {
+    id: "64", category: "nature", level: "Beginner",
+    title: "Sunrise Mountain Summit",
+    preview: "You at the peak, first light breaking over the range — pure summit energy.",
+    tags: ["mountain", "sunrise", "hiking", "adventure"],
+    emoji: "🏔️",
+    full: `Using my uploaded photo, create a portrait of me at the summit of a mountain at sunrise.
+
+Keep my exact facial features. I am standing at the very top of a high alpine peak — the world spread below me, other mountain ranges visible in the far distance. The sun is just breaking over the horizon behind me: first light, golden and pink, creating a rim light halo effect around my silhouette.
+
+I am wearing hiking gear — a technical jacket, windswept hair. My expression: the expression of someone who earned this view. Tired, elated, completely alive.
+
+The sky: deep blue-purple fading to warm gold. Some cloud wisps below us.
+
+Style: adventure lifestyle photography — authentic, earned, not polished. 4:5 portrait.`,
+    tips: [
+      "A windswept, natural photo gives the most authentic outdoor result.",
+      "Try: 'sunset instead of sunrise' for warm orange tones and a closing-day energy.",
+      "Specify a real mountain: 'the summit of Rinjani' or 'the Dolomites at dawn'.",
+      "Great for outdoor enthusiasts, travel creators, and adventure brand content."
+    ],
+    resultHint: "Authentic, inspiring, earned. The summit light creates a portrait of genuine emotional power. Feels like a memory you'd frame and keep forever."
+  },
+  {
+    id: "65", category: "cinematic", level: "Advanced",
+    title: "Villain Origin Moment",
+    preview: "The exact moment everything changed — cinematic, operatic, unforgettable.",
+    tags: ["villain", "cinematic", "dramatic", "origin"],
+    emoji: "🎭",
+    full: `Using my uploaded photo, create a cinematic villain origin portrait of me — the exact moment everything changed.
+
+Keep my exact facial features. I am caught in a defining moment: standing in rain, in wreckage, in a burned room — the setting your choice, but it should feel like the aftermath of something. My clothing: elegant but damaged — a fine coat, one lapel torn, ash on my face.
+
+My expression: not angry — something colder. The moment where a decision has been made and there is no returning from it. Eyes direct, jaw set, completely still inside.
+
+Lighting: dramatic and cinematic — a single cold light source from below or the side, deep shadows.
+
+Style: prestige cinema — operatic, composed, deliberate. No camp. Think Michael Mann, Denis Villeneuve. 9:16 portrait.`,
+    tips: [
+      "A completely still, cold expression is the key — avoid anger, lean into resolve.",
+      "Specify the setting: 'a flooded boardroom', 'the ruins of a library', 'an empty stage'.",
+      "Try: 'hero origin' instead of villain for a completely different emotional tone.",
+      "This portrait demands a strong, dramatically lit source photo for best results."
+    ],
+    resultHint: "Operatic, cold, unforgettable. The stillness in the expression combined with cinematic damage reads as a genuinely iconic villain portrait."
+  },
+  {
+    id: "66", category: "artistic", level: "Intermediate",
+    title: "Geometric Low Poly Portrait",
+    preview: "Your face fragmented into sharp triangular planes — digital origami.",
+    tags: ["low poly", "geometric", "digital art", "abstract"],
+    emoji: "🔺",
+    full: `Using my uploaded photo as a reference, create a low-poly geometric portrait of me.
+
+Keep my likeness recognizable. Render my face as a low-polygon 3D mesh — each facet a flat-shaded triangle in a slightly different tone, building up my features through geometric fragmentation. The overall image reads clearly as a portrait while also being an abstract geometric artwork.
+
+Color palette: either realistic skin tones with dramatic shadows, or a stylized palette of deep jewel tones — sapphire, emerald, gold — whichever creates the most dramatic visual impact.
+
+Background: a contrasting solid tone or a complementary geometric pattern that extends the portrait's visual language.
+
+Style: clean, precise, contemporary digital design. The geometry should feel intentional and crafted, not random.`,
+    tips: [
+      "A high-contrast photo with strong directional lighting produces the best faceted result.",
+      "Try: 'the poly count is very low — extremely blocky and angular' for a dramatic version.",
+      "Customize the palette: 'all cool blues and silver' or 'sunset orange and deep purple'.",
+      "Prints beautifully as a large-format poster — the geometry rewards scale."
+    ],
+    resultHint: "Crisp, contemporary, architectural. The geometric fragmentation creates a portrait that is both recognizably you and a standalone digital artwork."
+  },
+  {
+    id: "67", category: "editorial", level: "Beginner",
+    title: "Book Author Back Cover",
+    preview: "The definitive author photo — intellectual, considered, quietly brilliant.",
+    tags: ["author", "book", "intellectual", "portrait"],
+    emoji: "📚",
+    full: `Using my uploaded photo, create a professional author portrait suitable for the back cover of a literary novel.
+
+Keep my exact facial features. I am photographed in a thoughtful, slightly informal setting that suggests intellectual life: a library corner, a desk with books, near a large window with soft natural light filtering in.
+
+My expression: warm but considered — the expression of someone who thinks carefully before speaking. Slight hint of a smile. I might be holding a cup of tea or coffee. My clothing: intelligent-casual — a nice sweater, or an open-collar shirt. No power suits.
+
+Style: warm literary photography — the visual language of Penguin or Knopf author portraits. Shallow depth of field. 4:5 ratio.`,
+    tips: [
+      "Add a brief fictional biography in small text at the bottom for the full effect.",
+      "Try: 'academic headshot for a university website' for a more formal variation.",
+      "Change the setting: 'a used bookshop' or 'a garden in summer'.",
+      "Combine this with the Magazine Cover prompt (03) for a full author brand suite."
+    ],
+    resultHint: "Warm, intelligent, credible. Feels like the back of a book you'd want to read. A portrait that suggests depth and a rich inner world."
+  },
+  {
+    id: "68", category: "retro", level: "Advanced",
+    title: "Daguerreotype Victorian Portrait",
+    preview: "You as if photographed in 1860 — silver-plate detail, sepia tones, absolute stillness.",
+    tags: ["daguerreotype", "victorian", "historical", "sepia"],
+    emoji: "🕰️",
+    full: `Using my uploaded photo, create a portrait of me rendered as an authentic 1860s daguerreotype photograph.
+
+Keep my exact facial features. Dress me in period-accurate Victorian attire: for a male subject — a dark wool frock coat, high collar, cravat or bow tie. For a female subject — a dark silk dress with a high collar, hair parted and pulled back. Minimal jewelry.
+
+The daguerreotype aesthetic: the image rendered in the distinctive silver-gray tonality of the original process — not brown sepia, but a cooler metallic silver grey. Extreme fine detail in the face and fabric. The edges of the image slightly vignetted, as if on an actual silver plate.
+
+My expression: completely still — as required by the long exposure times of 1860s photography. A composed, formal Victorian stillness.
+
+Style: the most authentic daguerreotype recreation possible. Place in a simple oval vignette frame border.`,
+    tips: [
+      "A very neutral, still expression is historically correct — early photography required long stillness.",
+      "Try: 'ambrotype style' or '1890s cabinet card' for slightly different historical aesthetics.",
+      "Add: 'hand-tinting on the cheeks — a practice of the period'.",
+      "Printed on metallic photo paper, this is extraordinarily convincing as a historical artifact."
+    ],
+    resultHint: "Eerie, convincing, historically fascinating. The silver-grey daguerreotype tones make it look genuinely 160 years old. Deeply compelling."
+  },
+  {
+    id: "69", category: "fantasy", level: "Beginner",
+    title: "Garden Fairy Portrait",
+    preview: "Gossamer wings, flower-crown, soft dappled light — you as a garden fairy.",
+    tags: ["fairy", "magical", "garden", "whimsical"],
+    emoji: "🧚",
+    full: `Using my uploaded photo, create a whimsical portrait of me as a garden fairy.
+
+Keep my exact facial features. I am in a lush English garden in full bloom — enormous blowsy roses, foxgloves, and lavender surrounding me. I have delicate translucent wings — like a dragonfly's, catching the light. A crown of tiny flowers sits in my hair.
+
+The light: soft, golden, dappled — the kind that comes through a canopy of leaves on a summer afternoon. Tiny motes of magical light drift around me.
+
+My expression: playful, mischievous, joyful — caught mid-moment.
+
+Style: romantic painterly fantasy — reminiscent of Victorian fairy painting (Richard Dadd, John Anster Fitzgerald) but rendered with contemporary photorealism. Warm, lush, and beautiful.`,
+    tips: [
+      "Describe your hair so the flower crown can be matched: 'dark curly hair' or 'light straight hair'.",
+      "Try: 'dark fairy — night garden, moonflowers, shadowed wings' for a gothic version.",
+      "Add: 'a tiny hummingbird hovering by my shoulder'.",
+      "Beautiful printed large — the floral detail in the background is exquisite."
+    ],
+    resultHint: "Enchanting, lush, joyful. The Victorian fairy painting aesthetic gives it genuine artistic weight beyond simple whimsy. Warm and magical."
+  },
+  {
+    id: "70", category: "portrait", level: "Advanced",
+    title: "Emotion Study Triptych",
+    preview: "Three panels — joy, grief, rage — your full emotional range in one artwork.",
+    tags: ["triptych", "emotion", "study", "fine art"],
+    emoji: "🎨",
+    full: `Using my uploaded photo, create a fine art emotion study triptych — three portrait panels showing me expressing three distinct emotional states.
+
+Keep my facial features exactly consistent across all three panels. The three states:
+
+Panel 1 — JOY: eyes crinkling, genuine smile, warm light.
+Panel 2 — GRIEF: eyes downcast or wet, expression collapsed inward, cool grey light.
+Panel 3 — RAGE: jaw set, eyes intense and direct, hard side light with deep shadows.
+
+Each panel in the same compositional framing — same crop, same distance — so the emotional contrast is purely in the expression and light. A thin dividing line between panels. Each emotion labeled below in small, clean typography.
+
+Style: fine art photography study. Black and white, or each panel in a different carefully chosen tone.`,
+    tips: [
+      "Request the triptych horizontal or vertical depending on your use case.",
+      "Choose different emotions: 'joy, fear, surprise' or 'calm, melancholy, defiance'.",
+      "Try: 'the same emotion but across three different ages — young, middle, old'.",
+      "Printed large, this is a genuinely powerful fine art wall piece."
+    ],
+    resultHint: "Arresting, human, deeply felt. The emotional range captured in one artwork creates something genuinely moving. Fine art at its most direct."
+  },
+  {
+    id: "71", category: "futuristic", level: "Intermediate",
+    title: "Hologram Projection Portrait",
+    preview: "You as a glitching hologram projected in an empty dark room.",
+    tags: ["hologram", "glitch", "sci-fi", "projection"],
+    emoji: "📡",
+    full: `Using my uploaded photo, create a portrait of me rendered as a holographic projection in a dark empty room.
+
+Keep my facial features. Render me as a floating full-body hologram: my figure translucent and blue-white, visible scan lines running horizontally across my form at regular intervals. Small areas of digital glitch — my shoulder briefly pixelating, the edge of my hand breaking into static.
+
+I am in a natural standing pose, as if having a conversation. Around me: the darkness of the room, with the hologram as the only light source, casting faint blue light on the immediate floor.
+
+The hologram quality: not perfect — this is practical technology, not magical. It flickers slightly at the edges.
+
+Style: cinematic sci-fi. The realism of the glitch and scan lines is what sells it. 9:16 portrait format.`,
+    tips: [
+      "A full standing pose photo gives the best hologram projection result.",
+      "Try: 'the hologram is mid-disintegration — dissolving upward into pixels'.",
+      "Add: 'a small circular projector device visible on the floor below me'.",
+      "Great concept for music artists, event branding, or technology companies."
+    ],
+    resultHint: "Visually striking, technically convincing. The scan lines and translucency create an immediately recognizable hologram aesthetic with real cinematic quality."
+  },
+  {
+    id: "72", category: "artistic", level: "Beginner",
+    title: "Risograph Print Portrait",
+    preview: "Misregistered layers, flat ink colors — you as a hand-pulled Riso print.",
+    tags: ["risograph", "print", "indie", "graphic"],
+    emoji: "🖨️",
+    full: `Using my uploaded photo as a reference, create a portrait of me in the aesthetic of a Risograph (Riso) printed poster.
+
+Keep my face recognizable. Render the image using only two or three flat ink colors — choose a characteristic Riso palette: teal, fluorescent pink, and black; or bright red, gold, and dark navy. Each color layer is slightly misregistered — offset by 2–4 pixels in different directions — creating the characteristic Riso double-vision effect.
+
+Halftone dot screens in the shadow areas. Flat, graphic rendering with visible ink texture. No photorealism — this is a print medium.
+
+Background: a single Riso color, perhaps with a simple geometric or botanical pattern element.
+
+Style: contemporary independent poster design — the aesthetic of small-batch art zines and music venue posters. Warm and human.`,
+    tips: [
+      "Choose your color combination: 'fluorescent orange and teal' is extremely striking.",
+      "The misregistration should be subtle — 'slight' not 'extreme' for the authentic look.",
+      "Add: 'a simple text element — my name or a word in bold sans-serif'.",
+      "Printed at A3, this is the perfect bedroom or studio wall piece."
+    ],
+    resultHint: "Warm, independent, deeply contemporary. The Riso aesthetic carries cultural associations with creativity and craft. Feels handmade and intentional."
+  },
+  {
+    id: "73", category: "nature", level: "Advanced",
+    title: "Overgrown Ruin Portrait",
+    preview: "You reclaimed by nature — moss, vines, and time having their way.",
+    tags: ["ruin", "overgrown", "nature", "surreal"],
+    emoji: "🌿",
+    full: `Using my uploaded photo, create a surreal portrait of me partially reclaimed by nature — as if I have been still long enough for the forest to begin growing around and through me.
+
+Keep my exact facial features clearly visible. But my clothing, shoulders, and arms are being overtaken: ivy trails across my left shoulder, a small fern has taken root in the fold of my coat, moss is beginning to form on my sleeve, a flower blooms near my collarbone.
+
+The effect should feel poetic, not horrifying — I look comfortable with it, as if I chose to stand here for a hundred years.
+
+Setting: the interior of a forest ruin — a collapsed stone wall behind me, filtered green light from the canopy above.
+
+My expression: serene, ancient, at peace.
+
+Style: painterly magical realism photography — soft, textured, atmospheric. 4:5 portrait.`,
+    tips: [
+      "Specify the dominant plant: 'roses and thorns' for beauty-and-danger symbolism.",
+      "Try: 'the overgrowth is flowers, not vines — I am becoming a garden'.",
+      "Add: 'birds have made a small nest in my hair'.",
+      "One of the most philosophically resonant portrait concepts — deeply human."
+    ],
+    resultHint: "Dreamlike, poetic, genuinely moving. The tension between the human face and the growing nature creates an image of extraordinary quiet power."
+  },
+  {
+    id: "74", category: "cinematic", level: "Beginner",
+    title: "Long Hallway Walk-Away Shot",
+    preview: "You walking away down an infinite corridor — cinematic, solitary, iconic.",
+    tags: ["hallway", "cinematic", "solitary", "depth"],
+    emoji: "🚶",
+    full: `Using my uploaded photo, create a cinematic shot of me walking away down a long empty hallway or corridor.
+
+Keep my face and general build from the uploaded photo. The composition: I am shown from behind, walking away from the camera, centered in the frame, moving toward a distant vanishing point. The hallway stretches enormously ahead of me.
+
+The hallway options: a grand hotel corridor with ornate patterned carpet and warm wall sconces; or a stark brutalist concrete corridor with cold overhead lighting; or a hospital corridor with fluorescent lights flickering.
+
+My posture: confident, purposeful, unhurried. Long coat or structured jacket. 
+
+Lighting: whatever fits the hallway — warm and opulent, or cold and clinical.
+
+Style: cinematic photography — Kubrick-inspired symmetrical perspective. 9:16 portrait format.`,
+    tips: [
+      "The hallway choice entirely changes the emotional read — choose deliberately.",
+      "Try: 'the hallway has a glowing door at the very far end' for a symbolic touch.",
+      "A full-body photo gives the best reference for posture and clothing.",
+      "One of the most classically cinematic compositions — timeless and iconic."
+    ],
+    resultHint: "Instantly cinematic, compositionally perfect. The symmetrical perspective draws the eye inevitably forward. Feels like the opening shot of a prestige film."
+  },
+  {
+    id: "75", category: "portrait", level: "Intermediate",
+    title: "Candlelit Close-Up",
+    preview: "A single flame, absolute darkness — the most intimate portrait possible.",
+    tags: ["candlelight", "intimate", "close-up", "darkness"],
+    emoji: "🕯️",
+    full: `Using my uploaded photo, create an intimate close-up portrait of me lit by a single candle in complete darkness.
+
+Keep my exact facial features. The only light source: a candle held just below and to the left of my face, casting warm orange-gold light that illuminates the underside of my chin, cheekbones, and one side of my nose. The other side of my face dissolves into near-total darkness.
+
+My eyes catch the candlelight — the flame reflected as a tiny point of warmth in each eye. My expression: still, interior, as if deep in thought. Not looking at the camera — eyes slightly lowered, focused on nothing.
+
+Background: pure darkness — nothing else exists.
+
+Style: old master chiaroscuro photography — the quality of a Caravaggio painting rendered photographically. Extreme contrast, extraordinary skin texture, total intimacy.`,
+    tips: [
+      "This is the most technically intimate prompt in the library — the result is always striking.",
+      "Try: 'I am looking directly into the camera' for a more confrontational version.",
+      "Add: 'the candle is almost burned out — only a short nub remaining'.",
+      "Printed large on matte paper, the skin and shadow texture is museum quality."
+    ],
+    resultHint: "Profoundly intimate, technically extraordinary. The single flame against total darkness creates a portrait of timeless emotional and artistic power."
   }
 ];
 
