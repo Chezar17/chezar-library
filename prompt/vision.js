@@ -20,7 +20,7 @@ Ratio: 9:16 vertical. Ultra-realistic.`,
       "Generate 3 times — the rain streaks vary each run."
     ],
     resultHint: "Cinematic, dark, moody. Looks like a movie poster or a thriller album cover. Strong contrast between neon colors and dark interior.",
-    resultUrl: "https://chatgpt.com/s/m_69fc6f1b03b08191bc62f47cf3383ad2"
+    resultUrl: "https://chatgpt.com/s/m_6a06ed87aaf08191a6980e2ea28dfc3c"
   },
   {
     id: "02", category: "futuristic", level: "Intermediate",
