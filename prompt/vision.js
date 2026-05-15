@@ -1666,6 +1666,584 @@ Style: old master chiaroscuro photography — the quality of a Caravaggio painti
       "Printed large on matte paper, the skin and shadow texture is museum quality."
     ],
     resultHint: "Profoundly intimate, technically extraordinary. The single flame against total darkness creates a portrait of timeless emotional and artistic power."
+  },
+  {
+    id: "76", category: "cinematic", level: "Beginner",
+    title: "Train Window Reverie",
+    preview: "You in motion, the world blurring past — the universal feeling of going somewhere.",
+    tags: ["train", "travel", "motion", "cinematic"],
+    emoji: "🚆",
+    full: `Using my uploaded photo, create a cinematic portrait of me sitting at a train window.
+
+Keep my exact facial features. I am seated at a train window, the landscape outside blurring past in motion — fields, trees, or city buildings reduced to abstract streaks of color and light. The window glass reflects a faint ghost of my face over the rushing exterior.
+
+Warm interior train light from above. I am not looking at the camera — eyes directed at the window, expression: contemplative, peaceful, in-between. Slightly tired, in the best way.
+
+My clothing: simple, comfortable travel clothes. A jacket on the seat beside me.
+
+Style: cinematic travel photography — intimate and universal. Warm interior tones against cool rushing exterior. 4:5 portrait.`,
+    tips: [
+      "A relaxed, natural expression works best — this is a candid, not a pose.",
+      "Try: 'nighttime train — city lights streaking past the window' for a dramatic version.",
+      "Add: 'a book open face-down on the seat beside me, forgotten'.",
+      "Universal emotional resonance — one of the most relatable cinematic settings."
+    ],
+    resultHint: "Intimate, universal, emotionally precise. The motion blur outside against the still face creates a beautifully cinematic tension. Feels like everyone's best travel memory."
+  },
+  {
+    id: "77", category: "artistic", level: "Intermediate",
+    title: "Neon Sign Letter Portrait",
+    preview: "Your face built from glowing neon sign letters and typography — electric and bold.",
+    tags: ["typography", "neon", "letters", "graphic"],
+    emoji: "🔤",
+    full: `Using my uploaded photo as a reference, create a portrait of me constructed entirely from glowing neon sign letters and typographic elements.
+
+Keep my face recognizable — the letters should build up my features the way pixels build an image, but in a looser, more gestural way. Large letters form the main planes of the face; smaller characters fill shadow areas. The letters can be from any alphabet — Latin, Arabic, Japanese katakana — mixed freely.
+
+Each letter glows with neon tube light — warm white and yellow for the light areas, deep magenta and blue for the shadows. The background: absolute black, making the letter-glow the only light source.
+
+Style: contemporary typographic art — the poster design tradition of Stefan Sagmeister, but rendered with photorealistic neon material quality.`,
+    tips: [
+      "Specify a dominant language or alphabet: 'build me from Japanese characters only'.",
+      "Try: 'use only the letters of my name, repeated throughout'.",
+      "Change the glow color: 'all green neon — Matrix aesthetic' or 'all warm amber — vintage signage'.",
+      "Printed large, the letter-detail at close range is endlessly rewarding."
+    ],
+    resultHint: "Visually complex, typographically rich, electric. Steps back: a portrait. Steps forward: a universe of glowing letters. A genuinely rewarding artwork."
+  },
+  {
+    id: "78", category: "fantasy", level: "Beginner",
+    title: "Sand Dune Desert Prince",
+    preview: "Wind-carved dunes, golden light, billowing robes — you as a desert sovereign.",
+    tags: ["desert", "sand", "royalty", "golden"],
+    emoji: "🏜️",
+    full: `Using my uploaded photo, create a portrait of me as a desert prince or princess in a vast golden sand dune landscape.
+
+Keep my exact facial features. Dress me in flowing robes of white and deep indigo, richly embroidered, catching the wind. A light fabric wraps my head, partially framing my face. Gold jewelry — a single ring, a cuff — catches the light.
+
+Setting: the crest of an enormous sand dune at golden hour, the dune sea stretching to the horizon behind me. The wind is moving the fabric and lifting fine sand particles into the air, catching the low orange light.
+
+My expression: calm, surveying, completely sovereign.
+
+Style: cinematic Arabian Nights aesthetic — rich, warm, textured. The quality of a David Lean epic. 9:16 portrait.`,
+    tips: [
+      "A proud, upright posture photo gives the most regal bearing.",
+      "Try: 'Saharan desert' or 'Arabian Empty Quarter' for specific geographic atmospheres.",
+      "Add: 'a white Arabian horse visible on the dune behind me'.",
+      "The embroidery detail on the robes rewards a large print format."
+    ],
+    resultHint: "Regal, cinematic, breathtaking. The golden sand and flowing robes create a portrait of extraordinary warmth and visual splendor."
+  },
+  {
+    id: "79", category: "portrait", level: "Beginner",
+    title: "Renaissance Selfie",
+    preview: "The exact selfie angle and expression — but painted in 1490 by a master.",
+    tags: ["renaissance", "selfie", "humor", "painting"],
+    emoji: "🤳",
+    full: `Using my uploaded photo, recreate my selfie exactly — but painted as if by a Renaissance master in 1490.
+
+Keep my exact pose, expression, framing, and any background elements from the original photo — but render everything in meticulous Renaissance oil painting technique. If I am holding a phone, the painter has faithfully depicted this mysterious flat object. If the background is a bedroom or office, the painter has rendered it in full period-appropriate detail.
+
+Thick impasto paint. Warm amber varnish tones. Masterful rendering of skin, fabric, and light. The kind of craft that takes months.
+
+The joke is the tension: my exact contemporary self, utterly faithfully rendered, in the visual language of Raphael or Titian.
+
+Style: Northern Renaissance or High Renaissance — your choice.`,
+    tips: [
+      "The funnier your original selfie pose, the better this prompt becomes.",
+      "Try: 'painted in the style of a medieval illuminated manuscript' for a flatter, older aesthetic.",
+      "Add: 'the painter has included a Latin inscription in the corner attempting to describe a smartphone'.",
+      "One of the most shareable prompts in the library — always generates conversation."
+    ],
+    resultHint: "Immediately funny and technically impressive simultaneously. The collision between contemporary pose and Renaissance craft is both absurd and beautiful."
+  },
+  {
+    id: "80", category: "futuristic", level: "Intermediate",
+    title: "Deep Space Isolation Pod",
+    preview: "Sleeping in cryogenic suspension — centuries from home, beautifully still.",
+    tags: ["cryo", "space", "isolation", "sci-fi"],
+    emoji: "🛸",
+    full: `Using my uploaded photo, create a cinematic sci-fi portrait of me in cryogenic suspension inside a deep space isolation pod.
+
+Keep my exact facial features. I am lying still inside a transparent cryo-pod — the glass slightly frosted at the edges. My face is peaceful, eyes closed, skin pale with the faint blue-white glow of the cryo-field surrounding my body.
+
+Through the pod glass: the interior of a vast deep space vessel visible beyond me — other pods in rows, faint emergency lighting, the deep black of space through a distant porthole.
+
+Tiny ice crystals form on my eyelashes and hair. I look completely at peace — suspended between two lives.
+
+Style: cinematic hard sci-fi — the aesthetic of Alien, Passengers, or Interstellar. Ultra-realistic. Cool blues and whites with amber emergency lighting accents.`,
+    tips: [
+      "A relaxed, eyes-closed photo gives the best cryosleep reference.",
+      "Try: 'the pod is just opening — I am awakening, disoriented' for a different moment.",
+      "Add: 'mission patches on my suit visible inside the pod' for worldbuilding detail.",
+      "The frosted glass texture is the key detail — ask for it to be prominent."
+    ],
+    resultHint: "Cinematic, eerily beautiful, contemplative. The frosted glass and cryo-glow create a portrait that is both science fiction and deeply peaceful."
+  },
+  {
+    id: "81", category: "editorial", level: "Intermediate",
+    title: "Newspaper Front Page",
+    preview: "Breaking news — you as the subject of a major broadsheet front page.",
+    tags: ["newspaper", "editorial", "journalism", "graphic"],
+    emoji: "📰",
+    full: `Using my uploaded photo, create a realistic newspaper front page featuring me as the main story subject.
+
+Keep my facial features exactly. Place a large editorial-style photo of me — serious, direct expression — prominently on the front page. The newspaper design: authentic broadsheet layout with a masthead at top reading "THE MORNING HERALD" in classic serif newspaper typography.
+
+A bold headline above my photo: customize this to whatever story you want to tell — "LOCAL DESIGNER WINS INTERNATIONAL AWARD" or make it fictional and dramatic. Sub-headline. A few lines of body text in column format below. A pull quote.
+
+Other small stories visible in the columns beside and below the main story. Date. Issue number.
+
+Style: authentic quality newspaper design — The Times or New York Times visual language. Black and white editorial photography for my portrait. Slightly aged newsprint texture.`,
+    tips: [
+      "Customize the headline completely — make it reflect a real achievement or a funny fictional one.",
+      "Try: 'a tabloid front page instead — yellow journalism energy, bold caps, slightly sensational'.",
+      "Add: 'a second smaller photo of me at a podium or receiving an award'.",
+      "A personalized version of this makes an excellent gift — print and frame."
+    ],
+    resultHint: "Convincingly authentic, immediately personal. The newsprint texture and typography make it look genuinely publishable. Endlessly customizable."
+  },
+  {
+    id: "82", category: "cinematic", level: "Advanced",
+    title: "Car Chase Passenger Shot",
+    preview: "Speed, motion blur, urgency — you mid-chase, the city smearing past.",
+    tags: ["car", "chase", "action", "motion"],
+    emoji: "🚗",
+    full: `Using my uploaded photo, create a cinematic action portrait of me as the passenger in a high-speed car chase.
+
+Keep my exact facial features. I am in the passenger seat, one hand on the dashboard, leaning slightly forward — every muscle engaged. The car is moving at speed: through the windows, city streets are smearing into light trails and color. Oncoming headlights streak past.
+
+The interior: night-lit by dashboard glow and passing streetlights. My expression: alert, adrenaline-focused, completely in the moment — not afraid, but fully alive.
+
+The window is open slightly — wind catching my hair.
+
+Style: Michael Mann-level cinematic car photography — Heat, Collateral, Drive. The car interior as a contained world. Deep shadows, dashboard light, city streaks. 16:9 wide format.`,
+    tips: [
+      "An alert, focused expression is key — avoid wide eyes of fear; aim for controlled urgency.",
+      "Try: 'I am the driver instead — both hands on the wheel, jaw set'.",
+      "Specify the city: 'Los Angeles freeway at 2am' or 'Paris boulevard at night'.",
+      "The dashboard light color changes the whole mood: 'amber' vs 'blue-green' vs 'red'."
+    ],
+    resultHint: "Adrenaline-soaked, technically dazzling. The motion streaks and dashboard glow create a portrait of pure cinematic velocity."
+  },
+  {
+    id: "83", category: "retro", level: "Beginner",
+    title: "Polaroid Grid Wall",
+    preview: "A wall of overlapping Polaroids — every one of you, candid and warm.",
+    tags: ["polaroid", "collage", "wall", "nostalgic"],
+    emoji: "🖼️",
+    full: `Using my uploaded photo, create an image of a wall covered in overlapping Polaroid photographs — all of them featuring me.
+
+Generate multiple Polaroid crops from my photo: different zoom levels, different expressions (inferred), different angles. Each Polaroid has the characteristic thick white border and the handwritten caption area at the bottom — different short captions on each: "summer", "laughing", "finally", "3am", "us".
+
+The Polaroids are arranged in a casual overlapping grid on a textured wall — some straight, some slightly tilted. A few have small stickers on them. One is faded more than the others.
+
+Each individual Polaroid: warm color tone, slightly overexposed, the characteristic Polaroid color science with muted highlights and milky shadows.
+
+Style: intimate analog photography aesthetic. Personal, warm, lived-in.`,
+    tips: [
+      "Provide a few different natural photos of yourself for richer variation across the Polaroids.",
+      "Customize the handwritten captions to real dates or inside references.",
+      "Try: 'the wall is a corkboard with pushpins instead' for a different backing texture.",
+      "This works beautifully as a phone wallpaper or bedroom print."
+    ],
+    resultHint: "Warm, personal, deeply nostalgic. The overlapping Polaroids create an atmosphere of accumulated memory and genuine life lived."
+  },
+  {
+    id: "84", category: "nature", level: "Intermediate",
+    title: "Bioluminescent Beach at Night",
+    preview: "Glowing blue waves lapping at your feet — magic made real by nature.",
+    tags: ["bioluminescent", "beach", "night", "magical"],
+    emoji: "🌊",
+    full: `Using my uploaded photo, create a portrait of me on a bioluminescent beach at night.
+
+Keep my exact facial features. I am standing at the water's edge — barefoot in the sand, waves lapping softly around my feet and ankles. Each wave glows with brilliant electric blue bioluminescence — the water alive with light where it moves and breaks.
+
+The beach is otherwise dark — only moonlight and the bioluminescent glow illuminating me. The blue light from below catches the underside of my face and reflects off my skin. My expression: awed, joyful, completely present.
+
+Setting: a secluded beach, palm silhouettes visible against the moonlit sky.
+
+Style: nature photography meets magic realism — ultra-realistic bioluminescent light rendering. Deep blue and soft silver tones. 4:5 portrait.`,
+    tips: [
+      "The bioluminescent light source from below creates a uniquely beautiful under-lighting.",
+      "Try: 'I am sitting in the water, waves breaking around me' for more immersion.",
+      "Add: 'my hand is trailing in the water, leaving a glowing blue wake'.",
+      "Real bioluminescent beaches exist — Maldives, Puerto Rico — add a location for realism."
+    ],
+    resultHint: "Magical, genuinely awe-inspiring. The electric blue bioluminescence against total beach darkness is one of nature's most extraordinary visuals."
+  },
+  {
+    id: "85", category: "artistic", level: "Advanced",
+    title: "Brutalist Architecture Poster",
+    preview: "Raw concrete, bold typography, Soviet-scale ambition — you as a monumental poster.",
+    tags: ["brutalist", "concrete", "poster", "bold"],
+    emoji: "🏗️",
+    full: `Using my uploaded photo, create a Brutalist-inspired graphic poster featuring my face.
+
+Keep my face recognizable but render it with heavy contrast and graphic boldness — reduced to strong shadow planes, simplified forms, the subtlety of photography stripped away in favor of graphic impact.
+
+Background: raw concrete texture — the actual material texture of poured concrete with formwork marks and aggregate. Bold typographic elements integrated into the composition: large uppercase sans-serif text reading "CONSTRUCT" (or a word of your choice) at an unconventional angle.
+
+Color palette: severely limited — concrete grey, deep black, one single bold accent color (choose: red, yellow, or white). No gradients. Every element is intentional and structural.
+
+Style: Brutalist graphic design movement — raw material honesty, functional form, zero ornamentation. Powerful.`,
+    tips: [
+      "A high-contrast, strong-shadow photo gives the most graphic reduction.",
+      "The single accent color choice changes everything: 'red' reads urgent, 'yellow' reads bold, 'white' reads clean.",
+      "Try: 'replace the text with your name in Helvetica Neue Black'.",
+      "Printed on uncoated paper stock, the concrete texture looks tactile and real."
+    ],
+    resultHint: "Uncompromising, structurally powerful, graphic. The raw material aesthetic creates a portrait that feels built rather than photographed."
+  },
+  {
+    id: "86", category: "fantasy", level: "Intermediate",
+    title: "Mermaid Depth Portrait",
+    preview: "Deep water, coral light, scales catching the sun — you beneath the surface.",
+    tags: ["mermaid", "ocean", "fantasy", "underwater"],
+    emoji: "🧜",
+    full: `Using my uploaded photo, create a fantasy underwater portrait of me as a mermaid or merman.
+
+Keep my exact facial features. My upper body is human — but from the waist down, a powerful tail of iridescent scales: deep sapphire, aquamarine, and flecks of gold catching the light.
+
+I am suspended in clear warm tropical water — dappled sunlight filtering down from above in shafts of gold and green, creating caustic light patterns across my skin and scales. My hair drifts gently upward in the current.
+
+My expression: serene, powerful, completely at home. Not performing — simply being.
+
+Surrounding me: a coral reef, small tropical fish drifting by, soft sea anemones in the distance.
+
+Style: cinematic underwater photography meets fantasy illustration — painterly, luminous, warm. 9:16 portrait format.`,
+    tips: [
+      "Specify your scale color: 'deep emerald and copper' or 'midnight purple and silver'.",
+      "Try: 'dark ocean setting — abyssal zone, cold and deep' for a completely different tone.",
+      "Add: 'I am holding a glowing trident' for a more regal, powerful version.",
+      "A full-body photo gives the best reference for the tail transition point."
+    ],
+    resultHint: "Luminous, fantastical, genuinely beautiful. The caustic underwater light creates extraordinary skin texture. Warm and otherworldly simultaneously."
+  },
+  {
+    id: "87", category: "portrait", level: "Advanced",
+    title: "Four Seasons Quadrant",
+    preview: "Spring, summer, autumn, winter — you in all four, one unified portrait.",
+    tags: ["seasons", "quadrant", "nature", "series"],
+    emoji: "🍂",
+    full: `Using my uploaded photo, create a four-panel seasonal portrait of me — one panel per season, arranged in a 2×2 grid.
+
+Keep my facial features exactly consistent across all four panels. Same composition, same framing — only the environment, light, and styling changes with each season.
+
+Top-left — SPRING: soft cherry blossom light, fresh green, cool-warm air.
+Top-right — SUMMER: golden harsh sun, sharp shadows, warm skin.
+Bottom-left — AUTUMN: amber and crimson, the quality of October afternoon light.
+Bottom-right — WINTER: cool blue-white, snow falling, breath visible.
+
+Each panel's lighting and color grade precisely matches its season. A thin dividing line between panels. Season name labeled in small clean typography on each.
+
+Style: fine art portrait photography series. Precise, considered, unified.`,
+    tips: [
+      "This works best with a consistent, direct expression across all panels.",
+      "Try: 'make each panel a different artistic style — spring: watercolor, summer: photography'.",
+      "Customize clothing to match each season rather than keeping it consistent.",
+      "Printed as a quad in one frame, this is one of the most beautiful wall pieces possible."
+    ],
+    resultHint: "Considered, beautiful, complete. The four seasonal lights on one face create a portrait that feels like a year captured in a single artwork."
+  },
+  {
+    id: "88", category: "futuristic", level: "Beginner",
+    title: "Retro-Futurist Space Ad",
+    preview: "1950s optimism meets outer space — you in a vintage rocket-age advertisement.",
+    tags: ["retro-futurism", "space", "50s", "advertising"],
+    emoji: "🛸",
+    full: `Using my uploaded photo, create a 1950s-style retro-futurist space travel advertisement featuring me.
+
+Keep my facial features. Style me in authentic 1950s fashion: for a male figure — a sharply tailored suit, narrow tie, pocket square. For a female figure — a full-skirt dress or a sleek 50s travel outfit. My expression: the optimistic, slightly exaggerated smile of mid-century advertising.
+
+Setting: a stylized rocket launchpad or a luxury space liner observation deck, rendered in the bright, saturated illustration style of 1950s travel posters. Bold primary colors. Clean geometric shapes.
+
+Advertising copy overlaid in period-accurate typography: "VISIT MARS — A WEEKEND GETAWAY" or similar. A fictional travel company logo.
+
+Style: the visual language of Pan Am, Bonestell, and Saturday Evening Post covers. Optimistic, clean, mid-century perfect.`,
+    tips: [
+      "A bright, smiling, confident expression sells the advertising aesthetic.",
+      "Customize the destination: 'Weekend on the Moon' or 'Jupiter — The New Frontier'.",
+      "Try: 'rendered as a fully painted illustration — no photographic element at all'.",
+      "Prints perfectly as a vintage travel poster for home or studio walls."
+    ],
+    resultHint: "Joyful, nostalgic, visually optimistic. The collision of 1950s design language with space travel creates an image of boundless charm."
+  },
+  {
+    id: "89", category: "cinematic", level: "Intermediate",
+    title: "Interrogation Room Portrait",
+    preview: "One harsh bulb, a metal table, shadows — the most cinematic room in the world.",
+    tags: ["interrogation", "thriller", "shadows", "dramatic"],
+    emoji: "💡",
+    full: `Using my uploaded photo, create a cinematic interrogation room portrait of me.
+
+Keep my exact facial features. I am seated at a metal table in a stark interrogation room — bare concrete walls, a one-way mirror on the far wall. A single hanging incandescent bulb casts a harsh, hard-edged light directly overhead.
+
+My expression: depends on my role. Option A: I am completely calm, arms folded, expressionless — clearly the most dangerous person in the room. Option B: I know something, and I am deciding whether to share it.
+
+Deep shadows under my eyes, strong jaw highlight, the rest of my face falling into darkness.
+
+Style: the visual language of prestige crime cinema — True Detective, Mindhunter, Sicario. Desaturated, clinical, brutal. 4:5 portrait.`,
+    tips: [
+      "Choose your character before generating: 'I am the detective' vs 'I am the suspect' changes everything.",
+      "Try: 'the overhead light is swinging slightly — motion blur on the light'.",
+      "Add: 'a single folder of documents on the table in front of me'.",
+      "The desaturation level is key — ask for 'heavily desaturated, almost black and white'."
+    ],
+    resultHint: "Tense, cinematic, completely committed. The single harsh bulb creates the most dramatically effective portrait lighting in crime cinema history."
+  },
+  {
+    id: "90", category: "editorial", level: "Advanced",
+    title: "Haute Couture Runway Exit",
+    preview: "Post-runway: backstage light, still dressed, the show just ended.",
+    tags: ["couture", "runway", "fashion", "backstage"],
+    emoji: "👗",
+    full: `Using my uploaded photo, create an editorial portrait of me in an extraordinary haute couture garment, photographed in the moments after walking a runway show.
+
+Keep my exact facial features. Dress me in a spectacular fictional haute couture creation — describe it yourself or ask for: an architectural sculptural dress in ivory organza, a dramatic feathered black coat, or an asymmetric embroidered gown. The garment should be genuinely extraordinary — the kind of thing only seen once a year in Paris.
+
+Setting: backstage immediately after the walk — a narrow corridor with warm overhead glow, other garment bags visible in the background. I am still in full runway makeup and hair. Expression: post-show stillness — the adrenaline settling.
+
+Style: backstage fashion photography — the intimate, unguarded quality of a Vogue backstage series. Beautiful and real simultaneously.`,
+    tips: [
+      "Describe the garment in detail for best results: material, silhouette, color, structure.",
+      "Try: 'front-of-house runway shot instead — walking toward camera, crowd blurred behind'.",
+      "Add: 'a fashion assistant adjusting the hem of the garment in the corner of frame'.",
+      "Pair with the Magazine Cover (03) and Perfume Campaign (55) for a full fashion editorial."
+    ],
+    resultHint: "Exquisite, aspirational, genuinely couture-level. The backstage intimacy combined with extraordinary garment creates a portrait of rare elegance."
+  },
+  {
+    id: "91", category: "artistic", level: "Beginner",
+    title: "Vintage Botanical Illustration",
+    preview: "18th-century natural history style — you surrounded by meticulously painted flora.",
+    tags: ["botanical", "illustration", "vintage", "nature"],
+    emoji: "🌺",
+    full: `Using my uploaded photo, create a portrait of me in the style of an 18th-century botanical natural history illustration.
+
+Keep my face recognizable. Render me in the precise, meticulous linework and watercolor technique of historical botanical illustration — think the Duchess of Portland's collection, or Robert Thornton's Temple of Flora.
+
+Around and integrated with my portrait: extraordinary botanical specimens rendered with scientific precision — exotic flowers, detailed leaves, seed pods, cross-sections — all meticulously labeled in copperplate script. My clothing: period-appropriate 18th century, rendered in the same illustration style.
+
+The overall composition: a plate from a magnificent natural history folio. Cream paper background with slight foxing and age marks.
+
+Style: the highest level of 18th century botanical and natural history illustration. Scientific precision meeting artistic beauty.`,
+    tips: [
+      "Specify favorite or meaningful flowers: 'surround me with peonies and jasmine'.",
+      "Try: 'replace botanicals with insects and butterflies — entomological illustration style'.",
+      "Add: 'my name written in copperplate at the bottom: Plate XII — [Your Name]'.",
+      "Printed on aged paper stock, this is an extraordinary and unique artwork."
+    ],
+    resultHint: "Exquisite, scholarly, genuinely beautiful. The precision of botanical illustration applied to a portrait creates something entirely unique and deeply cultured."
+  },
+  {
+    id: "92", category: "fantasy", level: "Advanced",
+    title: "God of Thunder Storm Throne",
+    preview: "Seated on a storm cloud, lightning answering your call — pure divine power.",
+    tags: ["god", "thunder", "divine", "epic"],
+    emoji: "⚡",
+    full: `Using my uploaded photo, create a divine epic portrait of me as a thunder deity seated on a throne of storm clouds.
+
+Keep my exact facial features. I am seated on a massive throne that is made entirely of churning storm clouds — grey-white cumulus, crackling with lightning from within. My clothing: a divine garment of deep storm grey and electric silver, flowing into the clouds below me.
+
+From my hands, or simply surrounding me: thick bolts of lightning branch and arc outward in every direction, illuminating my face with their harsh white light. Behind me: the open sky — an infinite wall of storm.
+
+My expression: absolute calm. The eyes of someone who did not summon the storm — the storm summoned them.
+
+Style: epic mythological digital painting — Frank Frazetta scale, cinematic realism rendering. Maximum drama. 9:16 portrait.`,
+    tips: [
+      "A completely calm, composed expression contrasts most powerfully with the chaos.",
+      "Try: 'goddess of the sea — throne of ocean waves' or 'god of fire — throne of lava'.",
+      "Add: 'a raven or eagle perched on my arm' for mythological depth.",
+      "The lightning illumination is the key — ask for 'multiple simultaneous strikes' for maximum drama."
+    ],
+    resultHint: "Operatic, mythologically powerful, visually overwhelming. The calm face against surrounding lightning is a compositional masterstroke."
+  },
+  {
+    id: "93", category: "retro", level: "Intermediate",
+    title: "Vintage Travel Passport Photo",
+    preview: "A whole fictional passport — you as a citizen of somewhere extraordinary.",
+    tags: ["passport", "travel", "vintage", "identity"],
+    emoji: "🛂",
+    full: `Using my uploaded photo, create a realistic fictional vintage passport document featuring me.
+
+Keep my facial features for the passport photo. Design a complete fictional vintage passport — ideally from a fictional or nostalgic country, circa 1960s–1970s aesthetic. 
+
+The passport design: a rich deep colour cover (midnight blue, forest green, or burgundy) with embossed fictional country seal in gold. Inside spread showing: my passport photo (in the style of official documents — slightly harsh light, white background), a fictional name, fictional country of origin with an evocative name, date of birth, various entry/exit stamps from exotic locations with dates.
+
+Visa stamps: beautiful artistic versions from fictional places — colorful, detailed, worn from use.
+
+Style: authentic vintage document design — the beauty of a well-traveled 1960s passport.`,
+    tips: [
+      "Invent an evocative fictional country name for maximum personality.",
+      "Fill the stamps with real places you've visited or dream of visiting.",
+      "Try: 'a contemporary passport design — my real country, modern aesthetic'.",
+      "The entry stamps are the most beautiful detail — ask for 'heavily stamped, 20+ stamps'."
+    ],
+    resultHint: "Detailed, personal, evocative. A fully designed document that tells a story of travel and identity. Beautiful as a print and deeply personal."
+  },
+  {
+    id: "94", category: "nature", level: "Beginner",
+    title: "Cherry Blossom Sakura Portrait",
+    preview: "Soft pink petals raining down — the most beautiful moment of the Japanese spring.",
+    tags: ["sakura", "cherry blossom", "japan", "spring"],
+    emoji: "🌸",
+    full: `Using my uploaded photo, create a portrait of me under a cherry blossom tree at full bloom.
+
+Keep my exact facial features. I am standing or sitting beneath an enormous sakura tree in full bloom — the branches heavy with soft pink and white blossoms, a constant gentle snow of falling petals drifting around me. Some petals rest in my hair and on my shoulders.
+
+The light: the extraordinarily beautiful diffused pink-tinged light that exists only under a cherry tree in bloom — soft, warm, magical.
+
+My expression: peaceful, slightly upward-looking, completely present in the moment.
+
+Setting: a Japanese park — perhaps a path, a stone lantern partially visible in the background.
+
+Style: fine art lifestyle photography — the visual language of Japanese spring. Soft, romantic, luminous. 4:5 portrait.`,
+    tips: [
+      "Any photo works — this is a complete environment replacement.",
+      "Try: 'I am in a kimono' for a fully Japanese aesthetic.",
+      "Add: 'I am holding a branch of blossom, examining one small flower closely'.",
+      "The petals-in-hair detail is the most beautiful element — ask for it explicitly."
+    ],
+    resultHint: "Breathtakingly beautiful, soft, and romantic. The sakura light is unlike any other — it creates a portrait of extraordinary delicacy and warmth."
+  },
+  {
+    id: "95", category: "cinematic", level: "Beginner",
+    title: "Bookshop Afternoon Portrait",
+    preview: "Warm light, full shelves, the smell of paper — you in the perfect bookshop moment.",
+    tags: ["bookshop", "warm", "cozy", "cinematic"],
+    emoji: "📖",
+    full: `Using my uploaded photo, create a cinematic portrait of me in a beautiful independent bookshop.
+
+Keep my exact facial features. I am standing in an aisle of floor-to-ceiling bookshelves — the shelves stretching behind me, books in every color. The light: warm, late afternoon, filtering from a front window and casting long soft shadows through the stacks.
+
+I am holding an open book, caught mid-page — not posing, genuinely reading a passage that has arrested me. Expression: absorbed, slightly surprised by something I've just read. My clothing: comfortable, intelligent-casual.
+
+Style: warm cinematic photography — the light quality of a late afternoon in an old bookshop. Shallow depth of field, the book spines behind me softly blurred. 4:5 portrait.`,
+    tips: [
+      "A relaxed, natural expression gives the most authentic 'genuinely reading' quality.",
+      "Specify the bookshop type: 'second-hand', 'rare books', 'a grand Victorian reading room'.",
+      "Add: 'a cup of tea on a small step stool beside me'.",
+      "Try: 'nighttime — the bookshop is closed, I am the only one here, reading by lamplight'."
+    ],
+    resultHint: "Warm, intellectual, completely inviting. The book-spine bokeh and afternoon light create a portrait of ideal cozy contentment."
+  },
+  {
+    id: "96", category: "editorial", level: "Beginner",
+    title: "Album Liner Notes Portrait",
+    preview: "The inside of a debut album — you as the artist, grainy and intimate.",
+    tags: ["music", "album", "liner notes", "intimate"],
+    emoji: "🎵",
+    full: `Using my uploaded photo, create a portrait of me in the style of album liner notes photography from a debut indie album.
+
+Keep my exact facial features. The portrait should feel intimate, slightly unguarded — the kind of photo an artist's friend takes. Not a glamour shot; an honest portrait.
+
+Style: the visual language of indie album art — slightly grainy, high-quality 35mm film aesthetic. Warm, low-contrast, slightly faded. I might be sitting on a bare floor, on a fire escape, or in a plain room. Simple clothes. Expression: relaxed, slightly vulnerable — the face behind the music.
+
+Include album design elements: my name in a small, carefully chosen typeface. A fictional album title: "QUIET HOURS" or similar. Side A / Side B track listing in small print along the bottom.
+
+Format: the inner gatefold spread of a 12" vinyl album.`,
+    tips: [
+      "A natural, unposed photo gives the most authentic liner notes energy.",
+      "Customize the album title and track listing to make it genuinely personal.",
+      "Try: 'outer album cover instead — more designed, less intimate'.",
+      "Combine with the Vinyl Record Cover (27) for a complete album art package."
+    ],
+    resultHint: "Intimate, honest, genuinely musical. The liner notes format invites closeness. Feels like a portrait taken by someone who knows and loves you."
+  },
+  {
+    id: "97", category: "artistic", level: "Intermediate",
+    title: "Ukiyo-e Woodblock Print",
+    preview: "Bold flat lines, Mt. Fuji in the distance — you in the Edo-period tradition.",
+    tags: ["ukiyo-e", "japanese", "woodblock", "traditional"],
+    emoji: "🗻",
+    full: `Using my uploaded photo as a reference, create a portrait of me rendered as a traditional Japanese ukiyo-e woodblock print.
+
+Keep my facial features, but stylize them completely in the ukiyo-e tradition: graceful elongated features, clearly defined flat color areas separated by precise black outlines, the characteristic rendering of hair in sweeping brushstroke forms.
+
+My clothing: a richly patterned kimono with detailed textile patterns — waves, cranes, cherry blossoms, or geometric patterns. The background: a classic ukiyo-e landscape element — a glimpse of Mt. Fuji, a stylized wave, or a full moon over pine trees.
+
+Color palette: the authentic ukiyo-e woodblock palette — indigo blue, vermillion, black, gold, pale yellow, pine green. No gradients — pure flat color with visible woodblock texture.
+
+Style: the masters of the tradition — Hiroshige, Hokusai, Utamaro. Precise, elegant, timeless.`,
+    tips: [
+      "Specify the kimono pattern: 'cranes and pine needles' or 'flowing water and koi'.",
+      "Try: 'the background is the Great Wave — I am on the shore observing'.",
+      "Add: 'a haiku written in Japanese calligraphy in the upper right corner'.",
+      "Printed on rice paper or textured stock, this is an extraordinary artwork."
+    ],
+    resultHint: "Serene, elegant, culturally rich. The flat ukiyo-e color areas and precise line work create a portrait of timeless beauty and artistic tradition."
+  },
+  {
+    id: "98", category: "portrait", level: "Beginner",
+    title: "Superhero Costume Reveal",
+    preview: "Torn civilian clothes, revealed suit beneath — your hero moment has arrived.",
+    tags: ["superhero", "costume", "action", "hero"],
+    emoji: "🦸",
+    full: `Using my uploaded photo, create a portrait of me in a superhero costume reveal moment.
+
+Keep my exact facial features. Design me a completely original superhero suit — not an existing character's costume. Your design: a sleek, modern suit in deep midnight blue and silver, or crimson and black, or forest green and gold — whatever feels most 'you'. The suit has a distinctive symbol on the chest.
+
+The moment: I am standing tall, confident, one hand raised slightly — the pose of someone who has just arrived and intends to matter. Behind me: a city skyline, stormy sky, dramatic lighting.
+
+My expression: determined, calm, completely certain.
+
+Style: contemporary superhero film photography — Marvel/DC cinematic quality. Dramatic rim lighting, epic scale. 9:16 portrait.`,
+    tips: [
+      "Describe your ideal suit in detail: color, material, symbol, cape or no cape.",
+      "Try: 'dark, grounded, realistic suit — less Marvel, more Nolan-era Batman'.",
+      "Add: 'the symbol on my chest glows softly with energy'.",
+      "Ask for your superhero name in a title treatment at the bottom of the image."
+    ],
+    resultHint: "Empowering, epic, surprisingly personal. Your own original superhero identity — not borrowed from existing IP. Genuinely yours."
+  },
+  {
+    id: "99", category: "futuristic", level: "Advanced",
+    title: "Time Traveler's First Moment",
+    preview: "The coordinates set, the destination unknown — the face before the leap.",
+    tags: ["time travel", "sci-fi", "concept", "dramatic"],
+    emoji: "⏱️",
+    full: `Using my uploaded photo, create a cinematic portrait of me as a time traveler in the moment before departure.
+
+Keep my exact facial features. I am standing inside a time machine or temporal displacement chamber: surrounding me, rings of electrical energy, arcing sparks of blue-white light, a humming field of distortion bending the air. Below me: a circular floor platform with temporal coordinates glowing.
+
+My clothing: layered, practical, with details suggesting many eras — a Victorian waistcoat visible under a modern jacket, a future-tech device on my wrist.
+
+My expression: the expression of someone who knows exactly what they're doing and has done it before — calm, focused, slightly exhilarated.
+
+Style: cinematic sci-fi — the quality of Arrival meets Doctor Who meets Tenet. The temporal distortion field is ultra-realistic. Electrical arcs cast harsh shadows. 9:16 portrait.`,
+    tips: [
+      "The layered cross-era clothing is a storytelling detail — specify your era mix.",
+      "Try: 'I have just arrived — disheveled, coat smoking slightly, expression of relief'.",
+      "Add: 'a pocket watch open in my hand, hands spinning in both directions'.",
+      "The expression of 'calm certainty' is the key emotional note to request."
+    ],
+    resultHint: "Conceptually rich, visually electric, cinematically thrilling. The temporal distortion field creates a portrait that crackles with energy and narrative possibility."
+  },
+  {
+    id: "100", category: "cinematic", level: "Advanced",
+    title: "The Last Frame",
+    preview: "A closing shot. The end of your film — you walking into whatever comes next.",
+    tags: ["cinematic", "final", "emotional", "iconic"],
+    emoji: "🎬",
+    full: `Using my uploaded photo, create the final frame of my film — the closing shot of a movie about my life.
+
+Keep my exact facial features. The setting is your choice — but it should feel like an ending that is also a beginning: a road stretching to the horizon, a shoreline at the edge of a continent, an airport terminal, a front door.
+
+I am walking away, or standing still at the threshold — facing what comes next. The light: the golden, slightly overexposed warmth of a cinematic final frame. The camera is slightly behind me, or at a low angle looking up.
+
+Optional: a title card in elegant serif typography appears over the image, or closing credits begin to roll.
+
+My expression, visible or suggested: the quiet resolution of someone who has been through something, and come out the other side.
+
+Style: the final frames of the greatest films — Shawshank, Lost in Translation, Before Sunset. Still. True. Complete.`,
+    tips: [
+      "The location you choose is deeply personal — it should mean something to you.",
+      "Try: 'the final frame is black and white' for a more timeless, classic quality.",
+      "Add: 'my name appears as the title card over the image'.",
+      "This is the most emotionally resonant prompt in the library — generate it when you're ready."
+    ],
+    resultHint: "Quietly devastating, cinematically perfect, deeply personal. The closing frame of your story — whatever that means to you. The most powerful portrait possible."
   }
 ];
 
