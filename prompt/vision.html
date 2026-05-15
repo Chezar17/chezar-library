@@ -84,6 +84,23 @@
       <span class="section-title">The Prompt Library</span>
     </div>
 
+    <!-- SEARCH -->
+    <div class="search-row">
+      <div class="search-wrap">
+        <span class="search-icon">⌕</span>
+        <input
+          type="text"
+          id="searchInput"
+          class="search-input"
+          placeholder="Search prompts — title, style, mood..."
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button class="search-clear" id="searchClear" aria-label="Clear search">✕</button>
+      </div>
+      <span class="search-count" id="searchCount"></span>
+    </div>
+
     <!-- FILTERS -->
     <div class="filter-row">
       <button class="filter-btn active" data-filter="all">All</button>

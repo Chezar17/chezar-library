@@ -2296,14 +2296,50 @@ const grid = document.getElementById('promptGrid');
 const panel = document.getElementById('detailPanel');
 let activeCard = null;
 let activeIndex = null;
+let currentFilter = 'all';
+let currentSearch = '';
 
-function renderCards(filter = 'all') {
+function renderCards(filter = currentFilter, query = currentSearch) {
   grid.innerHTML = '';
   panel.classList.remove('open');
   activeCard = null;
   activeIndex = null;
 
-  const filtered = filter === 'all' ? prompts : prompts.filter(p => p.category === filter);
+  const q = query.trim().toLowerCase();
+
+  let filtered = filter === 'all' ? prompts : prompts.filter(p => p.category === filter);
+
+  if (q) {
+    filtered = filtered.filter(p =>
+      p.title.toLowerCase().includes(q) ||
+      p.preview.toLowerCase().includes(q) ||
+      p.tags.some(t => t.toLowerCase().includes(q)) ||
+      p.category.toLowerCase().includes(q) ||
+      p.full.toLowerCase().includes(q)
+    );
+  }
+
+  // update count display
+  const countEl = document.getElementById('searchCount');
+  if (q || filter !== 'all') {
+    countEl.textContent = `${filtered.length} prompt${filtered.length !== 1 ? 's' : ''}`;
+    countEl.classList.toggle('has-results', filtered.length > 0);
+  } else {
+    countEl.textContent = '';
+    countEl.classList.remove('has-results');
+  }
+
+  if (filtered.length === 0) {
+    const empty = document.createElement('div');
+    empty.className = 'no-results';
+    empty.innerHTML = `
+      <p class="no-results-title">// No prompts found</p>
+      <p class="no-results-sub">Try a different keyword or clear the search.</p>
+    `;
+    grid.appendChild(empty);
+    grid.appendChild(panel);
+    return;
+  }
 
   filtered.forEach((p, i) => {
     const card = document.createElement('div');
@@ -2411,8 +2447,27 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    renderCards(btn.dataset.filter);
+    currentFilter = btn.dataset.filter;
+    renderCards(currentFilter, currentSearch);
   });
+});
+
+/* ── SEARCH ───────────────────────────────────────────────── */
+const searchInput = document.getElementById('searchInput');
+const searchClear = document.getElementById('searchClear');
+
+searchInput.addEventListener('input', () => {
+  currentSearch = searchInput.value;
+  searchClear.classList.toggle('visible', currentSearch.length > 0);
+  renderCards(currentFilter, currentSearch);
+});
+
+searchClear.addEventListener('click', () => {
+  searchInput.value = '';
+  currentSearch = '';
+  searchClear.classList.remove('visible');
+  searchInput.focus();
+  renderCards(currentFilter, currentSearch);
 });
 
 /* ── SCROLL REVEAL ────────────────────────────────────────── */
