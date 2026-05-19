@@ -7,6 +7,43 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;400;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── READ MORE ── */
+    .item-desc {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      transition: none;
+    }
+    .item-desc.expanded {
+      display: block;
+      overflow: visible;
+    }
+    .read-more-btn {
+      background: none;
+      border: none;
+      padding: 0;
+      margin-top: 0.25rem;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--green);
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      display: none;           /* shown by JS only when text overflows */
+      align-items: center;
+      gap: 0.3rem;
+      transition: opacity 0.2s;
+      text-decoration: none;
+    }
+    .read-more-btn:hover { opacity: 0.75; }
+    .read-more-btn.visible { display: flex; }
+    .read-more-btn .rm-arrow {
+      display: inline-block;
+      transition: transform 0.2s;
+    }
+    .read-more-btn.expanded .rm-arrow { transform: rotate(180deg); }
+  </style>
 
   <!-- FAVICON — replace favicon.png with your image file -->
   <link rel="icon" type="image/png" href="favicon.jpg">
@@ -133,56 +170,83 @@
              - image: Place your image in /images/ folder and update src below
              - amazon link: Update href in <a class="buy-btn"> with your Amazon URL
         ============================================= -->
-        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-WATER-ITEM-1-LINK')">
+        <div class="gear-card" onclick="openLink('https://amzn.to/4tNBwL7')">
           <div class="card-image-wrap">
-            <img src="/images/water-item-1.jpg" alt="Water Item 1" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=WATER+ITEM+1&font=share-tech-mono'"/>
+            <img src="water/water1.jpg" alt="Water Item 1" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=WATER+ITEM+1&font=share-tech-mono'"/>
             <div class="card-overlay">
               <span>VIEW ON AMAZON →</span>
             </div>
           </div>
           <div class="card-body">
             <div class="card-top-row">
-              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-name">LifeStraw Personal Water Filter for Hiking, Camping, Travel, and Emergency Preparedness</span>
               <span class="item-status status-stocked">STOCKED</span>
             </div>
             <p class="item-desc">
-              ADD YOUR ITEM DESCRIPTION HERE. Explain why you chose this item, how you use it, and why it matters for survival.
+              Most people don’t realize how fast clean water disappears during disasters. Power outages, floods, earthquakes, and supply chain failures can leave store shelves empty within hours.
+
+That’s why preppers carry a LifeStraw.
+It’s small, lightweight, needs no batteries, and can filter contaminated freshwater on the spot.
+
+People like it because it’s simple: dip it in water and drink. No setup, no electricity, no chemicals. Reviews consistently praise its portability and emergency usefulness for bug-out bags, cars, and disaster kits.
             </p>
-            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-WATER-ITEM-1-LINK')">
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/4tNBwL7')">
               ⬛ GET THIS ITEM
             </a>
           </div>
         </div>
 
         <!-- WATER ITEM 2 -->
-        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-WATER-ITEM-2-LINK')">
+        <div class="gear-card" onclick="openLink('https://amzn.to/4wAxBnA')">
           <div class="card-image-wrap">
-            <img src="/images/water-item-2.jpg" alt="Water Item 2" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=WATER+ITEM+2&font=share-tech-mono'"/>
+            <img src="water/water2.jpg" alt="Water Item 2" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=WATER+ITEM+2&font=share-tech-mono'"/>
             <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
           </div>
           <div class="card-body">
             <div class="card-top-row">
-              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-name">The Prepper's Water Survival Handbook: Easy to Follow Steps to Find, Filter, Purify and Store Water for Long Term Readiness, Self Reliance and Emergency Preparedness</span>
               <span class="item-status status-stocked">STOCKED</span>
             </div>
-            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
-            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-WATER-ITEM-2-LINK')">⬛ GET THIS ITEM</a>
+            <p class="item-desc">This book exists for one reason: to teach you how to stay alive when clean water stops coming from the tap. It covers how to find water, purify unsafe water, store it long-term, and stay self-reliant during disasters or grid failures.
+
+Prepper communities constantly repeat the same lesson: gear helps, but knowledge matters more when systems fail. Water filters break. Bottled water runs out. Knowing what to do is what keeps you alive..</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/4wAxBnA')">⬛ GET THIS ITEM</a>
           </div>
         </div>
 
         <!-- WATER ITEM 3 -->
-        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-WATER-ITEM-3-LINK')">
+        <div class="gear-card" onclick="openLink('https://amzn.to/3RODAVT')">
           <div class="card-image-wrap">
-            <img src="/images/water-item-3.jpg" alt="Water Item 3" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=WATER+ITEM+3&font=share-tech-mono'"/>
+            <img src="water/water3.jpg" alt="Water Item 3" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=WATER+ITEM+3&font=share-tech-mono'"/>
             <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
           </div>
           <div class="card-body">
             <div class="card-top-row">
-              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-name">Collapsible Water Jug with Spigot, 2×5.3 Gallon BPA Free Camping Water Storage Container Carrier, for Outdoors Hiking Backpack RV Travel & Emergency, Portable Foldable Survival Water Canteen</span>
               <span class="item-status status-pending">PENDING</span>
             </div>
-            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
-            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-WATER-ITEM-3-LINK')">⬛ GET THIS ITEM</a>
+            <p class="item-desc">A collapsible water container solves a simple but critical problem: how to safely carry and store water when normal systems fail. Power outages, earthquakes, storms, and supply shortages can make clean running water disappear fast.
+
+People like these because they fold flat when empty, take almost no space in a prep kit, and can quickly store gallons of water when needed. Many models are made with BPA-free food-grade materials and are built for camping, evacuation kits, and emergency use.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/3RODAVT')">⬛ GET THIS ITEM</a>
+          </div>
+        </div>
+
+        <!-- WATER ITEM 4 -->
+        <div class="gear-card" onclick="openLink('https://amzn.to/4dPWnsC')">
+          <div class="card-image-wrap">
+            <img src="water/water4.jpg" alt="Water Item 4" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=WATER+ITEM+4&font=share-tech-mono'"/>
+            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <span class="item-name">Brita UltraMax Large Water Dispenser with 1 BritaPlus Filter, 27 Cup, White</span>
+              <span class="item-status status-pending">PENDING</span>
+            </div>
+            <p class="item-desc">The Brita UltraMax gives you a simple way to store and filter drinking water at home without relying completely on bottled water. Its large 27-cup capacity makes it useful during outages, storms, supply shortages, or any situation where clean water becomes harder to access. Reviews highlight its convenience, portability, and ability to reduce common contaminants while improving taste.
+
+Prepper communities often recommend having multiple layers of water security: stored water, portable filters, and daily-use filtration systems. This fits perfectly into that mindset because it’s practical enough to use every day — not just for emergencies.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/4dPWnsC')">⬛ GET THIS ITEM</a>
           </div>
         </div>
 
@@ -204,50 +268,64 @@
       <div class="gear-grid">
 
         <!-- FOOD ITEM 1 -->
-        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-FOOD-ITEM-1-LINK')">
+        <div class="gear-card" onclick="openLink('https://amzn.to/4v2xgZv')">
           <div class="card-image-wrap">
-            <img src="/images/food-item-1.jpg" alt="Food Item 1" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=FOOD+ITEM+1&font=share-tech-mono'"/>
+            <img src="food/food1.jpg" alt="Food Item 1" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=FOOD+ITEM+1&font=share-tech-mono'"/>
             <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
           </div>
           <div class="card-body">
             <div class="card-top-row">
-              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-name">ReadyWise Emergency Food Supply - 132 Servings, Survival Bucket, Dehydrated & Freeze Dried Protein Meals, Camping Essentials, Ready to Eat Disaster Prepping Supplies,up to 25 Year Shelf Life</span>
               <span class="item-status status-stocked">STOCKED</span>
             </div>
-            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
-            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-FOOD-ITEM-1-LINK')">⬛ GET THIS ITEM</a>
+            <p class="item-desc">The first thing people panic-buy during emergencies is food — and shelves empty fast.
+
+That’s why preppers store freeze-dried food buckets like ReadyWise. They’re compact, require minimal preparation, and can last up to 25 years when stored properly. ReadyWise markets these kits specifically for disasters, evacuations, and long-term food security.
+
+People in prepper communities often say the same thing: it’s not gourmet food — it’s emergency food. The value is having calories, shelf life, and convenience when normal food systems fail.
+
+Some users prefer brands like Mountain House for taste, but many still keep ReadyWise as backup storage because it’s affordable, lightweight, and designed for survival situations.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/4v2xgZv')">⬛ GET THIS ITEM</a>
           </div>
         </div>
 
         <!-- FOOD ITEM 2 -->
-        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-FOOD-ITEM-2-LINK')">
+        <div class="gear-card" onclick="openLink('https://amzn.to/42JBh8X')">
           <div class="card-image-wrap">
-            <img src="/images/food-item-2.jpg" alt="Food Item 2" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=FOOD+ITEM+2&font=share-tech-mono'"/>
+            <img src="food/food2.jpg" alt="Food Item 2" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=FOOD+ITEM+2&font=share-tech-mono'"/>
             <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
           </div>
           <div class="card-body">
             <div class="card-top-row">
-              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-name">Grizzly Gear Emergency Food Rations- 3600 Calorie Vanilla Poundcake Bar (5 Pack) - 15 Day, 360 Hour Value Supply For Disaster, Hurricane - Less Sugar, More Nutrients - 5 Year Shelf Life</span>
               <span class="item-status status-stocked">STOCKED</span>
             </div>
-            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
-            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-FOOD-ITEM-2-LINK')">⬛ GET THIS ITEM</a>
+            <p class="item-desc">These aren’t snacks.
+They’re survival calories made for the moments when normal food is gone.
+
+Emergency ration bars are trusted by lifeboats, emergency kits, and preppers because they last for years, handle extreme storage conditions, and give your body quick energy when food access disappears. Datrex bars are Coast Guard approved for emergency lifeboat rations and are designed specifically for survival situations.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/42JBh8X')">⬛ GET THIS ITEM</a>
           </div>
         </div>
 
         <!-- FOOD ITEM 3 -->
-        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-FOOD-ITEM-3-LINK')">
+        <div class="gear-card" onclick="openLink('https://amzn.to/3RNK4o0')">
           <div class="card-image-wrap">
-            <img src="/images/food-item-3.jpg" alt="Food Item 3" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=FOOD+ITEM+3&font=share-tech-mono'"/>
+            <img src="food/food3.jpg" alt="Food Item 3" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=FOOD+ITEM+3&font=share-tech-mono'"/>
             <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
           </div>
           <div class="card-body">
             <div class="card-top-row">
-              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-name">The Off-Grid Family Survival Bible: The All-in-One DIY Guide with Field-Tested, Step-by-Step Projects to Keep Your Family Safe, Fed, and Free When It Matters Most</span>
               <span class="item-status status-pending">PENDING</span>
             </div>
-            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
-            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-FOOD-ITEM-3-LINK')">⬛ GET THIS ITEM</a>
+            <p class="item-desc">This isn’t just about surviving disasters.
+It’s about learning how to stay calm, capable, and independent when normal systems stop working.
+
+Books like this are popular with preppers because they combine practical survival skills — food storage, water, shelter, power, first aid, and self-sufficiency — into one place. Many off-grid survival guides focus on step-by-step preparedness instead of fear-based scenarios.
+
+Prepper communities also constantly remind people that knowledge matters more than gear alone. Several Reddit discussions warn buyers to be careful with low-quality or AI-generated survival books and recommend choosing guides that focus on practical, actionable skills..</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/3RNK4o0')">⬛ GET THIS ITEM</a>
           </div>
         </div>
 
@@ -407,50 +485,64 @@ People in tactical and prepper communities often consider these a staple item fo
       <div class="gear-grid">
 
         <!-- POWER ITEM 1 -->
-        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-POWER-ITEM-1-LINK')">
+        <div class="gear-card" onclick="openLink('https://amzn.to/3RvnksQ')">
           <div class="card-image-wrap">
-            <img src="/images/power-item-1.jpg" alt="Power Item 1" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=POWER+ITEM+1&font=share-tech-mono'"/>
+            <img src="power/power1.jpg" alt="Power Item 1" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=POWER+ITEM+1&font=share-tech-mono'"/>
             <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
           </div>
           <div class="card-body">
             <div class="card-top-row">
-              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-name">Scepter 12 Gallon Portable Marine Gas Can, Large Capacity Boat Fuel Tank, 2-Way Vented Cap, Built-In Fuel Gauge & Pick-Up, Handles, EPA & CARB Compliant, Tall Profile, 22.9"L x 14.3"W x 13.9"H</span>
               <span class="item-status status-stocked">STOCKED</span>
             </div>
-            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
-            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-POWER-ITEM-1-LINK')">⬛ GET THIS ITEM</a>
+            <p class="item-desc">Most people don’t think about fuel until gas stations are empty or the power is already out. But generators, cars, heaters, and emergency tools all depend on one thing: stored gasoline.
+
+That’s why preppers keep fuel cans ready before emergencies happen.
+
+Scepter cans are popular because they’re durable, easier to pour, and built for safer long-term storage compared to cheap plastic containers. During blackouts, storms, or evacuations, having fuel already stored can mean keeping your lights on, charging devices, cooking food, or simply being able to leave when everyone else is stuck in line.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/3RvnksQ')">⬛ GET THIS ITEM</a>
           </div>
         </div>
 
         <!-- POWER ITEM 2 -->
-        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-POWER-ITEM-2-LINK')">
+        <div class="gear-card" onclick="openLink('https://amzn.to/4ujXgiS')">
           <div class="card-image-wrap">
-            <img src="/images/power-item-2.jpg" alt="Power Item 2" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=POWER+ITEM+2&font=share-tech-mono'"/>
+            <img src="power/power2.jpg" alt="Power Item 2" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=POWER+ITEM+2&font=share-tech-mono'"/>
             <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
           </div>
           <div class="card-body">
             <div class="card-top-row">
-              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-name">200W Portable Solar Panel for Power Station, Foldable Solar Charger w/ 4 Kickstands, IP65 Waterproof Solar Panel Kit w/DC XT60 Anderson Aviation Output for Outdoor RV Camper Blackout</span>
               <span class="item-status status-stocked">STOCKED</span>
             </div>
-            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
-            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-POWER-ITEM-2-LINK')">⬛ GET THIS ITEM</a>
+            <p class="item-desc">Power outages turn normal things into problems fast: dead phones, empty batteries, no lights, no way to charge radios or emergency gear.
+
+That’s why preppers invest in portable solar panels.
+
+The GRECELL folds down small, works without fuel, and gives you a renewable power source when outlets stop working. It’s built for camping, blackouts, bug-out setups, and emergency charging for power stations and devices. GRECELL highlights its monocrystalline cells, portability, and compatibility with most portable power stations.
+
+Prepper communities also constantly recommend looking for ETFE-coated panels and standard MC4 connections because durability and compatibility matter long-term</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/4ujXgiS')">⬛ GET THIS ITEM</a>
           </div>
         </div>
 
         <!-- POWER ITEM 3 -->
-        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-POWER-ITEM-3-LINK')">
+        <div class="gear-card" onclick="openLink('https://amzn.to/4ePM9tg')">
           <div class="card-image-wrap">
-            <img src="/images/power-item-3.jpg" alt="Power Item 3" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=POWER+ITEM+3&font=share-tech-mono'"/>
+            <img src="power/power3.jpg" alt="Power Item 3" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=POWER+ITEM+3&font=share-tech-mono'"/>
             <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
           </div>
           <div class="card-body">
             <div class="card-top-row">
-              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-name">GasTapper Fuel Transfer Pump - Gas Siphon Pro Pump for Gasoline, Oil, Diesel, Water, Liquid, Fluid - Portable Hand Gas Pump Includes Brass Tip Weight, 9 Ft Hose and Pinch Clip - 3.5 Gls/Min</span>
               <span class="item-status status-pending">PENDING</span>
             </div>
-            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
-            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-POWER-ITEM-3-LINK')">⬛ GET THIS ITEM</a>
+            <p class="item-desc">Most people don’t think about fuel transfer until they’re trying to refill a generator in the dark, drain bad gas, or move fuel during an emergency.
+
+That’s why preppers keep siphon pumps in their kits.
+
+The GasTapper is popular because it’s compact, doesn’t need electricity, and lets you transfer fuel without the mess, spills, or dangerous mouth-siphoning people used to do. Reviews frequently mention its usefulness for generators, motorcycles, boats, small engines, and emergency fuel storage</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/4ePM9tg')">⬛ GET THIS ITEM</a>
           </div>
         </div>
 
@@ -602,18 +694,26 @@ People in tactical and prepper communities often consider these a staple item fo
       <div class="gear-grid">
 
         <!-- COMMS ITEM 1 -->
-        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-COMMS-ITEM-1-LINK')">
+        <div class="gear-card" onclick="openLink('https://amzn.to/4dtHRVZ')">
           <div class="card-image-wrap">
-            <img src="/images/comms-item-1.jpg" alt="Comms Item 1" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=COMMS+ITEM+1&font=share-tech-mono'"/>
+            <img src="comm/comm1.jpg" alt="Comms Item 1" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=COMMS+ITEM+1&font=share-tech-mono'"/>
             <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
           </div>
           <div class="card-body">
             <div class="card-top-row">
-              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-name">Mesqool 12000 Emergency Radio, Auto Digital Weather Radio NOAA/AM/FM/SW Battery Backup Crank with Flashlight Phone Charger, Portable Solar Powered Radio Backlit LCD Display, SOS</span>
               <span class="item-status status-stocked">STOCKED</span>
             </div>
-            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
-            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-COMMS-ITEM-1-LINK')">⬛ GET THIS ITEM</a>
+            <p class="item-desc">When the power goes out, most people lose more than lights.
+They lose communication, updates, and awareness of what’s happening around them.
+
+That’s why preppers keep emergency radios nearby.
+
+This isn’t just a flashlight or a radio — it’s a backup source of information when phones die, internet disappears, and the grid stops working. Weather alerts, emergency broadcasts, flashlight, solar charging, hand crank backup — all built for situations where normal systems fail.
+
+People buy gear for comfort.
+Preppers buy gear that still works when comfort is gone.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/4dtHRVZ')">⬛ GET THIS ITEM</a>
           </div>
         </div>
 
@@ -836,6 +936,57 @@ People in tactical and prepper communities often consider these a staple item fo
 
     </div>
   </div>
+
+  <script>
+  // ── READ MORE ──
+  // Runs after DOM is ready. Finds every .item-desc, checks if it overflows
+  // (i.e. text is longer than 3 lines), and injects a toggle button if so.
+  document.addEventListener('DOMContentLoaded', function () {
+
+    document.querySelectorAll('.item-desc').forEach(function (desc) {
+
+      // Inject the button right after the <p>
+      var btn = document.createElement('button');
+      btn.className = 'read-more-btn';
+      btn.innerHTML = '// READ MORE <span class="rm-arrow">▾</span>';
+      desc.insertAdjacentElement('afterend', btn);
+
+      // Check overflow: if scrollHeight > clientHeight the text is clamped
+      function checkOverflow() {
+        if (desc.scrollHeight > desc.clientHeight + 2) {
+          btn.classList.add('visible');
+        } else if (!desc.classList.contains('expanded')) {
+          btn.classList.remove('visible');
+        }
+      }
+      checkOverflow();
+
+      // Toggle expand / collapse — stopPropagation prevents the card click
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();          // ← key: never fires the Amazon link
+        e.preventDefault();
+
+        var isExpanded = desc.classList.toggle('expanded');
+        btn.classList.toggle('expanded', isExpanded);
+        btn.innerHTML = isExpanded
+          ? '// SHOW LESS <span class="rm-arrow">▾</span>'
+          : '// READ MORE <span class="rm-arrow">▾</span>';
+      });
+    });
+
+    // Re-check on resize (font scaling / narrow screens)
+    window.addEventListener('resize', function () {
+      document.querySelectorAll('.item-desc:not(.expanded)').forEach(function (desc) {
+        var btn = desc.nextElementSibling;
+        if (btn && btn.classList.contains('read-more-btn')) {
+          if (desc.scrollHeight > desc.clientHeight + 2) {
+            btn.classList.add('visible');
+          }
+        }
+      });
+    });
+  });
+  </script>
 
   <script src="script.js"></script>
 </body>
