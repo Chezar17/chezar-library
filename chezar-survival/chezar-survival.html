@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CHEZAR // FIELD PREP MANIFEST</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;400;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- SCANLINE OVERLAY -->
+  <div class="scanlines"></div>
+  <!-- NOISE OVERLAY -->
+  <div class="noise"></div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-grid">
+      <div class="header-left">
+        <div class="classification-tag">// CLASSIFIED //</div>
+        <h1 class="site-title">
+          <span class="title-prefix">CHEZAR</span>
+          <span class="title-separator">◈</span>
+          <span class="title-suffix">FIELD PREP MANIFEST</span>
+        </h1>
+        <p class="site-tagline">Personal Survival Protocol — Curated. Tested. Ready.</p>
+      </div>
+      <div class="header-right">
+        <div class="status-block">
+          <div class="status-row"><span class="dot green"></span> SYSTEM ONLINE</div>
+          <div class="status-row"><span class="dot amber blink"></span> THREAT LEVEL: AMBER</div>
+          <div class="status-row"><span class="dot red"></span> PREP STATUS: ACTIVE</div>
+        </div>
+        <div class="doc-meta">
+          <span>DOC-REF: CZR-PREP-001</span>
+          <span id="live-date"></span>
+        </div>
+        <button class="cms-login-btn" onclick="openLoginModal()">
+          <span class="cms-btn-icon">⬛</span> CMS ACCESS
+        </button>
+      </div>
+    </div>
+    <div class="header-bar"></div>
+  </header>
+
+  <!-- HERO / MISSION STATEMENT -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="glitch-wrapper">
+        <h2 class="hero-headline glitch" data-text="WHEN IT HAPPENS, YOU'LL BE READY.">WHEN IT HAPPENS, YOU'LL BE READY.</h2>
+      </div>
+      <p class="hero-body">
+        This is not a shopping list. This is my <strong>personal survival manifest</strong> — every piece of gear I have 
+        vetted, field-tested, and trusted with my life. Infrastructure fails. Grids go dark. Supply chains collapse.
+        The question isn't <em>if</em> — it's <em>when</em>. Every item on this page exists because I refuse to be caught unprepared.
+      </p>
+      <div class="hero-stats">
+        <div class="stat-box">
+          <span class="stat-num" data-count="72">0</span><span class="stat-unit">HRS</span>
+          <span class="stat-label">Minimum Survival Window</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num" data-count="30">0</span><span class="stat-unit">DAYS</span>
+          <span class="stat-label">Extended Prep Coverage</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num" data-count="100">0</span><span class="stat-unit">%</span>
+          <span class="stat-label">Items Personally Sourced</span>
+        </div>
+      </div>
+    </div>
+    <div class="hex-grid-bg"></div>
+  </section>
+
+  <!-- URGENCY BANNER -->
+  <div class="urgency-ticker">
+    <div class="ticker-inner">
+      <span>⚠ POWER GRID VULNERABILITIES INCREASING &nbsp;|&nbsp;</span>
+      <span>⚠ SUPPLY CHAIN DISRUPTIONS ONGOING &nbsp;|&nbsp;</span>
+      <span>⚠ NATURAL DISASTER FREQUENCY AT ALL-TIME HIGH &nbsp;|&nbsp;</span>
+      <span>⚠ EVERY DAY UNPREPARED IS A RISK &nbsp;|&nbsp;</span>
+      <span>⚠ POWER GRID VULNERABILITIES INCREASING &nbsp;|&nbsp;</span>
+      <span>⚠ SUPPLY CHAIN DISRUPTIONS ONGOING &nbsp;|&nbsp;</span>
+      <span>⚠ NATURAL DISASTER FREQUENCY AT ALL-TIME HIGH &nbsp;|&nbsp;</span>
+      <span>⚠ EVERY DAY UNPREPARED IS A RISK &nbsp;|&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <!-- NAV / CATEGORY JUMP -->
+    <nav class="category-nav">
+      <span class="nav-label">// JUMP TO CATEGORY</span>
+      <a href="#water" class="cat-btn">WATER</a>
+      <a href="#food" class="cat-btn">FOOD</a>
+      <a href="#medical" class="cat-btn">MEDICAL</a>
+      <a href="#power" class="cat-btn">POWER</a>
+      <a href="#shelter" class="cat-btn">SHELTER</a>
+      <a href="#tools" class="cat-btn">TOOLS</a>
+      <a href="#comms" class="cat-btn">COMMS</a>
+      <a href="#defense" class="cat-btn">DEFENSE</a>
+    </nav>
+
+    <!-- ============================
+         SECTION: WATER
+    ============================= -->
+    <section class="gear-section" id="water">
+      <div class="section-header">
+        <div class="section-icon">💧</div>
+        <div>
+          <h3 class="section-title">WATER &amp; HYDRATION</h3>
+          <p class="section-desc">Without clean water, you have 3 days. This category is non-negotiable.</p>
+        </div>
+        <div class="section-priority">PRIORITY: <span class="p-critical">CRITICAL</span></div>
+      </div>
+      <div class="gear-grid">
+
+        <!-- =============================================
+             WATER ITEM 1
+             HOW TO EDIT:
+             - name: Change text inside <span class="item-name">
+             - status: Change "STOCKED" or "PENDING" in <span class="item-status">
+             - description: Change text inside <p class="item-desc">
+             - image: Place your image in /images/ folder and update src below
+             - amazon link: Update href in <a class="buy-btn"> with your Amazon URL
+        ============================================= -->
+        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-WATER-ITEM-1-LINK')">
+          <div class="card-image-wrap">
+            <img src="/images/water-item-1.jpg" alt="Water Item 1" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=WATER+ITEM+1&font=share-tech-mono'"/>
+            <div class="card-overlay">
+              <span>VIEW ON AMAZON →</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-status status-stocked">STOCKED</span>
+            </div>
+            <p class="item-desc">
+              ADD YOUR ITEM DESCRIPTION HERE. Explain why you chose this item, how you use it, and why it matters for survival.
+            </p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-WATER-ITEM-1-LINK')">
+              ⬛ GET THIS ITEM
+            </a>
+          </div>
+        </div>
+
+        <!-- WATER ITEM 2 -->
+        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-WATER-ITEM-2-LINK')">
+          <div class="card-image-wrap">
+            <img src="/images/water-item-2.jpg" alt="Water Item 2" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=WATER+ITEM+2&font=share-tech-mono'"/>
+            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-status status-stocked">STOCKED</span>
+            </div>
+            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-WATER-ITEM-2-LINK')">⬛ GET THIS ITEM</a>
+          </div>
+        </div>
+
+        <!-- WATER ITEM 3 -->
+        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-WATER-ITEM-3-LINK')">
+          <div class="card-image-wrap">
+            <img src="/images/water-item-3.jpg" alt="Water Item 3" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=WATER+ITEM+3&font=share-tech-mono'"/>
+            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-status status-pending">PENDING</span>
+            </div>
+            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-WATER-ITEM-3-LINK')">⬛ GET THIS ITEM</a>
+          </div>
+        </div>
+
+      </div><!-- /gear-grid -->
+    </section><!-- /water -->
+
+    <!-- ============================
+         SECTION: FOOD
+    ============================= -->
+    <section class="gear-section" id="food">
+      <div class="section-header">
+        <div class="section-icon">🥫</div>
+        <div>
+          <h3 class="section-title">FOOD &amp; NUTRITION</h3>
+          <p class="section-desc">Caloric density, shelf life, no refrigeration. These are the rules.</p>
+        </div>
+        <div class="section-priority">PRIORITY: <span class="p-critical">CRITICAL</span></div>
+      </div>
+      <div class="gear-grid">
+
+        <!-- FOOD ITEM 1 -->
+        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-FOOD-ITEM-1-LINK')">
+          <div class="card-image-wrap">
+            <img src="/images/food-item-1.jpg" alt="Food Item 1" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=FOOD+ITEM+1&font=share-tech-mono'"/>
+            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-status status-stocked">STOCKED</span>
+            </div>
+            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-FOOD-ITEM-1-LINK')">⬛ GET THIS ITEM</a>
+          </div>
+        </div>
+
+        <!-- FOOD ITEM 2 -->
+        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-FOOD-ITEM-2-LINK')">
+          <div class="card-image-wrap">
+            <img src="/images/food-item-2.jpg" alt="Food Item 2" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=FOOD+ITEM+2&font=share-tech-mono'"/>
+            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-status status-stocked">STOCKED</span>
+            </div>
+            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-FOOD-ITEM-2-LINK')">⬛ GET THIS ITEM</a>
+          </div>
+        </div>
+
+        <!-- FOOD ITEM 3 -->
+        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-FOOD-ITEM-3-LINK')">
+          <div class="card-image-wrap">
+            <img src="/images/food-item-3.jpg" alt="Food Item 3" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=FOOD+ITEM+3&font=share-tech-mono'"/>
+            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-status status-pending">PENDING</span>
+            </div>
+            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-FOOD-ITEM-3-LINK')">⬛ GET THIS ITEM</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================
+         SECTION: MEDICAL
+    ============================= -->
+    <section class="gear-section" id="medical">
+      <div class="section-header">
+        <div class="section-icon">🩺</div>
+        <div>
+          <h3 class="section-title">MEDICAL &amp; FIRST AID</h3>
+          <p class="section-desc">Hospitals may be overwhelmed. You are your own medic. Train accordingly.</p>
+        </div>
+        <div class="section-priority">PRIORITY: <span class="p-critical">CRITICAL</span></div>
+      </div>
+      <div class="gear-grid">
+
+        <!-- MEDICAL ITEM 1 -->
+        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-MEDICAL-ITEM-1-LINK')">
+          <div class="card-image-wrap">
+            <img src="/images/medical-item-1.jpg" alt="Medical Item 1" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=MEDICAL+ITEM+1&font=share-tech-mono'"/>
+            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-status status-stocked">STOCKED</span>
+            </div>
+            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-MEDICAL-ITEM-1-LINK')">⬛ GET THIS ITEM</a>
+          </div>
+        </div>
+
+        <!-- MEDICAL ITEM 2 -->
+        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-MEDICAL-ITEM-2-LINK')">
+          <div class="card-image-wrap">
+            <img src="/images/medical-item-2.jpg" alt="Medical Item 2" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=MEDICAL+ITEM+2&font=share-tech-mono'"/>
+            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-status status-stocked">STOCKED</span>
+            </div>
+            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-MEDICAL-ITEM-2-LINK')">⬛ GET THIS ITEM</a>
+          </div>
+        </div>
+
+        <!-- MEDICAL ITEM 3 -->
+        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-MEDICAL-ITEM-3-LINK')">
+          <div class="card-image-wrap">
+            <img src="/images/medical-item-3.jpg" alt="Medical Item 3" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=MEDICAL+ITEM+3&font=share-tech-mono'"/>
+            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-status status-pending">PENDING</span>
+            </div>
+            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-MEDICAL-ITEM-3-LINK')">⬛ GET THIS ITEM</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================
+         SECTION: POWER
+    ============================= -->
+    <section class="gear-section" id="power">
+      <div class="section-header">
+        <div class="section-icon">⚡</div>
+        <div>
+          <h3 class="section-title">POWER &amp; ENERGY</h3>
+          <p class="section-desc">When the grid fails, your independence depends on what you charged yesterday.</p>
+        </div>
+        <div class="section-priority">PRIORITY: <span class="p-high">HIGH</span></div>
+      </div>
+      <div class="gear-grid">
+
+        <!-- POWER ITEM 1 -->
+        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-POWER-ITEM-1-LINK')">
+          <div class="card-image-wrap">
+            <img src="/images/power-item-1.jpg" alt="Power Item 1" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=POWER+ITEM+1&font=share-tech-mono'"/>
+            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-status status-stocked">STOCKED</span>
+            </div>
+            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-POWER-ITEM-1-LINK')">⬛ GET THIS ITEM</a>
+          </div>
+        </div>
+
+        <!-- POWER ITEM 2 -->
+        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-POWER-ITEM-2-LINK')">
+          <div class="card-image-wrap">
+            <img src="/images/power-item-2.jpg" alt="Power Item 2" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=POWER+ITEM+2&font=share-tech-mono'"/>
+            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-status status-stocked">STOCKED</span>
+            </div>
+            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-POWER-ITEM-2-LINK')">⬛ GET THIS ITEM</a>
+          </div>
+        </div>
+
+        <!-- POWER ITEM 3 -->
+        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-POWER-ITEM-3-LINK')">
+          <div class="card-image-wrap">
+            <img src="/images/power-item-3.jpg" alt="Power Item 3" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=POWER+ITEM+3&font=share-tech-mono'"/>
+            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-status status-pending">PENDING</span>
+            </div>
+            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-POWER-ITEM-3-LINK')">⬛ GET THIS ITEM</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================
+         SECTION: SHELTER
+    ============================= -->
+    <section class="gear-section" id="shelter">
+      <div class="section-header">
+        <div class="section-icon">🏕</div>
+        <div>
+          <h3 class="section-title">SHELTER &amp; WARMTH</h3>
+          <p class="section-desc">Exposure kills faster than starvation. Shelter is survival layer one.</p>
+        </div>
+        <div class="section-priority">PRIORITY: <span class="p-high">HIGH</span></div>
+      </div>
+      <div class="gear-grid">
+
+        <!-- SHELTER ITEM 1 -->
+        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-SHELTER-ITEM-1-LINK')">
+          <div class="card-image-wrap">
+            <img src="/images/shelter-item-1.jpg" alt="Shelter Item 1" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=SHELTER+ITEM+1&font=share-tech-mono'"/>
+            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-status status-stocked">STOCKED</span>
+            </div>
+            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-SHELTER-ITEM-1-LINK')">⬛ GET THIS ITEM</a>
+          </div>
+        </div>
+
+        <!-- SHELTER ITEM 2 -->
+        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-SHELTER-ITEM-2-LINK')">
+          <div class="card-image-wrap">
+            <img src="/images/shelter-item-2.jpg" alt="Shelter Item 2" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=SHELTER+ITEM+2&font=share-tech-mono'"/>
+            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-status status-pending">PENDING</span>
+            </div>
+            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-SHELTER-ITEM-2-LINK')">⬛ GET THIS ITEM</a>
+          </div>
+        </div>
+
+        <!-- SHELTER ITEM 3 -->
+        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-SHELTER-ITEM-3-LINK')">
+          <div class="card-image-wrap">
+            <img src="/images/shelter-item-3.jpg" alt="Shelter Item 3" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=SHELTER+ITEM+3&font=share-tech-mono'"/>
+            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-status status-stocked">STOCKED</span>
+            </div>
+            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-SHELTER-ITEM-3-LINK')">⬛ GET THIS ITEM</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================
+         SECTION: TOOLS
+    ============================= -->
+    <section class="gear-section" id="tools">
+      <div class="section-header">
+        <div class="section-icon">🔧</div>
+        <div>
+          <h3 class="section-title">TOOLS &amp; EQUIPMENT</h3>
+          <p class="section-desc">Multi-function, durable, proven. Dead weight is a liability in the field.</p>
+        </div>
+        <div class="section-priority">PRIORITY: <span class="p-high">HIGH</span></div>
+      </div>
+      <div class="gear-grid">
+
+        <!-- TOOLS ITEM 1 -->
+        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-TOOLS-ITEM-1-LINK')">
+          <div class="card-image-wrap">
+            <img src="/images/tools-item-1.jpg" alt="Tools Item 1" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=TOOLS+ITEM+1&font=share-tech-mono'"/>
+            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-status status-stocked">STOCKED</span>
+            </div>
+            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-TOOLS-ITEM-1-LINK')">⬛ GET THIS ITEM</a>
+          </div>
+        </div>
+
+        <!-- TOOLS ITEM 2 -->
+        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-TOOLS-ITEM-2-LINK')">
+          <div class="card-image-wrap">
+            <img src="/images/tools-item-2.jpg" alt="Tools Item 2" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=TOOLS+ITEM+2&font=share-tech-mono'"/>
+            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-status status-stocked">STOCKED</span>
+            </div>
+            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-TOOLS-ITEM-2-LINK')">⬛ GET THIS ITEM</a>
+          </div>
+        </div>
+
+        <!-- TOOLS ITEM 3 -->
+        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-TOOLS-ITEM-3-LINK')">
+          <div class="card-image-wrap">
+            <img src="/images/tools-item-3.jpg" alt="Tools Item 3" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=TOOLS+ITEM+3&font=share-tech-mono'"/>
+            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-status status-pending">PENDING</span>
+            </div>
+            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-TOOLS-ITEM-3-LINK')">⬛ GET THIS ITEM</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================
+         SECTION: COMMS
+    ============================= -->
+    <section class="gear-section" id="comms">
+      <div class="section-header">
+        <div class="section-icon">📡</div>
+        <div>
+          <h3 class="section-title">COMMUNICATIONS</h3>
+          <p class="section-desc">Information is power. Silence is danger. Stay connected when everything goes dark.</p>
+        </div>
+        <div class="section-priority">PRIORITY: <span class="p-medium">MEDIUM</span></div>
+      </div>
+      <div class="gear-grid">
+
+        <!-- COMMS ITEM 1 -->
+        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-COMMS-ITEM-1-LINK')">
+          <div class="card-image-wrap">
+            <img src="/images/comms-item-1.jpg" alt="Comms Item 1" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=COMMS+ITEM+1&font=share-tech-mono'"/>
+            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-status status-stocked">STOCKED</span>
+            </div>
+            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-COMMS-ITEM-1-LINK')">⬛ GET THIS ITEM</a>
+          </div>
+        </div>
+
+        <!-- COMMS ITEM 2 -->
+        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-COMMS-ITEM-2-LINK')">
+          <div class="card-image-wrap">
+            <img src="/images/comms-item-2.jpg" alt="Comms Item 2" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=COMMS+ITEM+2&font=share-tech-mono'"/>
+            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-status status-pending">PENDING</span>
+            </div>
+            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-COMMS-ITEM-2-LINK')">⬛ GET THIS ITEM</a>
+          </div>
+        </div>
+
+        <!-- COMMS ITEM 3 -->
+        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-COMMS-ITEM-3-LINK')">
+          <div class="card-image-wrap">
+            <img src="/images/comms-item-3.jpg" alt="Comms Item 3" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=COMMS+ITEM+3&font=share-tech-mono'"/>
+            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-status status-stocked">STOCKED</span>
+            </div>
+            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-COMMS-ITEM-3-LINK')">⬛ GET THIS ITEM</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================
+         SECTION: DEFENSE
+    ============================= -->
+    <section class="gear-section" id="defense">
+      <div class="section-header">
+        <div class="section-icon">🛡</div>
+        <div>
+          <h3 class="section-title">DEFENSE &amp; SECURITY</h3>
+          <p class="section-desc">Protecting your resources and your people. Non-negotiable when rule of law is absent.</p>
+        </div>
+        <div class="section-priority">PRIORITY: <span class="p-high">HIGH</span></div>
+      </div>
+      <div class="gear-grid">
+
+        <!-- DEFENSE ITEM 1 -->
+        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-DEFENSE-ITEM-1-LINK')">
+          <div class="card-image-wrap">
+            <img src="/images/defense-item-1.jpg" alt="Defense Item 1" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=DEFENSE+ITEM+1&font=share-tech-mono'"/>
+            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-status status-stocked">STOCKED</span>
+            </div>
+            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-DEFENSE-ITEM-1-LINK')">⬛ GET THIS ITEM</a>
+          </div>
+        </div>
+
+        <!-- DEFENSE ITEM 2 -->
+        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-DEFENSE-ITEM-2-LINK')">
+          <div class="card-image-wrap">
+            <img src="/images/defense-item-2.jpg" alt="Defense Item 2" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=DEFENSE+ITEM+2&font=share-tech-mono'"/>
+            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-status status-pending">PENDING</span>
+            </div>
+            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-DEFENSE-ITEM-2-LINK')">⬛ GET THIS ITEM</a>
+          </div>
+        </div>
+
+        <!-- DEFENSE ITEM 3 -->
+        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-DEFENSE-ITEM-3-LINK')">
+          <div class="card-image-wrap">
+            <img src="/images/defense-item-3.jpg" alt="Defense Item 3" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=DEFENSE+ITEM+3&font=share-tech-mono'"/>
+            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-status status-stocked">STOCKED</span>
+            </div>
+            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-DEFENSE-ITEM-3-LINK')">⬛ GET THIS ITEM</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main><!-- /main-content -->
+
+  <!-- TRUST / CREDIBILITY SECTION -->
+  <section class="trust-section">
+    <div class="trust-inner">
+      <h3 class="trust-title">// WHY TRUST THIS LIST?</h3>
+      <div class="trust-grid">
+        <div class="trust-card">
+          <span class="trust-icon">🎖</span>
+          <h4>Personally Vetted</h4>
+          <p>Every item has been researched, tested, and verified. Nothing ends up on this list because of price or hype — only because it works.</p>
+        </div>
+        <div class="trust-card">
+          <span class="trust-icon">📋</span>
+          <h4>Research-Backed Choices</h4>
+          <p>Built from years of reading survival manuals, community forums, and military field guides. These are considered, deliberate selections.</p>
+        </div>
+        <div class="trust-card">
+          <span class="trust-icon">🔄</span>
+          <h4>Continuously Updated</h4>
+          <p>The world changes. This list changes with it. Items are reviewed, rotated, and updated as better gear becomes available.</p>
+        </div>
+        <div class="trust-card">
+          <span class="trust-icon">⚙</span>
+          <h4>System-Oriented</h4>
+          <p>This isn't random gear — it's an interlocking system. Each item complements the others. The whole is stronger than its parts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-title">CHEZAR // FIELD PREP MANIFEST</span>
+        <span class="footer-sub">Personal Survival Protocol</span>
+      </div>
+      <div class="footer-disclaimer">
+        <p>// This is a personal preparation log. Links may include affiliate commissions that support this project. All choices reflect personal experience and research.</p>
+        <p class="footer-classif">DOCUMENT CLASSIFICATION: PERSONAL USE ONLY — CZR-PREP-001</p>
+      </div>
+    </div>
+    <div class="footer-bar"></div>
+  </footer>
+
+  <!-- ==============================
+       CMS LOGIN MODAL
+  ============================== -->
+  <div class="modal-backdrop" id="loginModal" onclick="handleBackdropClick(event)">
+    <div class="modal-box">
+
+      <!-- MODAL HEADER -->
+      <div class="modal-header">
+        <div class="modal-classify">// RESTRICTED ACCESS //</div>
+        <h2 class="modal-title">
+          <span class="modal-title-czr">CHEZAR</span> CMS
+        </h2>
+        <p class="modal-subtitle">Authorized Personnel Only — Credential Verification Required</p>
+        <button class="modal-close" onclick="closeLoginModal()" aria-label="Close">✕</button>
+      </div>
+
+      <!-- TERMINAL LINE -->
+      <div class="modal-terminal-line">
+        <span id="terminal-typing"></span><span class="cursor-blink">█</span>
+      </div>
+
+      <!-- FORM -->
+      <div class="modal-form">
+        <div class="field-group">
+          <label class="field-label" for="cms-user">// OPERATOR ID</label>
+          <input
+            class="field-input"
+            id="cms-user"
+            type="text"
+            autocomplete="off"
+            placeholder="Enter username"
+            onkeydown="clearFieldError('cms-user')"
+          />
+          <span class="field-error" id="err-user"></span>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="cms-pass">// ACCESS CODE</label>
+          <div class="pass-wrap">
+            <input
+              class="field-input"
+              id="cms-pass"
+              type="password"
+              autocomplete="off"
+              placeholder="Enter password"
+              onkeydown="clearFieldError('cms-pass')"
+              onkeyup="handlePassKey(event)"
+            />
+            <button class="toggle-pass" onclick="togglePassword()" aria-label="Show password" id="toggle-pass-btn">◉</button>
+          </div>
+          <span class="field-error" id="err-pass"></span>
+        </div>
+
+        <!-- GLOBAL ERROR -->
+        <div class="login-error-box" id="login-error-box">
+          <span class="login-error-icon">⚠</span>
+          <span id="login-error-msg"></span>
+        </div>
+
+        <!-- SUBMIT -->
+        <button class="login-submit-btn" id="login-submit-btn" onclick="attemptLogin()">
+          <span id="btn-label">AUTHENTICATE</span>
+          <span class="btn-bar"></span>
+        </button>
+
+        <p class="login-hint">Access restricted to manifest administrator.</p>
+      </div>
+
+      <!-- ATTEMPT COUNTER -->
+      <div class="attempt-counter" id="attempt-counter"></div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
