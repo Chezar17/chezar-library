@@ -969,6 +969,254 @@ body {
   to   { left: 100%; }
 }
 
+/* ======================================
+   READ MORE
+   ====================================== */
+.item-desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: none;
+}
+.item-desc.expanded {
+  display: block;
+  overflow: visible;
+}
+.read-more-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-top: 0.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--green);
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  gap: 0.3rem;
+  transition: opacity 0.2s;
+  text-decoration: none;
+}
+.read-more-btn:hover { opacity: 0.75; }
+.read-more-btn.visible { display: flex; }
+.read-more-btn .rm-arrow {
+  display: inline-block;
+  transition: transform 0.2s;
+}
+.read-more-btn.expanded .rm-arrow { transform: rotate(180deg); }
+
+/* ======================================
+   CARD IMAGE — 1:1 RATIO
+   ====================================== */
+.card-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  height: auto !important;
+  overflow: hidden;
+  background: var(--bg3);
+}
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ======================================
+   HERO — HEADLINE & CENTERED LAYOUT
+   ====================================== */
+.hero-section {
+  min-height: calc(100vh - 90px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 4rem 2.5rem 8rem !important;
+  text-align: center;
+  position: relative;
+}
+.hero-content {
+  max-width: 860px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* headline block */
+.hero-headline-block  { margin-bottom: 2.2rem; width: 100%; }
+
+/* pre-label */
+.hero-pre-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+}
+.hero-pre-line {
+  width: 50px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--green-dim));
+}
+.hero-pre-line:last-child {
+  background: linear-gradient(90deg, var(--green-dim), transparent);
+}
+.hero-pre-text {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.28em;
+  color: var(--green);
+  opacity: 0.7;
+  white-space: nowrap;
+}
+
+/* main headline */
+.hero-headline-new {
+  font-family: 'Orbitron', sans-serif;
+  line-height: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15em;
+  margin-bottom: 1rem;
+}
+.headline-top {
+  font-size: clamp(1.1rem, 3.5vw, 2.1rem);
+  font-weight: 400;
+  color: #6b8c60;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+.headline-bottom {
+  font-size: clamp(2.2rem, 7vw, 5.2rem);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.12em;
+  line-height: 1;
+}
+.headline-accent {
+  color: var(--green);
+  text-shadow: 0 0 30px rgba(57,255,20,0.4), 0 0 60px rgba(57,255,20,0.15);
+}
+.headline-white  { color: #ffffff; }
+.headline-outline {
+  color: transparent;
+  -webkit-text-stroke: 2px #fff;
+  opacity: 0.85;
+}
+
+/* post-label */
+.hero-post-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.8rem;
+  flex-wrap: wrap;
+}
+.hero-doc-ref {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  letter-spacing: 0.14em;
+}
+.hero-threat-bar {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+.threat-segment {
+  width: 18px;
+  height: 6px;
+  background: var(--border-bright);
+  clip-path: polygon(4px 0%, 100% 0%, calc(100% - 4px) 100%, 0% 100%);
+}
+.threat-segment.filled {
+  background: var(--amber);
+  box-shadow: 0 0 5px rgba(255,179,0,0.5);
+}
+.hero-threat-text {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--amber);
+  letter-spacing: 0.14em;
+}
+
+/* body & stats centering */
+.hero-body {
+  text-align: center !important;
+  max-width: 640px;
+}
+.hero-stats { justify-content: center; }
+
+/* ======================================
+   SCROLL INDICATOR
+   ====================================== */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  animation: scroll-fade-in 1.2s 1.2s ease both;
+  z-index: 10;
+}
+.scroll-label {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: var(--green);
+  white-space: nowrap;
+  text-shadow: 0 0 14px rgba(57,255,20,0.7), 0 0 30px rgba(57,255,20,0.3);
+  padding: 0.4rem 1.2rem;
+  border: 1px solid var(--green-dim);
+  background: rgba(57,255,20,0.05);
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  transition: background 0.2s, text-shadow 0.2s;
+}
+.scroll-indicator:hover .scroll-label {
+  background: rgba(57,255,20,0.12);
+  text-shadow: 0 0 20px rgba(57,255,20,1), 0 0 40px rgba(57,255,20,0.5);
+}
+.scroll-arrow-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.scroll-arrow-svg {
+  width: 28px;
+  height: 32px;
+  color: var(--green);
+  filter: drop-shadow(0 0 6px rgba(57,255,20,0.8)) drop-shadow(0 0 14px rgba(57,255,20,0.4));
+  animation: arrow-bounce 1.4s ease-in-out infinite;
+}
+.scroll-indicator:hover .scroll-arrow-svg {
+  filter: drop-shadow(0 0 10px rgba(57,255,20,1)) drop-shadow(0 0 22px rgba(57,255,20,0.6));
+}
+@keyframes arrow-bounce {
+  0%, 100% { transform: translateY(0);   opacity: 1;   }
+  50%       { transform: translateY(9px); opacity: 0.7; }
+}
+@keyframes scroll-fade-in {
+  from { opacity: 0; transform: translateX(-50%) translateY(16px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+
+
 @media (max-width: 640px) {
   .site-header { padding: 1.5rem 1.2rem 0; }
   .hero-section { padding: 3rem 1.2rem 2.5rem; }

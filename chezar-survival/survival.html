@@ -7,179 +7,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;400;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* ── READ MORE ── */
-    .item-desc {
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      transition: none;
-    }
-    .item-desc.expanded {
-      display: block;
-      overflow: visible;
-    }
-    .read-more-btn {
-      background: none;
-      border: none;
-      padding: 0;
-      margin-top: 0.25rem;
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      color: var(--green);
-      letter-spacing: 0.1em;
-      cursor: pointer;
-      display: none;
-      align-items: center;
-      gap: 0.3rem;
-      transition: opacity 0.2s;
-      text-decoration: none;
-    }
-    .read-more-btn:hover { opacity: 0.75; }
-    .read-more-btn.visible { display: flex; }
-    .read-more-btn .rm-arrow {
-      display: inline-block;
-      transition: transform 0.2s;
-    }
-    .read-more-btn.expanded .rm-arrow { transform: rotate(180deg); }
-
-    /* ── CARD IMAGE 1:1 RATIO ── */
-    .card-image-wrap {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      height: auto !important;   /* override any fixed height from style.css */
-      overflow: hidden;
-      background: var(--bg3);
-    }
-    .card-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* ── HERO HEADLINE ── */
-    .hero-headline-block {
-      margin-bottom: 2.2rem;
-    }
-
-    /* Pre-label row */
-    .hero-pre-label {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 0.9rem;
-    }
-    .hero-pre-line {
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--green-dim));
-      max-width: 60px;
-    }
-    .hero-pre-line:last-child {
-      background: linear-gradient(90deg, var(--green-dim), transparent);
-    }
-    .hero-pre-text {
-      font-family: var(--font-mono);
-      font-size: 0.62rem;
-      letter-spacing: 0.28em;
-      color: var(--green);
-      opacity: 0.7;
-      white-space: nowrap;
-    }
-
-    /* Main headline */
-    .hero-headline-new {
-      font-family: 'Orbitron', sans-serif;
-      line-height: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 0.15em;
-      margin-bottom: 1rem;
-    }
-    .headline-top {
-      font-size: clamp(1.1rem, 3.5vw, 2.1rem);
-      font-weight: 400;
-      color: #6b8c60;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-    }
-    .headline-bottom {
-      font-size: clamp(2.2rem, 7vw, 5.2rem);
-      font-weight: 900;
-      letter-spacing: 0.04em;
-      display: flex;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 0.12em;
-      line-height: 1;
-    }
-    .headline-accent {
-      color: var(--green);
-      text-shadow: 0 0 30px rgba(57,255,20,0.4), 0 0 60px rgba(57,255,20,0.15);
-    }
-    .headline-white {
-      color: #ffffff;
-    }
-    .headline-outline {
-      color: transparent;
-      -webkit-text-stroke: 2px #fff;
-      opacity: 0.85;
-    }
-
-    /* Post-label row */
-    .hero-post-label {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-top: 0.8rem;
-      flex-wrap: wrap;
-    }
-    .hero-doc-ref {
-      font-family: var(--font-mono);
-      font-size: 0.6rem;
-      color: var(--text-dim);
-      letter-spacing: 0.14em;
-    }
-    .hero-threat-bar {
-      display: flex;
-      gap: 3px;
-      align-items: center;
-    }
-    .threat-segment {
-      width: 18px;
-      height: 6px;
-      background: var(--border-bright);
-      clip-path: polygon(4px 0%, 100% 0%, calc(100% - 4px) 100%, 0% 100%);
-    }
-    .threat-segment.filled {
-      background: var(--amber);
-      box-shadow: 0 0 5px rgba(255,179,0,0.5);
-    }
-    .hero-threat-text {
-      font-family: var(--font-mono);
-      font-size: 0.6rem;
-      color: var(--amber);
-      letter-spacing: 0.14em;
-    }
-  </style>
-
-  <!-- FAVICON — replace favicon.png with your image file -->
   <link rel="icon" type="image/png" href="favicon.jpg">
   <link rel="shortcut icon" href="favicon.ico">
-  <!-- For iPhone/iPad home screen -->
   <link rel="apple-touch-icon" href="favicon.png">
 </head>
 <body>
-
-  <!-- SCANLINE OVERLAY -->
   <div class="scanlines"></div>
-  <!-- NOISE OVERLAY -->
   <div class="noise"></div>
-
-  <!-- HEADER -->
   <header class="site-header">
     <div class="header-grid">
       <div class="header-left">
@@ -209,7 +43,7 @@
     <div class="header-bar"></div>
   </header>
 
-  <!-- HERO / MISSION STATEMENT -->
+
   <section class="hero-section">
     <div class="hero-content">
       <div class="hero-headline-block">
@@ -259,9 +93,20 @@
       </div>
     </div>
     <div class="hex-grid-bg"></div>
+
+    <!-- SCROLL INDICATOR -->
+    <a class="scroll-indicator" href="#water" aria-label="Scroll to gear list">
+      <span class="scroll-label">SCROLL TO ACCESS MANIFEST</span>
+      <span class="scroll-arrow-wrap">
+        <svg class="scroll-arrow-svg" viewBox="0 0 40 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="18" y="0" width="4" height="28" fill="currentColor" opacity="0.9"/>
+          <polyline points="4,22 20,42 36,22" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+        </svg>
+      </span>
+    </a>
+
   </section>
 
-  <!-- URGENCY BANNER -->
   <div class="urgency-ticker">
     <div class="ticker-inner">
       <span>⚠ POWER GRID VULNERABILITIES INCREASING &nbsp;|&nbsp;</span>
@@ -269,16 +114,14 @@
       <span>⚠ NATURAL DISASTER FREQUENCY AT ALL-TIME HIGH &nbsp;|&nbsp;</span>
       <span>⚠ EVERY DAY UNPREPARED IS A RISK &nbsp;|&nbsp;</span>
       <span>⚠ POWER GRID VULNERABILITIES INCREASING &nbsp;|&nbsp;</span>
-      <span>⚠ SUPPLY CHAIN DISRUPTIONS ONGOING &nbsp;|&nbsp;</span>
+      <span>⚠ SUPPLY CHAIN ONGOING &nbsp;|&nbsp;</span>
       <span>⚠ NATURAL DISASTER FREQUENCY AT ALL-TIME HIGH &nbsp;|&nbsp;</span>
       <span>⚠ EVERY DAY UNPREPARED IS A RISK &nbsp;|&nbsp;</span>
     </div>
   </div>
 
-  <!-- MAIN CONTENT -->
-  <main class="main-content">
 
-    <!-- NAV / CATEGORY JUMP -->
+  <main class="main-content">
     <nav class="category-nav">
       <span class="nav-label">// JUMP TO CATEGORY</span>
       <a href="#water" class="cat-btn">WATER</a>
@@ -291,9 +134,6 @@
       <a href="#defense" class="cat-btn">DEFENSE</a>
     </nav>
 
-    <!-- ============================
-         SECTION: WATER
-    ============================= -->
     <section class="gear-section" id="water">
       <div class="section-header">
         <div class="section-icon">💧</div>
@@ -304,16 +144,6 @@
         <div class="section-priority">PRIORITY: <span class="p-critical">CRITICAL</span></div>
       </div>
       <div class="gear-grid">
-
-        <!-- =============================================
-             WATER ITEM 1
-             HOW TO EDIT:
-             - name: Change text inside <span class="item-name">
-             - status: Change "STOCKED" or "PENDING" in <span class="item-status">
-             - description: Change text inside <p class="item-desc">
-             - image: Place your image in /images/ folder and update src below
-             - amazon link: Update href in <a class="buy-btn"> with your Amazon URL
-        ============================================= -->
         <div class="gear-card" onclick="openLink('https://amzn.to/4tNBwL7')">
           <div class="card-image-wrap">
             <img src="water/water1.jpg" alt="Water Item 1" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=WATER+ITEM+1&font=share-tech-mono'"/>
@@ -340,7 +170,6 @@ People like it because it’s simple: dip it in water and drink. No setup, no el
           </div>
         </div>
 
-        <!-- WATER ITEM 2 -->
         <div class="gear-card" onclick="openLink('https://amzn.to/4wAxBnA')">
           <div class="card-image-wrap">
             <img src="water/water2.jpg" alt="Water Item 2" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=WATER+ITEM+2&font=share-tech-mono'"/>
@@ -358,7 +187,6 @@ Prepper communities constantly repeat the same lesson: gear helps, but knowledge
           </div>
         </div>
 
-        <!-- WATER ITEM 3 -->
         <div class="gear-card" onclick="openLink('https://amzn.to/3RODAVT')">
           <div class="card-image-wrap">
             <img src="water/water3.jpg" alt="Water Item 3" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=WATER+ITEM+3&font=share-tech-mono'"/>
@@ -376,7 +204,6 @@ People like these because they fold flat when empty, take almost no space in a p
           </div>
         </div>
 
-        <!-- WATER ITEM 4 -->
         <div class="gear-card" onclick="openLink('https://amzn.to/4dPWnsC')">
           <div class="card-image-wrap">
             <img src="water/water4.jpg" alt="Water Item 4" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=WATER+ITEM+4&font=share-tech-mono'"/>
@@ -396,10 +223,6 @@ Prepper communities often recommend having multiple layers of water security: st
 
       </div><!-- /gear-grid -->
     </section><!-- /water -->
-
-    <!-- ============================
-         SECTION: FOOD
-    ============================= -->
     <section class="gear-section" id="food">
       <div class="section-header">
         <div class="section-icon">🥫</div>
@@ -410,8 +233,6 @@ Prepper communities often recommend having multiple layers of water security: st
         <div class="section-priority">PRIORITY: <span class="p-critical">CRITICAL</span></div>
       </div>
       <div class="gear-grid">
-
-        <!-- FOOD ITEM 1 -->
         <div class="gear-card" onclick="openLink('https://amzn.to/4v2xgZv')">
           <div class="card-image-wrap">
             <img src="food/food1.jpg" alt="Food Item 1" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=FOOD+ITEM+1&font=share-tech-mono'"/>
@@ -432,8 +253,6 @@ Some users prefer brands like Mountain House for taste, but many still keep Read
             <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/4v2xgZv')">⬛ GET THIS ITEM</a>
           </div>
         </div>
-
-        <!-- FOOD ITEM 2 -->
         <div class="gear-card" onclick="openLink('https://amzn.to/42JBh8X')">
           <div class="card-image-wrap">
             <img src="food/food2.jpg" alt="Food Item 2" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=FOOD+ITEM+2&font=share-tech-mono'"/>
@@ -451,8 +270,6 @@ Emergency ration bars are trusted by lifeboats, emergency kits, and preppers bec
             <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/42JBh8X')">⬛ GET THIS ITEM</a>
           </div>
         </div>
-
-        <!-- FOOD ITEM 3 -->
         <div class="gear-card" onclick="openLink('https://amzn.to/3RNK4o0')">
           <div class="card-image-wrap">
             <img src="food/food3.jpg" alt="Food Item 3" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=FOOD+ITEM+3&font=share-tech-mono'"/>
@@ -475,10 +292,6 @@ Prepper communities also constantly remind people that knowledge matters more th
 
       </div>
     </section>
-
-    <!-- ============================
-         SECTION: MEDICAL
-    ============================= -->
     <section class="gear-section" id="medical">
       <div class="section-header">
         <div class="section-icon">🩺</div>
@@ -489,8 +302,6 @@ Prepper communities also constantly remind people that knowledge matters more th
         <div class="section-priority">PRIORITY: <span class="p-critical">CRITICAL</span></div>
       </div>
       <div class="gear-grid">
-
-        <!-- MEDICAL ITEM 1 -->
         <div class="gear-card" onclick="openLink('https://amzn.to/4uRAcba')">
           <div class="card-image-wrap">
             <img src="medical/medical1.jpg" alt="Medical Item 1" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=MEDICAL+ITEM+1&font=share-tech-mono'"/>
@@ -509,8 +320,6 @@ But if the day ever comes when you need them, stores will already be empty.</p>
             <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/4v2osCV')">⬛ GET THIS ITEM</a>
           </div>
         </div>
-
-        <!-- MEDICAL ITEM 2 -->
         <div class="gear-card" onclick="openLink('https://amzn.to/4tNmdSW')">
           <div class="card-image-wrap">
             <img src="medical/medical2.jpg" alt="Medical Item 2" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=MEDICAL+ITEM+2&font=share-tech-mono'"/>
@@ -530,8 +339,6 @@ This book teaches you what to do when gear alone isn’t enough.</p>
             <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/4ukkvcR')">⬛ GET THIS ITEM</a>
           </div>
         </div>
-
-        <!-- MEDICAL ITEM 3 -->
         <div class="gear-card" onclick="openLink('https://amzn.to/4eVxe0B')">
           <div class="card-image-wrap">
             <img src="medical/medical3.jpg" alt="Medical Item 3" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=MEDICAL+ITEM+3&font=share-tech-mono'"/>
@@ -548,8 +355,6 @@ This book teaches practical herbal remedies, foraging knowledge, dosage basics, 
             <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/4eVxe0B')">⬛ GET THIS ITEM</a>
           </div>
         </div>
-
-        <!-- MEDICAL ITEM 4 -->
         <div class="gear-card" onclick="openLink('https://amzn.to/3RlDSn6')">
           <div class="card-image-wrap">
             <img src="medical/medical4.jpg" alt="Medical Item 3" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=MEDICAL+ITEM+3&font=share-tech-mono'"/>
@@ -566,8 +371,6 @@ Preppers like it because it’s compact, organized, and includes real emergency 
             <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/3RlDSn6')">⬛ GET THIS ITEM</a>
           </div>
         </div>
-
-        <!-- MEDICAL ITEM 5 -->
         <div class="gear-card" onclick="openLink('https://amzn.to/4dPqfVY')">
           <div class="card-image-wrap">
             <img src="medical/medical5.jpg" alt="Medical Item 5" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=MEDICAL+ITEM+5&font=share-tech-mono'"/>
@@ -589,8 +392,6 @@ Prepper and tactical communities consistently call CAT tourniquets the “gold s
             <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/4dPqfVY')">⬛ GET THIS ITEM</a>
           </div>
         </div>
-
-        <!-- MEDICAL ITEM 6 -->
         <div class="gear-card" onclick="openLink('https://amzn.to/4dyyDYC')">
           <div class="card-image-wrap">
             <img src="medical/medical6.jpg" alt="Medical Item 6" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=MEDICAL+ITEM+6&font=share-tech-mono'"/>
@@ -613,10 +414,6 @@ People in tactical and prepper communities often consider these a staple item fo
 
       </div>
     </section>
-
-    <!-- ============================
-         SECTION: POWER
-    ============================= -->
     <section class="gear-section" id="power">
       <div class="section-header">
         <div class="section-icon">⚡</div>
@@ -627,8 +424,6 @@ People in tactical and prepper communities often consider these a staple item fo
         <div class="section-priority">PRIORITY: <span class="p-high">HIGH</span></div>
       </div>
       <div class="gear-grid">
-
-        <!-- POWER ITEM 1 -->
         <div class="gear-card" onclick="openLink('https://amzn.to/3RvnksQ')">
           <div class="card-image-wrap">
             <img src="power/power1.jpg" alt="Power Item 1" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=POWER+ITEM+1&font=share-tech-mono'"/>
@@ -647,8 +442,6 @@ Scepter cans are popular because they’re durable, easier to pour, and built fo
             <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/3RvnksQ')">⬛ GET THIS ITEM</a>
           </div>
         </div>
-
-        <!-- POWER ITEM 2 -->
         <div class="gear-card" onclick="openLink('https://amzn.to/4ujXgiS')">
           <div class="card-image-wrap">
             <img src="power/power2.jpg" alt="Power Item 2" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=POWER+ITEM+2&font=share-tech-mono'"/>
@@ -669,8 +462,6 @@ Prepper communities also constantly recommend looking for ETFE-coated panels and
             <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/4ujXgiS')">⬛ GET THIS ITEM</a>
           </div>
         </div>
-
-        <!-- POWER ITEM 3 -->
         <div class="gear-card" onclick="openLink('https://amzn.to/4ePM9tg')">
           <div class="card-image-wrap">
             <img src="power/power3.jpg" alt="Power Item 3" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=POWER+ITEM+3&font=share-tech-mono'"/>
@@ -689,13 +480,25 @@ The GasTapper is popular because it’s compact, doesn’t need electricity, and
             <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/4ePM9tg')">⬛ GET THIS ITEM</a>
           </div>
         </div>
+        <div class="gear-card" onclick="openLink('https://amzn.to/4wGtA0U')">
+          <div class="card-image-wrap">
+            <img src="power/power4.jpg" alt="Power Item 4" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=POWER+ITEM+4&font=share-tech-mono'"/>
+            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <span class="item-name">WEN 5600-Watt Portable Generator, Electric Start, 224cc, Transfer-Switch and RV-Ready with CO Shutdown Sensor (GN5602X)
+</span>
+              <span class="item-status status-pending">PENDING</span>
+            </div>
+            <p class="item-desc">The WEN 5600W is popular because it gives enough power to run essentials during emergencies while still being portable enough for home backup, RV use, and disaster preparedness. Users frequently mention running refrigerators, AC units, lights, freezers, and charging equipment during outages</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/4wGtA0U')">⬛ GET THIS ITEM</a>
+          </div>
+        </div>
 
       </div>
     </section>
 
-    <!-- ============================
-         SECTION: SHELTER
-    ============================= -->
     <section class="gear-section" id="shelter">
       <div class="section-header">
         <div class="section-icon">🏕</div>
@@ -706,61 +509,127 @@ The GasTapper is popular because it’s compact, doesn’t need electricity, and
         <div class="section-priority">PRIORITY: <span class="p-high">HIGH</span></div>
       </div>
       <div class="gear-grid">
-
-        <!-- SHELTER ITEM 1 -->
-        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-SHELTER-ITEM-1-LINK')">
+        <div class="gear-card" onclick="openLink('https://amzn.to/42N2hEF')">
           <div class="card-image-wrap">
-            <img src="/images/shelter-item-1.jpg" alt="Shelter Item 1" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=SHELTER+ITEM+1&font=share-tech-mono'"/>
+            <img src="shelter/shelter1.jpg" alt="Shelter Item 1" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=SHELTER+ITEM+1&font=share-tech-mono'"/>
             <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
           </div>
           <div class="card-body">
             <div class="card-top-row">
-              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-name">Forceatt Tent for 2 and 3 Person is Waterproof and Windproof, Camping Tent for 3 to 4 Seasons,Lightweight Aluminum Pole Backpacking Tent Can be Set Up Quickly,Great for Hiking</span>
               <span class="item-status status-stocked">STOCKED</span>
             </div>
-            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
-            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-SHELTER-ITEM-1-LINK')">⬛ GET THIS ITEM</a>
+            <p class="item-desc">The Forceatt tent is popular because it’s lightweight, compact, waterproof, and fast to set up — exactly the kind of thing you want during evacuations, storms, bug-out situations, or off-grid camping. Reviews often mention its portability, weather resistance, and good value for budget preparedness setups.
+
+Prepper and camping communities generally see it as a solid budget option for casual camping and emergency use, though some users caution that cheaper tents may not perform like premium expedition gear in extreme conditions.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/42N2hEF')">⬛ GET THIS ITEM</a>
           </div>
         </div>
-
-        <!-- SHELTER ITEM 2 -->
-        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-SHELTER-ITEM-2-LINK')">
+        <div class="gear-card" onclick="openLink('https://amzn.to/4uR8viO')">
           <div class="card-image-wrap">
-            <img src="/images/shelter-item-2.jpg" alt="Shelter Item 2" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=SHELTER+ITEM+2&font=share-tech-mono'"/>
+            <img src="shelter/shelter2.jpg" alt="Shelter Item 2" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=SHELTER+ITEM+2&font=share-tech-mono'"/>
             <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
           </div>
           <div class="card-body">
             <div class="card-top-row">
-              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-name">AquaQuest Defender Tarp – Heavy-Duty Waterproof (20,000 mm) Seam-Taped Rain Fly for Camping, Bushcraft & Survival</span>
               <span class="item-status status-pending">PENDING</span>
             </div>
-            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
-            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-SHELTER-ITEM-2-LINK')">⬛ GET THIS ITEM</a>
+            <p class="item-desc">A good tarp is one of the most underrated survival tools you can own. Shelter from rain, wind, and cold can matter faster than food in a real emergency.
+
+That’s why experienced preppers and bushcrafters trust heavy-duty tarps like the Aqua Quest Defender.
+
+It’s built with thick waterproof material, reinforced tie-out points, and heat-taped seams designed for serious weather protection. Reviews constantly describe it as “bombproof,” durable, and reliable during storms and long-term outdoor use.
+
+Prepper and bushcraft communities especially like it because it can be configured into dozens of shelter setups — lean-tos, A-frames, rain covers, emergency camps, or bug-out shelters.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/4uR8viO')">⬛ GET THIS ITEM</a>
           </div>
         </div>
-
-        <!-- SHELTER ITEM 3 -->
-        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-SHELTER-ITEM-3-LINK')">
+        <div class="gear-card" onclick="openLink('https://amzn.to/4tNKmc1')">
           <div class="card-image-wrap">
-            <img src="/images/shelter-item-3.jpg" alt="Shelter Item 3" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=SHELTER+ITEM+3&font=share-tech-mono'"/>
+            <img src="shelter/shelter3.jpg" alt="Shelter Item 3" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=SHELTER+ITEM+3&font=share-tech-mono'"/>
             <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
           </div>
           <div class="card-body">
             <div class="card-top-row">
-              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-name">ECOOPRO Warm Weather Sleeping Bag - Portable, Waterproof, Compact Lightweight, Comfort with Compression Sack - Great for Outdoor Camping, Backpacking & Hiking-83 L x 30" W Fits Adults</span>
               <span class="item-status status-stocked">STOCKED</span>
             </div>
-            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
-            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-SHELTER-ITEM-3-LINK')">⬛ GET THIS ITEM</a>
+            <p class="item-desc">Cold, exhaustion, and exposure can wear you down fast during emergencies. That’s why preppers always think about sleep and warmth — not just food and tools.
+
+The ECOOPRO is popular because it’s lightweight, compact, easy to carry, and warm enough for spring and summer conditions while taking up very little space. Users often mention it as a great budget option for bug-out bags, motorcycle camping, backpacking, and emergency kits.
+
+Prepper and camping communities also like that it compresses small and can fully unzip into a blanket when needed. Several reviews mention it performs surprisingly well for the price, especially in mild weather conditions.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/4tNKmc1')">⬛ GET THIS ITEM</a>
           </div>
         </div>
+        <div class="gear-card" onclick="openLink('https://amzn.to/3RzNaMh')">
+          <div class="card-image-wrap">
+            <img src="shelter/shelter4.jpg" alt="Shelter Item 3" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=SHELTER+ITEM+3&font=share-tech-mono'"/>
+            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <span class="item-name">Swiss Safe 4 Pack Mylar Emergency Blankets for Survival - Compact & Insulated for Cold Weather - Designed for NASA, Outdoor, Running, Camping, Survival, First Aid Car Kit - Silver, 4 Pack</span>
+              <span class="item-status status-stocked">STOCKED</span>
+            </div>
+            <p class="item-desc">When your body starts losing heat, survival becomes a race against time.
+
+Most people see emergency blankets as cheap foil sheets.
+Preppers see them as lightweight life insurance.
+
+These blankets are designed to reflect and retain body heat during cold exposure, making them valuable for car kits, bug-out bags, camping, storms, and medical emergencies. They’re waterproof, wind-resistant, compact enough to fit in almost any pack, and useful far beyond warmth — shelter building, rain collection, signaling, and insulation.
+
+Swiss Safe blankets are popular because they’re thicker and more durable than many cheap emergency blankets, which matters when gear is actually used instead of stored forever. Reviews frequently mention their usefulness for hiking, roadside emergencies, and disaster kits.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/3RzNaMh')">⬛ GET THIS ITEM</a>
+          </div>
+        </div>
+        <div class="gear-card" onclick="openLink('https://amzn.to/4fwMfpU')">
+          <div class="card-image-wrap">
+            <img src="shelter/shelter5.jpg" alt="Shelter Item 3" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=SHELTER+ITEM+3&font=share-tech-mono'"/>
+            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <span class="item-name">Large Hand & Body Warmers - Up to 18 Hours of Heat, Super Long Lasting - Easy, All Natural - Air Activated, for Body, Hands & Toes - Odorless Hot Hand Warmer - Sport Temp</span>
+              <span class="item-status status-stocked">STOCKED</span>
+            </div>
+            <p class="item-desc">Cold doesn’t just make you uncomfortable.
+It drains your energy, slows your thinking, and wears your body down fast.
+
+That’s why experienced preppers always think about heat.
+
+Hand warmers are simple, lightweight, and easy to ignore — until you’re stuck in freezing weather, a blackout, a stalled vehicle, or an emergency shelter with no reliable heat source.
+
+People keep these in bug-out bags, glove compartments, winter kits, and camping gear because they work instantly without batteries, fuel, or electricity. Reviews consistently mention using them during storms, hunting trips, winter outages, hiking, and emergency situations where staying warm matters</p>
+              <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/3RzNaMh')">⬛ GET THIS ITEM</a>
+            </div>
+        </div>
+        <div class="gear-card" onclick="openLink('https://amzn.to/4uh3kZu')">
+          <div class="card-image-wrap">
+            <img src="shelter/shelter6.jpg" alt="Shelter Item 6" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=SHELTER+ITEM+6&font=share-tech-mono'"/>
+            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <span class="item-name">PTEROMY 3-in-1 Hooded Rain Poncho for Adult with Pocket, Waterproof Lightweight Unisex Raincoat for Hiking Camping Emergency</span>
+              <span class="item-status status-stocked">STOCKED</span>
+            </div>
+            <p class="item-desc">Getting wet in bad weather isn’t just annoying.
+In a survival situation, it can become dangerous fast.
+
+That’s why preppers always pack rain protection.
+
+A poncho like this keeps you dry without taking up much space, and that matters more than people realize during storms, evacuations, blackouts, or long hours outdoors. Staying dry helps preserve body heat, energy, and morale when conditions get rough.
+
+People like these because they’re lightweight, reusable, easy to throw into bug-out bags, and large enough to cover both you and your backpack. Many users also use ponchos as emergency shelters, ground covers, or quick rain tarps when needed.</p>
+              <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/4uh3kZu')">⬛ GET THIS ITEM</a>
+            </div>
+        </div>
+
 
       </div>
     </section>
-
-    <!-- ============================
-         SECTION: TOOLS
-    ============================= -->
     <section class="gear-section" id="tools">
       <div class="section-header">
         <div class="section-icon">🔧</div>
@@ -773,59 +642,129 @@ The GasTapper is popular because it’s compact, doesn’t need electricity, and
       <div class="gear-grid">
 
         <!-- TOOLS ITEM 1 -->
-        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-TOOLS-ITEM-1-LINK')">
+        <div class="gear-card" onclick="openLink('https://amzn.to/4u54qH7')">
           <div class="card-image-wrap">
-            <img src="/images/tools-item-1.jpg" alt="Tools Item 1" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=TOOLS+ITEM+1&font=share-tech-mono'"/>
+            <img src="tools/tool1.jpg" alt="Tools Item 1" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=TOOLS+ITEM+1&font=share-tech-mono'"/>
             <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
           </div>
           <div class="card-body">
             <div class="card-top-row">
-              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-name">Gerber Gear Suspension 12-in-1 EDC Multi-Plier Multitool with Pocket Knife, Needle Nose Pliers, Wire Cutters and More, Gifts for Men, Camping and Survival, Grey</span>
               <span class="item-status status-stocked">STOCKED</span>
             </div>
-            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
-            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-TOOLS-ITEM-1-LINK')">⬛ GET THIS ITEM</a>
+            <p class="item-desc">You never realize how valuable a simple tool is until something breaks and there’s nobody coming to fix it.
+
+That’s why preppers always carry multi-tools.
+
+In emergencies, small problems become big problems fast — loose wires, broken gear, stuck equipment, damaged shelter, missing tools. A multitool gives you a little bit of everything in one compact piece of gear you can carry anywhere.
+
+The Gerber Suspension is popular because it combines pliers, blades, screwdrivers, and utility tools into a rugged all-in-one setup without taking much space. People keep them in bug-out bags, vehicles, work kits, camping gear, and everyday carry setups because they’re useful long before emergencies happen.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/4u54qH7')">⬛ GET THIS ITEM</a>
+          </div>
+        </div>
+        <div class="gear-card" onclick="openLink('https://amzn.to/4eXcHZM')">
+          <div class="card-image-wrap">
+            <img src="tools/tool2.jpg" alt="Tools Item 2" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=TOOLS+ITEM+2&font=share-tech-mono'"/>
+            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <span class="item-name">VEITORLD Gifts for Men Dad Husband Him Fathers Day, Survival Gear and Equipment 12 in 1, Survival Kits, Cool Unique Fishing Hunting Anniversary Birthday Gifts for Him Teen Boy Boyfriend Women</span>
+              <span class="item-status status-stocked">STOCKED</span>
+            </div>
+            <p class="item-desc">Most people buy survival gear one piece at a time.
+A good emergency kit gives you the basics before you even realize you need them.
+
+That’s why kits like this are popular with beginners and casual preppers.
+
+You get a collection of useful emergency tools in one package — things people often forget until they actually need them. Flashlight, fire starter, multitool, emergency gear, survival accessories — compact enough to throw into a vehicle, backpack, or emergency kit.
+
+Experienced preppers usually customize gear over time, but most agree that having a basic survival kit is far better than having nothing at all.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/4eXcHZM')">⬛ GET THIS ITEM</a>
           </div>
         </div>
 
-        <!-- TOOLS ITEM 2 -->
-        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-TOOLS-ITEM-2-LINK')">
+        <div class="gear-card" onclick="openLink('https://amzn.to/4duBao9')">
           <div class="card-image-wrap">
-            <img src="/images/tools-item-2.jpg" alt="Tools Item 2" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=TOOLS+ITEM+2&font=share-tech-mono'"/>
+            <img src="tools/tool3.jpg" alt="Tools Item 3" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=TOOLS+ITEM+3&font=share-tech-mono'"/>
             <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
           </div>
           <div class="card-body">
             <div class="card-top-row">
-              <span class="item-name">// YOUR ITEM NAME HERE</span>
-              <span class="item-status status-stocked">STOCKED</span>
-            </div>
-            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
-            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-TOOLS-ITEM-2-LINK')">⬛ GET THIS ITEM</a>
-          </div>
-        </div>
-
-        <!-- TOOLS ITEM 3 -->
-        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-TOOLS-ITEM-3-LINK')">
-          <div class="card-image-wrap">
-            <img src="/images/tools-item-3.jpg" alt="Tools Item 3" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=TOOLS+ITEM+3&font=share-tech-mono'"/>
-            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
-          </div>
-          <div class="card-body">
-            <div class="card-top-row">
-              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-name">Fire Starter Squares 64 - Fire Starters for Fireplace,Chimney,BBQ Grill,Camping Fire,Wood Stove - Water Resistant and Safe Odourless - Camping Accessories</span>
               <span class="item-status status-pending">PENDING</span>
             </div>
-            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
-            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-TOOLS-ITEM-3-LINK')">⬛ GET THIS ITEM</a>
+            <p class="item-desc">These fire starter squares are popular because they light fast, burn hot, and work even when conditions are cold, damp, or windy — the exact moments when starting a fire becomes hardest and most important.
+
+People keep them in bug-out bags, camping kits, vehicles, and emergency supplies because they’re lightweight, reliable, and simple to use without needing perfect conditions or advanced bushcraft skills.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/4duBao9')">⬛ GET THIS ITEM</a>
+          </div>
+        </div>
+
+        <div class="gear-card" onclick="openLink('https://amzn.to/3RhLU0l')">
+          <div class="card-image-wrap">
+            <img src="tools/tool4.jpg" alt="Tools Item 3" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=TOOLS+ITEM+3&font=share-tech-mono'"/>
+            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <span class="item-name">The Book of Building Fires: How to Master the Art of the Perfect Fire</span>
+              <span class="item-status status-pending">PENDING</span>
+            </div>
+            <p class="item-desc">Fire is one of the oldest survival skills for a reason. Heat, clean water, cooking, light, signaling, and morale can all depend on your ability to build one.
+
+This book matters because it teaches more than “light wood and hope.” It covers fire types, fuel selection, weather conditions, and practical techniques that actually matter outdoors and during emergencies.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/3RhLU0l')">⬛ GET THIS ITEM</a>
+          </div>
+        </div>
+
+        <div class="gear-card" onclick="openLink('https://amzn.to/4uTCNBl')">
+          <div class="card-image-wrap">
+            <img src="tools/tool5.jpg" alt="Tools Item 3" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=TOOLS+ITEM+3&font=share-tech-mono'"/>
+            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <span class="item-name">LHKNL Headlamp Flashlight, Lumen Ultra-Light Bright LED Rechargeable Headlight with White Red Light, 2-Pack Waterproof Motion Sensor Head Lamp,8 Modes for Outdoor Camping Running Hiking Fishing</span>
+              <span class="item-status status-pending">PENDING</span>
+            </div>
+            <p class="item-desc">Flashlights are useful.
+Headlamps are practical survival tools.
+
+Whether you’re fixing equipment during a blackout, setting up shelter in the rain, checking outside at night, or moving through the dark, having both hands free changes everything.
+
+Rechargeable waterproof headlamps are popular with preppers because they’re compact, lightweight, and reliable during emergencies. Outdoor and survival communities constantly recommend looking for waterproof ratings, rechargeable backup power, and long runtime over just “high lumen” marketing numbers.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/4uTCNBl')">⬛ GET THIS ITEM</a>
+          </div>
+        </div>
+
+        <div class="gear-card" onclick="openLink('https://amzn.to/42JPCT2')">
+          <div class="card-image-wrap">
+            <img src="tools/tool6.jpg" alt="Tools Item 3" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=TOOLS+ITEM+3&font=share-tech-mono'"/>
+            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <span class="item-name">Eyeskey Multifunctional Military Sighting Navigation Compass with Inclinometer | Impact Resistant & Waterproof Compass for Hiking, Camping
+</span>
+              <span class="item-status status-pending">PENDING</span>
+            </div>
+            <p class="item-desc">Phones lose signal.
+GPS loses battery.
+But a compass still works.
+
+That’s why experienced preppers never rely on just one navigation system.
+
+The Eyeskey compass is popular because it’s rugged, waterproof, and designed for real outdoor use — not just decoration. It includes a lensatic sighting system, inclinometer, and durable metal construction that makes it useful for hiking, bushcraft, bug-out kits, and emergency navigation when technology fails.
+
+Prepper and outdoor communities constantly repeat the same lesson: batteries die, signals disappear, and electronics can fail at the worst possible moment. Basic navigation skills still matter.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/42JPCT2')">⬛ GET THIS ITEM</a>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- ============================
-         SECTION: COMMS
-    ============================= -->
     <section class="gear-section" id="comms">
       <div class="section-header">
         <div class="section-icon">📡</div>
@@ -836,8 +775,6 @@ The GasTapper is popular because it’s compact, doesn’t need electricity, and
         <div class="section-priority">PRIORITY: <span class="p-medium">MEDIUM</span></div>
       </div>
       <div class="gear-grid">
-
-        <!-- COMMS ITEM 1 -->
         <div class="gear-card" onclick="openLink('https://amzn.to/4dtHRVZ')">
           <div class="card-image-wrap">
             <img src="comm/comm1.jpg" alt="Comms Item 1" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=COMMS+ITEM+1&font=share-tech-mono'"/>
@@ -860,110 +797,29 @@ Preppers buy gear that still works when comfort is gone.</p>
             <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/4dtHRVZ')">⬛ GET THIS ITEM</a>
           </div>
         </div>
-
-        <!-- COMMS ITEM 2 -->
-        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-COMMS-ITEM-2-LINK')">
+        <div class="gear-card" onclick="openLink('https://amzn.to/4tK1gYO')">
           <div class="card-image-wrap">
-            <img src="/images/comms-item-2.jpg" alt="Comms Item 2" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=COMMS+ITEM+2&font=share-tech-mono'"/>
+            <img src="comm/comm2.jpg" alt="Comms Item 2" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=COMMS+ITEM+2&font=share-tech-mono'"/>
             <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
           </div>
           <div class="card-body">
             <div class="card-top-row">
-              <span class="item-name">// YOUR ITEM NAME HERE</span>
+              <span class="item-name">Walkie Talkies for Adults Rechargeable, FM/NOAA Emergency Radios with Weather Alerts, LED Flashlight & SOS Alarm, Solar Powered Hand Crank 2 Way Radios Walkie Talkie Hand Crank Long Range</span>
               <span class="item-status status-pending">PENDING</span>
             </div>
-            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
-            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-COMMS-ITEM-2-LINK')">⬛ GET THIS ITEM</a>
-          </div>
-        </div>
+            <p class="item-desc">Devices like these give you NOAA weather alerts, flashlight functions, backup charging, and emergency communication when normal systems stop working. The biggest advantage isn’t convenience — it’s staying informed when everyone else is disconnected. Emergency radios are consistently recommended for disaster preparedness because they still work during grid failures and severe weather events.
 
-        <!-- COMMS ITEM 3 -->
-        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-COMMS-ITEM-3-LINK')">
-          <div class="card-image-wrap">
-            <img src="/images/comms-item-3.jpg" alt="Comms Item 3" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=COMMS+ITEM+3&font=share-tech-mono'"/>
-            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
-          </div>
-          <div class="card-body">
-            <div class="card-top-row">
-              <span class="item-name">// YOUR ITEM NAME HERE</span>
-              <span class="item-status status-stocked">STOCKED</span>
-            </div>
-            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
-            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-COMMS-ITEM-3-LINK')">⬛ GET THIS ITEM</a>
+Prepper communities also constantly stress redundancy: solar charging, hand crank backup, and radio communication can matter more than cell service during emergencies.</p>
+            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://amzn.to/4tK1gYO')">⬛ GET THIS ITEM</a>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- ============================
-         SECTION: DEFENSE
-    ============================= -->
-    <section class="gear-section" id="defense">
-      <div class="section-header">
-        <div class="section-icon">🛡</div>
-        <div>
-          <h3 class="section-title">DEFENSE &amp; SECURITY</h3>
-          <p class="section-desc">Protecting your resources and your people. Non-negotiable when rule of law is absent.</p>
-        </div>
-        <div class="section-priority">PRIORITY: <span class="p-high">HIGH</span></div>
-      </div>
-      <div class="gear-grid">
 
-        <!-- DEFENSE ITEM 1 -->
-        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-DEFENSE-ITEM-1-LINK')">
-          <div class="card-image-wrap">
-            <img src="/images/defense-item-1.jpg" alt="Defense Item 1" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=DEFENSE+ITEM+1&font=share-tech-mono'"/>
-            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
-          </div>
-          <div class="card-body">
-            <div class="card-top-row">
-              <span class="item-name">// YOUR ITEM NAME HERE</span>
-              <span class="item-status status-stocked">STOCKED</span>
-            </div>
-            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
-            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-DEFENSE-ITEM-1-LINK')">⬛ GET THIS ITEM</a>
-          </div>
-        </div>
+  </main>
 
-        <!-- DEFENSE ITEM 2 -->
-        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-DEFENSE-ITEM-2-LINK')">
-          <div class="card-image-wrap">
-            <img src="/images/defense-item-2.jpg" alt="Defense Item 2" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=DEFENSE+ITEM+2&font=share-tech-mono'"/>
-            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
-          </div>
-          <div class="card-body">
-            <div class="card-top-row">
-              <span class="item-name">// YOUR ITEM NAME HERE</span>
-              <span class="item-status status-pending">PENDING</span>
-            </div>
-            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
-            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-DEFENSE-ITEM-2-LINK')">⬛ GET THIS ITEM</a>
-          </div>
-        </div>
-
-        <!-- DEFENSE ITEM 3 -->
-        <div class="gear-card" onclick="openLink('https://www.amazon.com/YOUR-DEFENSE-ITEM-3-LINK')">
-          <div class="card-image-wrap">
-            <img src="/images/defense-item-3.jpg" alt="Defense Item 3" class="card-img" onerror="this.src='https://placehold.co/400x260/0a0f0d/39ff14?text=DEFENSE+ITEM+3&font=share-tech-mono'"/>
-            <div class="card-overlay"><span>VIEW ON AMAZON →</span></div>
-          </div>
-          <div class="card-body">
-            <div class="card-top-row">
-              <span class="item-name">// YOUR ITEM NAME HERE</span>
-              <span class="item-status status-stocked">STOCKED</span>
-            </div>
-            <p class="item-desc">ADD YOUR ITEM DESCRIPTION HERE.</p>
-            <a class="buy-btn" onclick="event.stopPropagation(); openLink('https://www.amazon.com/YOUR-DEFENSE-ITEM-3-LINK')">⬛ GET THIS ITEM</a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-  </main><!-- /main-content -->
-
-  <!-- TRUST / CREDIBILITY SECTION -->
   <section class="trust-section">
     <div class="trust-inner">
       <h3 class="trust-title">// WHY TRUST THIS LIST?</h3>
@@ -992,7 +848,6 @@ Preppers buy gear that still works when comfort is gone.</p>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
@@ -1006,14 +861,8 @@ Preppers buy gear that still works when comfort is gone.</p>
     </div>
     <div class="footer-bar"></div>
   </footer>
-
-  <!-- ==============================
-       CMS LOGIN MODAL
-  ============================== -->
   <div class="modal-backdrop" id="loginModal" onclick="handleBackdropClick(event)">
     <div class="modal-box">
-
-      <!-- MODAL HEADER -->
       <div class="modal-header">
         <div class="modal-classify">// RESTRICTED ACCESS //</div>
         <h2 class="modal-title">
@@ -1022,13 +871,9 @@ Preppers buy gear that still works when comfort is gone.</p>
         <p class="modal-subtitle">Authorized Personnel Only — Credential Verification Required</p>
         <button class="modal-close" onclick="closeLoginModal()" aria-label="Close">✕</button>
       </div>
-
-      <!-- TERMINAL LINE -->
       <div class="modal-terminal-line">
         <span id="terminal-typing"></span><span class="cursor-blink">█</span>
       </div>
-
-      <!-- FORM -->
       <div class="modal-form">
         <div class="field-group">
           <label class="field-label" for="cms-user">// OPERATOR ID</label>
@@ -1059,14 +904,10 @@ Preppers buy gear that still works when comfort is gone.</p>
           </div>
           <span class="field-error" id="err-pass"></span>
         </div>
-
-        <!-- GLOBAL ERROR -->
         <div class="login-error-box" id="login-error-box">
           <span class="login-error-icon">⚠</span>
           <span id="login-error-msg"></span>
         </div>
-
-        <!-- SUBMIT -->
         <button class="login-submit-btn" id="login-submit-btn" onclick="attemptLogin()">
           <span id="btn-label">AUTHENTICATE</span>
           <span class="btn-bar"></span>
@@ -1074,28 +915,21 @@ Preppers buy gear that still works when comfort is gone.</p>
 
         <p class="login-hint">Access restricted to manifest administrator.</p>
       </div>
-
-      <!-- ATTEMPT COUNTER -->
       <div class="attempt-counter" id="attempt-counter"></div>
 
     </div>
   </div>
 
   <script>
-  // ── READ MORE ──
-  // Runs after DOM is ready. Finds every .item-desc, checks if it overflows
-  // (i.e. text is longer than 3 lines), and injects a toggle button if so.
   document.addEventListener('DOMContentLoaded', function () {
 
     document.querySelectorAll('.item-desc').forEach(function (desc) {
 
-      // Inject the button right after the <p>
       var btn = document.createElement('button');
       btn.className = 'read-more-btn';
       btn.innerHTML = '// READ MORE <span class="rm-arrow">▾</span>';
       desc.insertAdjacentElement('afterend', btn);
 
-      // Check overflow: if scrollHeight > clientHeight the text is clamped
       function checkOverflow() {
         if (desc.scrollHeight > desc.clientHeight + 2) {
           btn.classList.add('visible');
@@ -1105,9 +939,9 @@ Preppers buy gear that still works when comfort is gone.</p>
       }
       checkOverflow();
 
-      // Toggle expand / collapse — stopPropagation prevents the card click
+
       btn.addEventListener('click', function (e) {
-        e.stopPropagation();          // ← key: never fires the Amazon link
+        e.stopPropagation();       
         e.preventDefault();
 
         var isExpanded = desc.classList.toggle('expanded');
@@ -1117,8 +951,6 @@ Preppers buy gear that still works when comfort is gone.</p>
           : '// READ MORE <span class="rm-arrow">▾</span>';
       });
     });
-
-    // Re-check on resize (font scaling / narrow screens)
     window.addEventListener('resize', function () {
       document.querySelectorAll('.item-desc:not(.expanded)').forEach(function (desc) {
         var btn = desc.nextElementSibling;
