@@ -30,7 +30,7 @@
       color: var(--green);
       letter-spacing: 0.1em;
       cursor: pointer;
-      display: none;           /* shown by JS only when text overflows */
+      display: none;
       align-items: center;
       gap: 0.3rem;
       transition: opacity 0.2s;
@@ -43,6 +43,127 @@
       transition: transform 0.2s;
     }
     .read-more-btn.expanded .rm-arrow { transform: rotate(180deg); }
+
+    /* ── CARD IMAGE 1:1 RATIO ── */
+    .card-image-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      height: auto !important;   /* override any fixed height from style.css */
+      overflow: hidden;
+      background: var(--bg3);
+    }
+    .card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ── HERO HEADLINE ── */
+    .hero-headline-block {
+      margin-bottom: 2.2rem;
+    }
+
+    /* Pre-label row */
+    .hero-pre-label {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.9rem;
+    }
+    .hero-pre-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--green-dim));
+      max-width: 60px;
+    }
+    .hero-pre-line:last-child {
+      background: linear-gradient(90deg, var(--green-dim), transparent);
+    }
+    .hero-pre-text {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.28em;
+      color: var(--green);
+      opacity: 0.7;
+      white-space: nowrap;
+    }
+
+    /* Main headline */
+    .hero-headline-new {
+      font-family: 'Orbitron', sans-serif;
+      line-height: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.15em;
+      margin-bottom: 1rem;
+    }
+    .headline-top {
+      font-size: clamp(1.1rem, 3.5vw, 2.1rem);
+      font-weight: 400;
+      color: #6b8c60;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+    .headline-bottom {
+      font-size: clamp(2.2rem, 7vw, 5.2rem);
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.12em;
+      line-height: 1;
+    }
+    .headline-accent {
+      color: var(--green);
+      text-shadow: 0 0 30px rgba(57,255,20,0.4), 0 0 60px rgba(57,255,20,0.15);
+    }
+    .headline-white {
+      color: #ffffff;
+    }
+    .headline-outline {
+      color: transparent;
+      -webkit-text-stroke: 2px #fff;
+      opacity: 0.85;
+    }
+
+    /* Post-label row */
+    .hero-post-label {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 0.8rem;
+      flex-wrap: wrap;
+    }
+    .hero-doc-ref {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: var(--text-dim);
+      letter-spacing: 0.14em;
+    }
+    .hero-threat-bar {
+      display: flex;
+      gap: 3px;
+      align-items: center;
+    }
+    .threat-segment {
+      width: 18px;
+      height: 6px;
+      background: var(--border-bright);
+      clip-path: polygon(4px 0%, 100% 0%, calc(100% - 4px) 100%, 0% 100%);
+    }
+    .threat-segment.filled {
+      background: var(--amber);
+      box-shadow: 0 0 5px rgba(255,179,0,0.5);
+    }
+    .hero-threat-text {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: var(--amber);
+      letter-spacing: 0.14em;
+    }
   </style>
 
   <!-- FAVICON — replace favicon.png with your image file -->
@@ -91,8 +212,31 @@
   <!-- HERO / MISSION STATEMENT -->
   <section class="hero-section">
     <div class="hero-content">
-      <div class="glitch-wrapper">
-        <h2 class="hero-headline glitch" data-text="WHEN IT HAPPENS, YOU'LL BE READY.">WHEN IT HAPPENS, YOU'LL BE READY.</h2>
+      <div class="hero-headline-block">
+        <div class="hero-pre-label">
+          <span class="hero-pre-line"></span>
+          <span class="hero-pre-text">FIELD OPERATOR DOCTRINE</span>
+          <span class="hero-pre-line"></span>
+        </div>
+        <h2 class="hero-headline-new">
+          <span class="headline-top">WHEN IT HAPPENS,</span>
+          <span class="headline-bottom">
+            <span class="headline-accent">YOU'LL</span>
+            <span class="headline-white"> BE </span>
+            <span class="headline-outline">READY.</span>
+          </span>
+        </h2>
+        <div class="hero-post-label">
+          <span class="hero-doc-ref">DOC // CZR-PREP-001</span>
+          <span class="hero-threat-bar">
+            <span class="threat-segment filled"></span>
+            <span class="threat-segment filled"></span>
+            <span class="threat-segment filled"></span>
+            <span class="threat-segment filled"></span>
+            <span class="threat-segment"></span>
+          </span>
+          <span class="hero-threat-text">THREAT LEVEL: AMBER</span>
+        </div>
       </div>
       <p class="hero-body">
         This is not a shopping list. This is my <strong>personal survival manifest</strong> — every piece of gear I have 
