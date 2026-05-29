@@ -6,6 +6,9 @@
   <title>Gracia Overlay Controller</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.jpg">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="favicon.png">
 </head>
 <body>
 
@@ -68,7 +71,7 @@
 
       <!-- GOC IMAGE ▼ Replace src with your image path, e.g. images/goc-preview.png -->
       <div class="goc-img-wrap">
-        <img src=""
+        <img src="images/goc-preview.png"
              alt="Gracia Overlay Controller"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
              onload="this.nextElementSibling.style.display='none';" />
@@ -189,6 +192,37 @@
            Change: openModal('v3'), version badge,
            title, description, image src.
            ════════════════════════════════ -->
+
+      <!-- ════════════════════════════════
+           CATALOG CARD — VERSION 3
+           ════════════════════════════════ -->
+      <div class="cat-card" onclick="openModal('v3')">
+        <div class="cat-thumb">
+          <!-- ▼ Replace src: images/v3-thumb.png -->
+          <img src="" alt="Version 3 Thumbnail"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+               onload="this.nextElementSibling.style.display='none';" />
+          <div class="img-placeholder">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+            <span>images/v3-thumb.png</span>
+          </div>
+          <div class="cat-thumb-overlay"></div>
+          <div class="cat-version-badge">Version 3</div>
+        </div>
+        <div class="cat-body">
+          <h3 class="cat-title">Neon Cyber Pack</h3>
+          <p class="cat-short">High-contrast neon overlays designed for cyberpunk and sci-fi themed streams. Animated elements included.</p>
+          <div class="cat-footer">
+            <span class="cat-img-count">6 previews</span>
+            <button class="cat-btn">View Details</button>
+          </div>
+        </div>
+      </div>
+
 
     </div>
   </div>
@@ -490,6 +524,140 @@
       </div>
     </div>
   </div>
+
+  <div class="modal-overlay" id="modal-v3">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <div class="modal-ver">// VERSION 03</div>
+          <div class="modal-title">Neon Cyber Pack</div>
+        </div>
+        <button class="modal-close" onclick="closeModal('v3')">✕</button>
+      </div>
+      <div class="modal-body">
+
+        <!-- ▼ Edit description for Version 2 ▼ -->
+        <p class="modal-desc">
+          A high-energy, neon-lit overlay pack built for cyberpunk and sci-fi themed streamers.
+          Features glowing animated borders, dynamic transitions, and a full suite of stream graphics
+          including starting soon, BRB, and ending screens.
+        </p>
+
+        <!-- ─── GALLERY: 6 images for Version 2 ─── -->
+        <div class="modal-gallery">
+
+          <div class="modal-gallery-item" onclick="openLightbox(this)">
+            <img src="" alt="Preview 1"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                 onload="this.nextElementSibling.style.display='none';" />
+            <div class="img-placeholder">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <span>images/v3-preview-1.png</span>
+            </div>
+            <div class="modal-gallery-label">Preview 1 — Main Scene</div>
+          </div>
+
+          <div class="modal-gallery-item" onclick="openLightbox(this)">
+            <img src="" alt="Preview 2"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                 onload="this.nextElementSibling.style.display='none';" />
+            <div class="img-placeholder">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <span>images/v3-preview-2.png</span>
+            </div>
+            <div class="modal-gallery-label">Preview 2 — Webcam Frame</div>
+          </div>
+
+          <div class="modal-gallery-item" onclick="openLightbox(this)">
+            <img src="" alt="Preview 3"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                 onload="this.nextElementSibling.style.display='none';" />
+            <div class="img-placeholder">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <span>images/v3-preview-3.png</span>
+            </div>
+            <div class="modal-gallery-label">Preview 3 — Starting Soon</div>
+          </div>
+
+          <div class="modal-gallery-item" onclick="openLightbox(this)">
+            <img src="" alt="Preview 4"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                 onload="this.nextElementSibling.style.display='none';" />
+            <div class="img-placeholder">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <span>images/v3-preview-4.png</span>
+            </div>
+            <div class="modal-gallery-label">Preview 4 — Alerts</div>
+          </div>
+
+          <div class="modal-gallery-item" onclick="openLightbox(this)">
+            <img src="" alt="Preview 5"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                 onload="this.nextElementSibling.style.display='none';" />
+            <div class="img-placeholder">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <span>images/v3-preview-5.png</span>
+            </div>
+            <div class="modal-gallery-label">Preview 5 — BRB Screen</div>
+          </div>
+
+          <div class="modal-gallery-item" onclick="openLightbox(this)">
+            <img src="" alt="Preview 6"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                 onload="this.nextElementSibling.style.display='none';" />
+            <div class="img-placeholder">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <span>images/v3-preview-6.png</span>
+            </div>
+            <div class="modal-gallery-label">Preview 6 — Ending Screen</div>
+          </div>
+
+        </div>
+
+        <div class="modal-tags">
+          <div class="modal-tag">OBS Compatible</div>
+          <div class="modal-tag">Full HD 1080p</div>
+          <div class="modal-tag">Animated Borders</div>
+          <div class="modal-tag">Neon Glow FX</div>
+          <div class="modal-tag">GOC Ready</div>
+        </div>
+
+        <!-- ─── YOUTUBE PREVIEW ───
+             Replace the src URL with your actual YouTube embed link.
+             Format: https://www.youtube.com/embed/YOUR_VIDEO_ID -->
+        <div class="modal-yt-wrap">
+          <div class="modal-yt-label">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-2.95A5 5 0 0 0 12 2a5 5 0 0 0-3.82 1.74A4.83 4.83 0 0 1 4.41 6.69 4.83 4.83 0 0 0 2 10.36 5 5 0 0 0 4.1 14.6a4.83 4.83 0 0 1 1.23 4A5 5 0 0 0 8 22a5 5 0 0 0 4-2 5 5 0 0 0 4 2 5 5 0 0 0 2.67-3.4 4.83 4.83 0 0 1 1.23-4A5 5 0 0 0 22 10.36a4.83 4.83 0 0 0-2.41-3.67z"/></svg>
+            <span>// VIDEO PREVIEW</span>
+          </div>
+          <div class="modal-yt-frame">
+            <!-- ▼▼▼ REPLACE src WITH YOUR YOUTUBE EMBED URL ▼▼▼ -->
+            <iframe
+              src="https://www.youtube.com/embed/YOUR_VIDEO_ID_V2"
+              title="Version 2 — Neon Cyber Pack Preview"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  
 
   <!--
   ══════════════════════════════════════════════════════
