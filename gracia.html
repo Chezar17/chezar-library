@@ -104,6 +104,189 @@
 
   <div class="divider"></div>
 
+  <!-- ══════════════════════════════════════════
+       BUY / GET NOW — HOOK SECTION
+       ══════════════════════════════════════════ -->
+  <section id="get-now" class="cta-section">
+    <div class="cta-corner tl"></div>
+    <div class="cta-corner tr"></div>
+    <div class="cta-corner bl"></div>
+    <div class="cta-corner br"></div>
+
+    <div class="cta-inner">
+      <p class="cta-eyebrow">// Limited Availability</p>
+      <h2 class="cta-headline">
+        Ready to <span class="cta-accent">Elevate</span><br>Your Stream?
+      </h2>
+      <p class="cta-sub">
+        Get the full Gracia Overlay Controller + your chosen overlay pack.<br>
+        Professional-grade visuals. Instant delivery. Zero hassle.
+      </p>
+
+      <div class="cta-perks">
+        <div class="cta-perk">
+          <span class="cta-perk-icon">⚡</span>
+          <span>Instant Access</span>
+        </div>
+        <div class="cta-perk">
+          <span class="cta-perk-icon">🎯</span>
+          <span>OBS Ready</span>
+        </div>
+        <div class="cta-perk">
+          <span class="cta-perk-icon">🛡</span>
+          <span>Lifetime Updates</span>
+        </div>
+      </div>
+
+      <a href="https://discord.com/users/426776197322506260" target="_blank" rel="noopener noreferrer" class="cta-btn-main">
+        <span class="cta-btn-label">Get Now</span>
+        <span class="cta-btn-arrow">→</span>
+      </a>
+      <p class="cta-hint">Contact us on Discord to place your order</p>
+    </div>
+  </section>
+
+  <style>
+    /* ── CTA / Hook Section ── */
+    .cta-section {
+      position: relative;
+      padding: 100px 40px;
+      text-align: center;
+      background: radial-gradient(ellipse at 50% 0%, rgba(0,255,200,0.06) 0%, transparent 70%),
+                  var(--bg, #0a0a0f);
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 39px,
+        rgba(0,255,200,0.03) 39px,
+        rgba(0,255,200,0.03) 40px
+      );
+      pointer-events: none;
+    }
+    .cta-corner {
+      position: absolute;
+      width: 18px; height: 18px;
+      border-color: rgba(0,255,200,0.5);
+      border-style: solid;
+    }
+    .cta-corner.tl { top: 24px; left: 24px; border-width: 2px 0 0 2px; }
+    .cta-corner.tr { top: 24px; right: 24px; border-width: 2px 2px 0 0; }
+    .cta-corner.bl { bottom: 24px; left: 24px; border-width: 0 0 2px 2px; }
+    .cta-corner.br { bottom: 24px; right: 24px; border-width: 0 2px 2px 0; }
+
+    .cta-inner {
+      position: relative;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .cta-eyebrow {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      color: rgba(0,255,200,0.6);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .cta-headline {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      line-height: 1.1;
+      color: #e8eaf6;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .cta-accent {
+      color: #00ffc8;
+      text-shadow: 0 0 20px rgba(0,255,200,0.5);
+    }
+
+    .cta-sub {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.05rem;
+      color: rgba(232,234,246,0.6);
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+
+    .cta-perks {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-bottom: 44px;
+      flex-wrap: wrap;
+    }
+    .cta-perk {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(232,234,246,0.75);
+    }
+    .cta-perk-icon {
+      font-size: 1rem;
+    }
+
+    .cta-btn-main {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 44px;
+      background: linear-gradient(135deg, #00ffc8, #00c8ff);
+      color: #080a12;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
+      transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+      box-shadow: 0 0 28px rgba(0,255,200,0.35), 0 0 60px rgba(0,255,200,0.15);
+    }
+    .cta-btn-main:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 0 40px rgba(0,255,200,0.55), 0 0 80px rgba(0,255,200,0.25);
+      filter: brightness(1.1);
+    }
+    .cta-btn-label {
+      position: relative;
+    }
+    .cta-btn-arrow {
+      font-size: 1.1rem;
+      transition: transform 0.2s;
+    }
+    .cta-btn-main:hover .cta-btn-arrow {
+      transform: translateX(4px);
+    }
+
+    .cta-hint {
+      margin-top: 16px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      color: rgba(232,234,246,0.3);
+    }
+  </style>
+
+  <div class="divider"></div>
+
   <div id="catalog" class="section">
     <div class="sec-head">
       <span class="sec-title">// <span>02</span> — Overlay Catalog</span>
@@ -204,50 +387,6 @@
 
     </div>
   </div>
-
-  <div class="divider"></div>
-
-  <!-- ══════════════════════════════════════════
-       BUY / GET NOW — HOOK SECTION
-       ══════════════════════════════════════════ -->
-  <section id="get-now" class="cta-section">
-    <div class="cta-corner tl"></div>
-    <div class="cta-corner tr"></div>
-    <div class="cta-corner bl"></div>
-    <div class="cta-corner br"></div>
-
-    <div class="cta-inner">
-      <p class="cta-eyebrow">// Limited Availability</p>
-      <h2 class="cta-headline">
-        Ready to <span class="cta-accent">Elevate</span><br>Your Stream?
-      </h2>
-      <p class="cta-sub">
-        Get the full Gracia Overlay Controller + your chosen overlay pack.<br>
-        Professional-grade visuals. Instant delivery. Zero hassle.
-      </p>
-
-      <div class="cta-perks">
-        <div class="cta-perk">
-          <span class="cta-perk-icon">⚡</span>
-          <span>Instant Access</span>
-        </div>
-        <div class="cta-perk">
-          <span class="cta-perk-icon">🎯</span>
-          <span>OBS Ready</span>
-        </div>
-        <div class="cta-perk">
-          <span class="cta-perk-icon">🛡</span>
-          <span>Lifetime Updates</span>
-        </div>
-      </div>
-
-      <a href="https://discord.com/users/426776197322506260" target="_blank" rel="noopener noreferrer" class="cta-btn-main">
-        <span class="cta-btn-label">Get Now</span>
-        <span class="cta-btn-arrow">→</span>
-      </a>
-      <p class="cta-hint">Contact us on Discord to place your order</p>
-    </div>
-  </section>
 
   <div class="divider"></div>
 
