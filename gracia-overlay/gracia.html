@@ -9,12 +9,11 @@
   <link rel="icon" type="image/png" href="favicon.jpg">
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="favicon.png">
+
+
 </head>
 <body>
 
-  <!-- ══════════════════════════════════════════
-       NAVBAR
-       ══════════════════════════════════════════ -->
   <nav>
     <div class="nav-logo">GRACIA<span>.</span>GOC</div>
     <div class="nav-links">
@@ -24,35 +23,80 @@
     </div>
   </nav>
 
-  <!-- ══════════════════════════════════════════
-       HERO
-       ══════════════════════════════════════════ -->
   <section id="hero">
     <div class="hero-grid"></div>
+    <div class="hero-noise"></div>
+    <div class="hero-vignette"></div>
     <div class="hero-corner tl"></div>
     <div class="hero-corner tr"></div>
     <div class="hero-corner bl"></div>
     <div class="hero-corner br"></div>
+    <div class="hero-scanbar hero-scanbar--1"></div>
+    <div class="hero-scanbar hero-scanbar--2"></div>
+    <div class="hero-side-accent left"></div>
+    <div class="hero-side-accent right"></div>
+
     <div class="hero-content">
-      <p class="hero-tag">// OBS Overlay System</p>
+      <div class="hero-sys-line">
+        <span class="hero-sys-dot"></span>
+        <span class="hero-sys-text">SYS:ONLINE</span>
+        <span class="hero-sys-sep">|</span>
+        <span class="hero-sys-text">OBS_OVERLAY_SYSTEM v2.4</span>
+        <span class="hero-sys-sep">|</span>
+        <span class="hero-sys-blink">_</span>
+      </div>
+
       <h1 class="hero-title">
-        <span class="accent">Gracia</span><br>Overlay<br><span class="accent2">Controller</span>
+        <span class="hero-title-line hero-title-line--1">
+          <span class="ht-glitch" data-text="GRACIA">GRACIA</span>
+        </span>
+        <span class="hero-title-line hero-title-line--2">
+          OVERLAY
+        </span>
+        <span class="hero-title-line hero-title-line--3">
+          <span class="ht-accent2">CONTROLLER</span>
+        </span>
       </h1>
+
       <p class="hero-sub">
-        Professional-grade overlay packs for OBS Studio.<br>
-        Designed for streamers who demand precision and style.
+        Professional dynamic overlay packs for OBS Studio.<br>
+        Designed for streamers who demand <em>precision</em> and <em>style</em>.
       </p>
-      <div class="hero-badge">GOC // v-series overlays available</div>
+
+      <div class="hero-cta-group">
+        <a href="#catalog" class="hero-btn hero-btn--primary">
+          <span class="hero-btn-inner">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            BROWSE CATALOGUE
+          </span>
+          <span class="hero-btn-glare"></span>
+        </a>
+        <a href="#controller" class="hero-btn hero-btn--secondary">
+          <span class="hero-btn-inner">LEARN MORE</span>
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-num">4</span>
+          <span class="hero-stat-label">OVERLAY PACKS</span>
+        </div>
+        <div class="hero-stat-div"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">1080p</span>
+          <span class="hero-stat-label">FULL HD</span>
+        </div>
+        <div class="hero-stat-div"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">OBS</span>
+          <span class="hero-stat-label">NATIVE</span>
+        </div>
+      </div>
     </div>
 
-    <!-- Scroll down indicator -->
     <a href="#controller" class="scroll-indicator" aria-label="Scroll to Controller">
       <span class="scroll-label">SCROLL</span>
-      <div class="scroll-arrow">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <polyline points="2,5 8,11 14,5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
+      <div class="scroll-arrow"></div>
     </a>
   </section>
 
@@ -63,8 +107,6 @@
     </div>
 
     <div class="goc-card">
-
-      <!-- GOC IMAGE ▼ Replace src with your image path, e.g. images/goc-preview.png -->
       <div class="goc-img-wrap">
         <img src="images/goc-preview.png"
              alt="Gracia Overlay Controller"
@@ -81,21 +123,20 @@
         <div class="scan-line"></div>
       </div>
 
-      <!-- GOC INFO -->
       <div class="goc-info">
         <div class="goc-tag">Main Program</div>
         <h2 class="goc-name"><em>Gracia</em> Overlay<br>Controller</h2>
         <p class="goc-desc">
           The GOC is the central hub for managing and switching between all of your overlay packs
-          in real-time during your stream. Seamless integration with OBS Studio — no lag, no hassle.
+          in real-time during your stream. Seamless integration with OBS Studio no lag, no hassle.
         </p>
         <div class="goc-features">
-          <!-- ▼ Edit or add feature lines freely below ▼ -->
           <div class="feat-row">Real-time overlay switching</div>
           <div class="feat-row">OBS Studio native integration</div>
           <div class="feat-row">Hotkey &amp; scene support</div>
           <div class="feat-row">Lightweight &amp; low-latency</div>
           <div class="feat-row">Compatible with all GOC overlay packs</div>
+          <div class="feat-row">Overlay customization options</div>
         </div>
       </div>
 
@@ -109,14 +150,32 @@
       <span class="sec-title">// <span>02</span> — Overlay Catalog</span>
     </div>
 
-    <div class="catalog-grid">
+    <script>
+      const PRICES = {
+        v1: 'Rp 150.000',
+        v2: 'Rp 150.000',
+        v3: 'Rp 150.000',
+        v4: 'Rp 150.000',
+        v5: 'Rp 50.000',
+        v6: 'Rp 50.000',
+      };
+    </script>
+    <div class="custom-banner">
+      <div class="custom-banner-pulse"></div>
+      <div class="custom-banner-icon">✦</div>
+      <div class="custom-banner-text">
+        <div class="custom-banner-title">// Open for Custom Style Overlays</div>
+        <div class="custom-banner-desc">
+          Want something unique? We're accepting commissions for fully custom overlay designs tailored to your brand and stream identity.
+          <a href="https://discord.com/users/426776197322506260" target="_blank" rel="noopener noreferrer">Contact us on Discord</a> to get started.
+        </div>
+      </div>
+    </div>
 
-      <!-- ════════════════════════════════
-           CATALOG CARD — VERSION 1
-           ════════════════════════════════ -->
+    <div class="catalog-grid" style="margin-top:2rem;">
+
       <div class="cat-card" onclick="openModal('v1')">
         <div class="cat-thumb">
-          <!-- ▼ Replace src: images/v1-thumb.png -->
           <img src="images/v1/v1.1.jpg" alt="Version 1 Thumbnail"
                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                onload="this.nextElementSibling.style.display='none';" />
@@ -141,12 +200,8 @@
         </div>
       </div>
 
-      <!-- ════════════════════════════════
-           CATALOG CARD — VERSION 2
-           ════════════════════════════════ -->
       <div class="cat-card" onclick="openModal('v2')">
         <div class="cat-thumb">
-          <!-- ▼ Replace src: images/v2-thumb.png -->
           <img src="images/v2/v2.1.jpg" alt="Version 2 Thumbnail"
                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                onload="this.nextElementSibling.style.display='none';" />
@@ -162,7 +217,7 @@
           <div class="cat-version-badge">Version 2</div>
         </div>
         <div class="cat-body">
-          <h3 class="cat-title">Central Investigation Bureau Overlay Pack</h3>
+          <h3 class="cat-title">Investigation Bureau Overlay Pack</h3>
           <p class="cat-short">Perfect for FiveM detectives, investigators, and special units looking to create a professional, immersive criminal investigation and surveillance atmosphere on stream.</p>
           <div class="cat-footer">
             <span class="cat-img-count">6 previews</span>
@@ -171,12 +226,8 @@
         </div>
       </div>
 
-      <!-- ════════════════════════════════
-           CATALOG CARD — VERSION 3
-           ════════════════════════════════ -->
       <div class="cat-card" onclick="openModal('v3')">
         <div class="cat-thumb">
-          <!-- ▼ Replace src: images/v3-thumb.png -->
           <img src="images/v3/v3.1.jpg" alt="Version 3 Thumbnail"
                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                onload="this.nextElementSibling.style.display='none';" />
@@ -192,7 +243,7 @@
           <div class="cat-version-badge">Version 3</div>
         </div>
         <div class="cat-body">
-          <h3 class="cat-title">Los Santos Heat Division Overlay Pack</h3>
+          <h3 class="cat-title">Los Santos Interceptor Overlay Pack</h3>
           <p class="cat-short">Perfect for FiveM streamers looking for a stylish, futuristic alternative to traditional police-themed overlays while maintaining a professional dispatch feel.</p>
           <div class="cat-footer">
             <span class="cat-img-count">6 previews</span>
@@ -201,15 +252,91 @@
         </div>
       </div>
 
+      <div class="cat-card" onclick="openModal('v4')">
+        <div class="cat-thumb">
+          <img src="images/v4/v4.1.jpg" alt="Version 4 Thumbnail"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+               onload="this.nextElementSibling.style.display='none';" />
+          <div class="img-placeholder">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+            <span>images/v4-thumb.png</span>
+          </div>
+          <div class="cat-thumb-overlay"></div>
+          <div class="cat-version-badge">Version 4</div>
+        </div>
+        <div class="cat-body">
+          <h3 class="cat-title">Los Santos SWAT Overlay Pack</h3>
+          <p class="cat-short">Perfect for FiveM streamers seeking a tactical, cinematic overlay with a professional command-center aesthetic.</p>
+          <div class="cat-footer">
+            <span class="cat-img-count">6 previews</span>
+            <button class="cat-btn">View Details</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="cat-card coming-soon">
+        <div class="cat-thumb">
+          <div class="coming-soon-overlay">
+            <div class="coming-soon-label">Coming Soon</div>
+            <div class="coming-soon-sub">// IN DEVELOPMENT</div>
+          </div>
+          <div class="img-placeholder" style="display:flex;">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+            <span>Version 5</span>
+          </div>
+          <div class="cat-thumb-overlay"></div>
+          <div class="cat-version-badge">Version 5</div>
+        </div>
+        <div class="cat-body">
+          <h3 class="cat-title">New Overlay Pack</h3>
+          <p class="cat-short">A brand new overlay style is in the works. Stay tuned for the reveal — coming soon.</p>
+          <div class="cat-footer">
+            <span class="cat-img-count">— previews</span>
+            <button class="cat-btn">Coming Soon</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="cat-card coming-soon">
+        <div class="cat-thumb">
+          <div class="coming-soon-overlay">
+            <div class="coming-soon-label">Coming Soon</div>
+            <div class="coming-soon-sub">// IN DEVELOPMENT</div>
+          </div>
+          <div class="img-placeholder" style="display:flex;">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+            <span>Version 6</span>
+          </div>
+          <div class="cat-thumb-overlay"></div>
+          <div class="cat-version-badge">Version 6</div>
+        </div>
+        <div class="cat-body">
+          <h3 class="cat-title">New Overlay Pack</h3>
+          <p class="cat-short">Another exclusive overlay style is currently being designed. Follow us for updates.</p>
+          <div class="cat-footer">
+            <span class="cat-img-count">— previews</span>
+            <button class="cat-btn">Coming Soon</button>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>
 
   <div class="divider"></div>
 
-  <!-- ══════════════════════════════════════════
-       BUY / GET NOW — HOOK SECTION
-       ══════════════════════════════════════════ -->
   <section id="get-now" class="cta-section">
     <div class="cta-corner tl"></div>
     <div class="cta-corner tr"></div>
@@ -256,7 +383,6 @@
     <div class="footer-copy">© 2026 Gracia Overlay Controller &nbsp;|&nbsp; All rights reserved</div>
   </footer>
 
-  <!-- MODAL: VERSION 1 -->
   <div class="modal-overlay" id="modal-v1">
     <div class="modal">
       <div class="modal-header">
@@ -267,17 +393,21 @@
         <button class="modal-close" onclick="closeModal('v1')">✕</button>
       </div>
       <div class="modal-body">
-
-        <!-- ▼ Edit description for Version 1 ▼ -->
         <p class="modal-desc">
           A premium OBS Browser Source overlay pack inspired by the Los Santos Police Department (LSPD), Los Santos County Sheriff (LSCS), and San Andreas State Patrol (SASP). Designed with a modern tactical interface to deliver an immersive and professional law enforcement streaming experience. Included Overlays: Start Stream, Standby, Alert, Investigation, AFK, and Stream End.
         </p>
-
-        <!-- ─── GALLERY: 6 images for Version 1 ─── -->
+        <div class="modal-price-block">
+          <div>
+            <div class="modal-price-label">// Pack Price</div>
+            <div class="modal-price-value" id="modal-price-v1"></div>
+          </div>
+          <a href="https://discord.com/users/426776197322506260" target="_blank" rel="noopener noreferrer" class="modal-buy-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.013.043.031.057a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+            Buy Now
+          </a>
+        </div>
         <div class="modal-gallery">
-
           <div class="modal-gallery-item" onclick="openLightbox(this)">
-            <!-- ▼ Replace src: images/v1-preview-1.png -->
             <img src="images/v1/v1.1.jpg" alt="Preview 1"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                  onload="this.nextElementSibling.style.display='none';" />
@@ -289,9 +419,7 @@
             </div>
             <div class="modal-gallery-label">Preview 1 — Start Stream</div>
           </div>
-
           <div class="modal-gallery-item" onclick="openLightbox(this)">
-            <!-- ▼ Replace src: images/v1-preview-2.png -->
             <img src="images/v1/v1.2.jpg" alt="Preview 2"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                  onload="this.nextElementSibling.style.display='none';" />
@@ -303,9 +431,7 @@
             </div>
             <div class="modal-gallery-label">Preview 2 — Standby (CODE 4)</div>
           </div>
-
           <div class="modal-gallery-item" onclick="openLightbox(this)">
-            <!-- ▼ Replace src: images/v1-preview-3.png -->
             <img src="images/v1/v1.3.jpg" alt="Preview 3"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                  onload="this.nextElementSibling.style.display='none';" />
@@ -317,9 +443,7 @@
             </div>
             <div class="modal-gallery-label">Preview 3 — Alert (CODE 3)</div>
           </div>
-
           <div class="modal-gallery-item" onclick="openLightbox(this)">
-            <!-- ▼ Replace src: images/v1-preview-4.png -->
             <img src="images/v1/v1.4.jpg" alt="Preview 4"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                  onload="this.nextElementSibling.style.display='none';" />
@@ -331,9 +455,7 @@
             </div>
             <div class="modal-gallery-label">Preview 4 — Investigation (CODE 6)</div>
           </div>
-
           <div class="modal-gallery-item" onclick="openLightbox(this)">
-            <!-- ▼ Replace src: images/v1-preview-5.png -->
             <img src="images/v1/v1.5.jpg" alt="Preview 5"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                  onload="this.nextElementSibling.style.display='none';" />
@@ -345,9 +467,7 @@
             </div>
             <div class="modal-gallery-label">Preview 5 — End Stream</div>
           </div>
-
           <div class="modal-gallery-item" onclick="openLightbox(this)">
-            <!-- ▼ Replace src: images/v1-preview-6.png -->
             <img src="images/v1/v1.6.jpg" alt="Preview 6"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                  onload="this.nextElementSibling.style.display='none';" />
@@ -359,10 +479,7 @@
             </div>
             <div class="modal-gallery-label">Preview 6 — AFK Screen</div>
           </div>
-
         </div>
-
-        <!-- Tags for Version 1 — edit freely -->
         <div class="modal-tags">
           <div class="modal-tag">OBS Compatible</div>
           <div class="modal-tag">Full HD 1080p</div>
@@ -370,7 +487,6 @@
           <div class="modal-tag">Alert Animations</div>
           <div class="modal-tag">GOC Ready</div>
         </div>
-
         <div class="modal-yt-wrap">
           <div class="modal-yt-label">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-2.95A5 5 0 0 0 12 2a5 5 0 0 0-3.82 1.74A4.83 4.83 0 0 1 4.41 6.69 4.83 4.83 0 0 0 2 10.36 5 5 0 0 0 4.1 14.6a4.83 4.83 0 0 1 1.23 4A5 5 0 0 0 8 22a5 5 0 0 0 4-2 5 5 0 0 0 4 2 5 5 0 0 0 2.67-3.4 4.83 4.83 0 0 1 1.23-4A5 5 0 0 0 22 10.36a4.83 4.83 0 0 0-2.41-3.67z"/></svg>
@@ -386,12 +502,10 @@
             </iframe>
           </div>
         </div>
-
       </div>
     </div>
   </div>
 
-  <!-- MODAL: VERSION 2 -->
   <div class="modal-overlay" id="modal-v2">
     <div class="modal">
       <div class="modal-header">
@@ -402,17 +516,20 @@
         <button class="modal-close" onclick="closeModal('v2')">✕</button>
       </div>
       <div class="modal-body">
-
-        <!-- ▼ Edit description for Version 2 ▼ -->
         <p class="modal-desc">
- A premium OBS Browser Source overlay pack inspired by elite investigative units within the State of San Andreas. Featuring a sleek intelligence-agency aesthetic with case management, surveillance, and investigation-themed UI elements for a cinematic streaming experience.
-
-Included Overlays: Start Stream, Standby, Alert, Investigation, AFK, and Stream End.
+          A premium OBS Browser Source overlay pack inspired by elite investigative units within the State of San Andreas. Featuring a sleek intelligence-agency aesthetic with case management, surveillance, and investigation-themed UI elements for a cinematic streaming experience. Included Overlays: Start Stream, Standby, Alert, Investigation, AFK, and Stream End.
         </p>
-
-        <!-- ─── GALLERY: 6 images for Version 2 ─── -->
+        <div class="modal-price-block">
+          <div>
+            <div class="modal-price-label">// Pack Price</div>
+            <div class="modal-price-value" id="modal-price-v2"></div>
+          </div>
+          <a href="https://discord.com/users/426776197322506260" target="_blank" rel="noopener noreferrer" class="modal-buy-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.013.043.031.057a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+            Buy Now
+          </a>
+        </div>
         <div class="modal-gallery">
-
           <div class="modal-gallery-item" onclick="openLightbox(this)">
             <img src="images/v2/v2.1.jpg" alt="Preview 1"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
@@ -425,7 +542,6 @@ Included Overlays: Start Stream, Standby, Alert, Investigation, AFK, and Stream 
             </div>
             <div class="modal-gallery-label">Preview 1 — Start Stream</div>
           </div>
-
           <div class="modal-gallery-item" onclick="openLightbox(this)">
             <img src="images/v2/v2.2.jpg" alt="Preview 2"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
@@ -438,7 +554,6 @@ Included Overlays: Start Stream, Standby, Alert, Investigation, AFK, and Stream 
             </div>
             <div class="modal-gallery-label">Preview 2 — Standby (CODE 4)</div>
           </div>
-
           <div class="modal-gallery-item" onclick="openLightbox(this)">
             <img src="images/v2/v2.3.jpg" alt="Preview 3"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
@@ -451,7 +566,6 @@ Included Overlays: Start Stream, Standby, Alert, Investigation, AFK, and Stream 
             </div>
             <div class="modal-gallery-label">Preview 3 — Alert (CODE 3)</div>
           </div>
-
           <div class="modal-gallery-item" onclick="openLightbox(this)">
             <img src="images/v2/v2.4.jpg" alt="Preview 4"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
@@ -464,7 +578,6 @@ Included Overlays: Start Stream, Standby, Alert, Investigation, AFK, and Stream 
             </div>
             <div class="modal-gallery-label">Preview 4 — Investigating (CODE 6)</div>
           </div>
-
           <div class="modal-gallery-item" onclick="openLightbox(this)">
             <img src="images/v2/v2.5.jpg" alt="Preview 5"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
@@ -477,7 +590,6 @@ Included Overlays: Start Stream, Standby, Alert, Investigation, AFK, and Stream 
             </div>
             <div class="modal-gallery-label">Preview 5 — End Stream</div>
           </div>
-
           <div class="modal-gallery-item" onclick="openLightbox(this)">
             <img src="images/v2/v2.6.jpg" alt="Preview 6"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
@@ -490,9 +602,7 @@ Included Overlays: Start Stream, Standby, Alert, Investigation, AFK, and Stream 
             </div>
             <div class="modal-gallery-label">Preview 6 — AFK Screen</div>
           </div>
-
         </div>
-
         <div class="modal-tags">
           <div class="modal-tag">OBS Compatible</div>
           <div class="modal-tag">Full HD 1080p</div>
@@ -500,24 +610,21 @@ Included Overlays: Start Stream, Standby, Alert, Investigation, AFK, and Stream 
           <div class="modal-tag">Neon Glow FX</div>
           <div class="modal-tag">GOC Ready</div>
         </div>
-
         <div class="modal-yt-wrap">
           <div class="modal-yt-label">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-2.95A5 5 0 0 0 12 2a5 5 0 0 0-3.82 1.74A4.83 4.83 0 0 1 4.41 6.69 4.83 4.83 0 0 0 2 10.36 5 5 0 0 0 4.1 14.6a4.83 4.83 0 0 1 1.23 4A5 5 0 0 0 8 22a5 5 0 0 0 4-2 5 5 0 0 0 4 2 5 5 0 0 0 2.67-3.4 4.83 4.83 0 0 1 1.23-4A5 5 0 0 0 22 10.36a4.83 4.83 0 0 0-2.41-3.67z"/></svg>
             <span>// VIDEO PREVIEW</span>
           </div>
           <div class="modal-yt-frame">
-            <!-- ▼▼▼ REPLACE src WITH YOUR YOUTUBE EMBED URL ▼▼▼ -->
             <iframe
               src="https://www.youtube.com/embed/YOUR_VIDEO_ID_V2"
-              title="Version 2 — Neon Cyber Pack Preview"
+              title="Version 2 — Investigation Bureau Pack Preview"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen>
             </iframe>
           </div>
         </div>
-
       </div>
     </div>
   </div>
@@ -527,22 +634,25 @@ Included Overlays: Start Stream, Standby, Alert, Investigation, AFK, and Stream 
       <div class="modal-header">
         <div>
           <div class="modal-ver">// VERSION 03</div>
-          <div class="modal-title">Los Santos Heat Overlay Pack</div>
+          <div class="modal-title">Los Santos Interceptor Overlay Pack</div>
         </div>
         <button class="modal-close" onclick="closeModal('v3')">✕</button>
       </div>
       <div class="modal-body">
-
-        <!-- ▼ Edit description for Version 2 ▼ -->
         <p class="modal-desc">
-          A premium OBS Browser Source overlay pack inspired by the elite Los Santos Heat unit, featuring a sleek neon cyber-tactical design with vibrant pink, blue, and green accents. Built to deliver a modern, high-energy law enforcement streaming experience with a unique undercover and special operations aesthetic.
-
-Included Overlays: Start Stream, Standby, Alert, Investigation, AFK, and Stream End.
+          A premium OBS Browser Source overlay pack inspired by the elite Los Santos Heat unit, featuring a sleek neon cyber-tactical design with vibrant pink, blue, and green accents. Built to deliver a modern, high-energy law enforcement streaming experience with a unique undercover and special operations aesthetic. Included Overlays: Start Stream, Standby, Alert, Investigation, AFK, and Stream End.
         </p>
-
-        <!-- ─── GALLERY: 6 images for Version 2 ─── -->
+        <div class="modal-price-block">
+          <div>
+            <div class="modal-price-label">// Pack Price</div>
+            <div class="modal-price-value" id="modal-price-v3"></div>
+          </div>
+          <a href="https://discord.com/users/426776197322506260" target="_blank" rel="noopener noreferrer" class="modal-buy-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.013.043.031.057a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+            Buy Now
+          </a>
+        </div>
         <div class="modal-gallery">
-
           <div class="modal-gallery-item" onclick="openLightbox(this)">
             <img src="images/v3/v3.1.jpg" alt="Preview 1"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
@@ -555,7 +665,6 @@ Included Overlays: Start Stream, Standby, Alert, Investigation, AFK, and Stream 
             </div>
             <div class="modal-gallery-label">Preview 1 — Main Scene</div>
           </div>
-
           <div class="modal-gallery-item" onclick="openLightbox(this)">
             <img src="images/v3/v3.2.jpg" alt="Preview 2"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
@@ -568,7 +677,6 @@ Included Overlays: Start Stream, Standby, Alert, Investigation, AFK, and Stream 
             </div>
             <div class="modal-gallery-label">Preview 2 — Webcam Frame</div>
           </div>
-
           <div class="modal-gallery-item" onclick="openLightbox(this)">
             <img src="images/v3/v3.3.jpg" alt="Preview 3"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
@@ -581,7 +689,6 @@ Included Overlays: Start Stream, Standby, Alert, Investigation, AFK, and Stream 
             </div>
             <div class="modal-gallery-label">Preview 3 — Starting Soon</div>
           </div>
-
           <div class="modal-gallery-item" onclick="openLightbox(this)">
             <img src="images/v3/v3.4.jpg" alt="Preview 4"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
@@ -594,7 +701,6 @@ Included Overlays: Start Stream, Standby, Alert, Investigation, AFK, and Stream 
             </div>
             <div class="modal-gallery-label">Preview 4 — Alerts</div>
           </div>
-
           <div class="modal-gallery-item" onclick="openLightbox(this)">
             <img src="images/v3/v3.5.jpg" alt="Preview 5"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
@@ -607,7 +713,6 @@ Included Overlays: Start Stream, Standby, Alert, Investigation, AFK, and Stream 
             </div>
             <div class="modal-gallery-label">Preview 5 — BRB Screen</div>
           </div>
-
           <div class="modal-gallery-item" onclick="openLightbox(this)">
             <img src="images/v3/v3.6.jpg" alt="Preview 6"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
@@ -620,9 +725,7 @@ Included Overlays: Start Stream, Standby, Alert, Investigation, AFK, and Stream 
             </div>
             <div class="modal-gallery-label">Preview 6 — Ending Screen</div>
           </div>
-
         </div>
-
         <div class="modal-tags">
           <div class="modal-tag">OBS Compatible</div>
           <div class="modal-tag">Full HD 1080p</div>
@@ -630,35 +733,174 @@ Included Overlays: Start Stream, Standby, Alert, Investigation, AFK, and Stream 
           <div class="modal-tag">Neon Glow FX</div>
           <div class="modal-tag">GOC Ready</div>
         </div>
-        
         <div class="modal-yt-wrap">
           <div class="modal-yt-label">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-2.95A5 5 0 0 0 12 2a5 5 0 0 0-3.82 1.74A4.83 4.83 0 0 1 4.41 6.69 4.83 4.83 0 0 0 2 10.36 5 5 0 0 0 4.1 14.6a4.83 4.83 0 0 1 1.23 4A5 5 0 0 0 8 22a5 5 0 0 0 4-2 5 5 0 0 0 4 2 5 5 0 0 0 2.67-3.4 4.83 4.83 0 0 1 1.23-4A5 5 0 0 0 22 10.36a4.83 4.83 0 0 0-2.41-3.67z"/></svg>
             <span>// VIDEO PREVIEW</span>
           </div>
           <div class="modal-yt-frame">
-            <!-- ▼▼▼ REPLACE src WITH YOUR YOUTUBE EMBED URL ▼▼▼ -->
             <iframe
-              src="https://www.youtube.com/embed/YOUR_VIDEO_ID_V2"
-              title="Version 2 — Neon Cyber Pack Preview"
+              src="https://www.youtube.com/embed/YOUR_VIDEO_ID_V3"
+              title="Version 3 — Los Santos Interceptor Pack Preview"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen>
             </iframe>
           </div>
         </div>
-
       </div>
     </div>
   </div>
 
-  <!-- LIGHTBOX -->
+  <div class="modal-overlay" id="modal-v4">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <div class="modal-ver">// VERSION 04</div>
+          <div class="modal-title">Los Santos Heat Overlay Pack</div>
+        </div>
+        <button class="modal-close" onclick="closeModal('v4')">✕</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-desc">
+          This tactical SWAT-themed OBS Browser Source overlay delivers a sleek command-center experience with a dark cinematic HUD, real-time clock, operator identification panel, mission status tracking, and animated system diagnostics. Designed for GTA RP, FiveM, police roleplay, and tactical gaming streams, it creates an immersive surveillance-style interface while remaining lightweight, customizable, and easy to integrate into OBS.
+        </p>
+        <div class="modal-price-block">
+          <div>
+            <div class="modal-price-label">// Pack Price</div>
+            <div class="modal-price-value" id="modal-price-v4"></div>
+          </div>
+          <a href="https://discord.com/users/426776197322506260" target="_blank" rel="noopener noreferrer" class="modal-buy-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.013.043.031.057a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+            Buy Now
+          </a>
+        </div>
+        <div class="modal-gallery">
+          <div class="modal-gallery-item" onclick="openLightbox(this)">
+            <img src="images/v4/v4.1.jpg" alt="Preview 1"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                 onload="this.nextElementSibling.style.display='none';" />
+            <div class="img-placeholder">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <span>images/v4-preview-1.png</span>
+            </div>
+            <div class="modal-gallery-label">Preview 1 — Main Scene</div>
+          </div>
+          <div class="modal-gallery-item" onclick="openLightbox(this)">
+            <img src="images/v4/v4.2.jpg" alt="Preview 2"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                 onload="this.nextElementSibling.style.display='none';" />
+            <div class="img-placeholder">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <span>images/v4-preview-2.png</span>
+            </div>
+            <div class="modal-gallery-label">Preview 2 — Webcam Frame</div>
+          </div>
+          <div class="modal-gallery-item" onclick="openLightbox(this)">
+            <img src="images/v4/v4.3.jpg" alt="Preview 3"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                 onload="this.nextElementSibling.style.display='none';" />
+            <div class="img-placeholder">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <span>images/v4-preview-3.png</span>
+            </div>
+            <div class="modal-gallery-label">Preview 3 — Starting Soon</div>
+          </div>
+          <div class="modal-gallery-item" onclick="openLightbox(this)">
+            <img src="images/v4/v4.4.jpg" alt="Preview 4"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                 onload="this.nextElementSibling.style.display='none';" />
+            <div class="img-placeholder">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <span>images/v4-preview-4.png</span>
+            </div>
+            <div class="modal-gallery-label">Preview 4 — Alerts</div>
+          </div>
+          <div class="modal-gallery-item" onclick="openLightbox(this)">
+            <img src="images/v4/v4.5.jpg" alt="Preview 5"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                 onload="this.nextElementSibling.style.display='none';" />
+            <div class="img-placeholder">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <span>images/v4-preview-5.png</span>
+            </div>
+            <div class="modal-gallery-label">Preview 5 — BRB Screen</div>
+          </div>
+          <div class="modal-gallery-item" onclick="openLightbox(this)">
+            <img src="images/v4/v4.6.jpg" alt="Preview 6"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                 onload="this.nextElementSibling.style.display='none';" />
+            <div class="img-placeholder">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <span>images/v4-preview-6.png</span>
+            </div>
+            <div class="modal-gallery-label">Preview 6 — Ending Screen</div>
+          </div>
+        </div>
+        <div class="modal-tags">
+          <div class="modal-tag">OBS Compatible</div>
+          <div class="modal-tag">Full HD 1080p</div>
+          <div class="modal-tag">Animated Borders</div>
+          <div class="modal-tag">Neon Glow FX</div>
+          <div class="modal-tag">GOC Ready</div>
+        </div>
+        <div class="modal-yt-wrap">
+          <div class="modal-yt-label">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-2.95A5 5 0 0 0 12 2a5 5 0 0 0-3.82 1.74A4.83 4.83 0 0 1 4.41 6.69 4.83 4.83 0 0 0 2 10.36 5 5 0 0 0 4.1 14.6a4.83 4.83 0 0 1 1.23 4A5 5 0 0 0 8 22a5 5 0 0 0 4-2 5 5 0 0 0 4 2 5 5 0 0 0 2.67-3.4 4.83 4.83 0 0 1 1.23-4A5 5 0 0 0 22 10.36a4.83 4.83 0 0 0-2.41-3.67z"/></svg>
+            <span>// VIDEO PREVIEW</span>
+          </div>
+          <div class="modal-yt-frame">
+            <iframe
+              src="https://www.youtube.com/embed/YOUR_VIDEO_ID_V4"
+              title="Version 4 — Los Santos Heat Pack Preview"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="lightbox" id="lightbox" onclick="closeLightbox()">
     <button class="lightbox-close" onclick="closeLightbox()">✕</button>
     <img id="lightbox-img" src="" alt="Full Preview" />
   </div>
 
   <script src="script.js"></script>
+
+  <script>
+    /* Inject prices into modals */
+    document.addEventListener('DOMContentLoaded', function () {
+      Object.entries(PRICES).forEach(([key, val]) => {
+        const el = document.getElementById('modal-price-' + key);
+        if (el) el.textContent = val;
+      });
+
+      /* Patch openModal to reset scroll position — avoids stale scroll state */
+      const _origOpen = window.openModal;
+      window.openModal = function(id) {
+        _origOpen && _origOpen(id);
+        requestAnimationFrame(() => {
+          const modal = document.querySelector('#modal-' + id + ' .modal, #modal-' + id);
+          if (modal) modal.scrollTop = 0;
+        });
+      };
+    });
+  </script>
 
 </body>
 </html>
