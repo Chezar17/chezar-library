@@ -24,7 +24,7 @@ document.querySelectorAll('.modal-overlay').forEach(function(el) {
   });
 });
 
-/* ── LIGHTBOX: Open ── */
+
 function openLightbox(el) {
   var img = el.querySelector('img');
   if (!img || !img.src || img.style.display === 'none') return;
