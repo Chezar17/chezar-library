@@ -207,19 +207,32 @@
   }
   .hero-bg{
     position:absolute;inset:-8% 0 0 0;height:116%;
-    /* === GANTI: pasang foto suasana / interior Dapoer Kharisma di sini === */
-    background:
-      radial-gradient(circle at 30% 20%, rgba(176,85,42,0.35), transparent 55%),
-      linear-gradient(160deg, #6E4227 0%, #402A1E 68%, #2B1B12 100%);
+    background-color:var(--bark);
     background-size:cover;
     background-position:center;
     will-change:transform;
   }
+  .hero-bg::before{
+    /* lapisan gelap dasar supaya foto apa pun tetap kontras dengan teks putih */
+    content:"";position:absolute;inset:0;
+    background:rgba(30,19,12,0.38);
+  }
   .hero-bg::after{
     content:"";position:absolute;inset:0;
-    background:linear-gradient(180deg, rgba(43,27,18,0.35) 0%, rgba(43,27,18,0.55) 55%, rgba(43,27,18,0.92) 100%);
+    background:
+      radial-gradient(60% 55% at 50% 38%, rgba(43,27,18,0.22) 0%, rgba(43,27,18,0.58) 100%),
+      linear-gradient(180deg, rgba(43,27,18,0.55) 0%, rgba(43,27,18,0.5) 40%, rgba(43,27,18,0.72) 72%, rgba(43,27,18,0.95) 100%);
+  }
+  .hero-particles{
+    position:absolute;inset:0;z-index:1;
+    width:100%;height:100%;
+    pointer-events:none;
   }
   .hero-content{position:relative;z-index:2;padding:120px 24px 60px;max-width:720px;}
+  .hero-content h1,
+  .hero-content .sub,
+  .hero-content p.tagline{text-shadow:0 3px 18px rgba(0,0,0,0.35);}
+
   .hero-logo{
     width:150px;height:150px;object-fit:contain;
     margin:0 auto 26px;
@@ -363,7 +376,8 @@
     padding:0 4px;
   }
   .marquee-row.left{animation:marqueeLeft 46s linear infinite;}
-  .marquee-row.right{animation:marqueeRight 46s linear infinite;margin-top:18px;}
+  .marquee-row.right{animation:marqueeRight 50s linear infinite;margin-top:18px;}
+  .marquee-row.left2{animation:marqueeLeft 58s linear infinite;margin-top:18px;}
   .marquee-viewport:hover .marquee-row{animation-play-state:paused;}
   @keyframes marqueeLeft{from{transform:translateX(0);}to{transform:translateX(-50%);}}
   @keyframes marqueeRight{from{transform:translateX(-50%);}to{transform:translateX(0);}}
@@ -614,12 +628,14 @@
 
 <!-- ============ HERO ============ -->
 <header class="hero" id="beranda">
-  <div class="hero-bg"></div>
   <!--
     === GANTI DI SINI ===
-    Ganti background hero dengan foto suasana / interior restoran, contoh:
-    <div class="hero-bg" style="background-image:url('images/hero-restoran.jpg')"></div>
+    Ganti "images/hero-restoran.jpg" dengan foto suasana / interior Dapoer Kharisma.
+    Gunakan foto beresolusi besar (disarankan minimal 1920px lebar) agar tetap tajam di layar besar.
   -->
+  <div class="hero-bg" style="background-image:url('images/hero-restoran.png')"></div>
+  <canvas class="hero-particles" id="heroParticles" aria-hidden="true"></canvas>
+
   <div class="hero-content">
     <img class="hero-logo" src="images/logo.png" alt="Logo Dapoer Kharisma">
     <div class="sub">Sepatan · Tangerang</div>
@@ -635,7 +651,7 @@
     </div>
   </div>
   <div class="scroll-cue">
-    <span>Gulir</span>
+    <span>Geser</span>
     <svg viewBox="0 0 14 20" fill="none"><path d="M7 1v18M2 14l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </div>
 </header>
@@ -705,7 +721,7 @@
     </div>
     <div class="menu-actions">
       <!-- === GANTI href="" dengan link Google Drive menu Anda === -->
-      <a href="" target="_blank" rel="noopener" class="btn btn-primary">Buka Menu Penuh</a>
+      <a href="https://drive.google.com/file/d/1FXHV58B_09SziqwkU36v5FACFdb8MHiJ/view" target="_blank" rel="noopener" class="btn btn-primary">Buka Menu Penuh</a>
     </div>
   </div>
 </section>
@@ -720,7 +736,8 @@
     </div>
     <div class="marquee-viewport reveal" id="galleryViewport">
       <div class="marquee-row left" id="galleryRowTop"></div>
-      <div class="marquee-row right" id="galleryRowBottom"></div>
+      <div class="marquee-row right" id="galleryRowMiddle"></div>
+      <div class="marquee-row left2" id="galleryRowBottom"></div>
     </div>
     <p class="gallery-note">Arahkan kursor untuk menjeda, klik foto untuk memperbesar. Tambahkan foto baru lewat larik <code>galleryImages</code> di kode — otomatis ikut bergerak.</p>
   </div>
@@ -864,6 +881,104 @@
     setTimeout(hideSplash, 4000);
   }
 
+  // ---------- partikel interaktif di hero ----------
+  (function initHeroParticles(){
+    const canvas = document.getElementById('heroParticles');
+    const hero = document.getElementById('beranda');
+    if (!canvas || !hero) return;
+    const ctx = canvas.getContext('2d');
+
+    if (reduceMotion) return; // hormati preferensi pengguna, biarkan canvas kosong
+
+    let w, h, dpr;
+    let particles = [];
+    const mouse = { x: -9999, y: -9999, active:false };
+    const PARTICLE_COUNT = 46;
+
+    function resize(){
+      const rect = hero.getBoundingClientRect();
+      w = rect.width; h = rect.height;
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = w * dpr;
+      canvas.height = h * dpr;
+      canvas.style.width = w + 'px';
+      canvas.style.height = h + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    function makeParticle(){
+      return {
+        x: Math.random() * w,
+        y: Math.random() * h,
+        r: 1 + Math.random() * 2.2,
+        baseX: 0, baseY: 0,
+        vx: (Math.random() - 0.5) * 0.12,
+        vy: -0.12 - Math.random() * 0.18,
+        drift: Math.random() * Math.PI * 2,
+        opacity: 0.25 + Math.random() * 0.45
+      };
+    }
+
+    function initParticles(){
+      particles = Array.from({ length: PARTICLE_COUNT }, makeParticle);
+    }
+
+    function step(){
+      ctx.clearRect(0, 0, w, h);
+      particles.forEach(p => {
+        // melayang pelan ke atas dengan sedikit goyangan alami
+        p.drift += 0.006;
+        p.x += p.vx + Math.sin(p.drift) * 0.06;
+        p.y += p.vy;
+
+        // interaksi dengan kursor: partikel menjauh lembut dari mouse
+        if (mouse.active) {
+          const dx = p.x - mouse.x;
+          const dy = p.y - mouse.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          const radius = 120;
+          if (dist < radius && dist > 0.01) {
+            const force = (1 - dist / radius) * 1.6;
+            p.x += (dx / dist) * force;
+            p.y += (dy / dist) * force;
+          }
+        }
+
+        // reset saat keluar dari area
+        if (p.y < -10) { p.y = h + 10; p.x = Math.random() * w; }
+        if (p.x < -10) p.x = w + 10;
+        if (p.x > w + 10) p.x = -10;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(199,154,60,${p.opacity})`;
+        ctx.fill();
+      });
+      requestAnimationFrame(step);
+    }
+
+    hero.addEventListener('mousemove', (e) => {
+      const rect = hero.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+      mouse.active = true;
+    });
+    hero.addEventListener('mouseleave', () => { mouse.active = false; });
+    hero.addEventListener('touchmove', (e) => {
+      if (!e.touches || !e.touches[0]) return;
+      const rect = hero.getBoundingClientRect();
+      mouse.x = e.touches[0].clientX - rect.left;
+      mouse.y = e.touches[0].clientY - rect.top;
+      mouse.active = true;
+    }, { passive:true });
+
+    window.addEventListener('resize', () => { resize(); });
+
+    resize();
+    initParticles();
+    requestAnimationFrame(step);
+  })();
+
   // ---------- data: tambahkan ulasan baru di sini, otomatis ikut bergerak ----------
   const testimonials = [
     { name:'Rina A.',  stars:5, quote:'Suasananya adem banget buat makan siang bareng keluarga, saungnya luas dan anak-anak betah main di sana. Rasa masakannya juga pas di lidah.' },
@@ -954,12 +1069,15 @@
   const testiRow = document.getElementById('testiRow');
   [...testimonials, ...testimonials].forEach(t => testiRow.appendChild(buildTestiCard(t)));
 
-  // render gallery marquee, split into two alternating rows moving opposite directions
+  // render gallery marquee, split into three alternating rows moving opposite directions
   const galleryTop = document.getElementById('galleryRowTop');
+  const galleryMiddle = document.getElementById('galleryRowMiddle');
   const galleryBottom = document.getElementById('galleryRowBottom');
-  const rowTopImgs = galleryImages.filter((_, i) => i % 2 === 0);
-  const rowBottomImgs = galleryImages.filter((_, i) => i % 2 === 1);
+  const rowTopImgs = galleryImages.filter((_, i) => i % 3 === 0);
+  const rowMiddleImgs = galleryImages.filter((_, i) => i % 3 === 1);
+  const rowBottomImgs = galleryImages.filter((_, i) => i % 3 === 2);
   [...rowTopImgs, ...rowTopImgs].forEach(g => galleryTop.appendChild(buildGalleryItem(g)));
+  [...rowMiddleImgs, ...rowMiddleImgs].forEach(g => galleryMiddle.appendChild(buildGalleryItem(g)));
   [...rowBottomImgs, ...rowBottomImgs].forEach(g => galleryBottom.appendChild(buildGalleryItem(g)));
 
   if (reduceMotion) {
