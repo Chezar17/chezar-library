@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bagas Aditya Nugraha — Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B1120;
+    --navy-2:#131C33;
+    --offwhite:#F5F7FA;
+    --slate:#8B96AA;
+    --blue:#3B82F6;
+    --teal:#14B8A6;
+    --border:rgba(255,255,255,.08);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--navy);
+    color:var(--offwhite);
+    font-family:'Inter', sans-serif;
+  }
+  h1,h2,h3,.display{font-family:'Sora', sans-serif;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 28px;}
+
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(11,17,32,.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  nav .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    height:64px;
+  }
+  .logo{font-family:'Sora',sans-serif;font-weight:700;font-size:16px;letter-spacing:.02em;}
+  .logo span{color:var(--teal);}
+  .navlinks{display:flex;gap:28px;font-size:14px;color:var(--slate);}
+  .navlinks a:hover{color:var(--offwhite);}
+
+  header.hero{
+    padding:90px 0 70px;
+    position:relative;
+    overflow:hidden;
+  }
+  header.hero::before{
+    content:'';
+    position:absolute;
+    top:-200px;right:-150px;
+    width:500px;height:500px;
+    background:radial-gradient(circle, rgba(59,130,246,.18), transparent 70%);
+    animation:pulse 6s ease-in-out infinite;
+  }
+  @keyframes pulse{0%,100%{opacity:.6;transform:scale(1);}50%{opacity:1;transform:scale(1.1);}}
+
+  .hero-grid{
+    display:flex;
+    gap:50px;
+    align-items:center;
+    position:relative;
+    z-index:2;
+    flex-wrap:wrap;
+  }
+  .hero-info{flex:1;min-width:300px;}
+  .tag{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;color:var(--teal);
+    font-weight:600;letter-spacing:.04em;
+    margin-bottom:18px;
+    opacity:0;animation:fadeUp .7s ease forwards .1s;
+  }
+  .tag::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--teal);animation:blink 2s infinite;}
+  @keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
+
+  h1{
+    font-size:clamp(34px,5vw,52px);
+    line-height:1.15;
+    font-weight:700;
+    margin-bottom:16px;
+    opacity:0;animation:fadeUp .7s ease forwards .25s;
+  }
+  h1 .accent{color:var(--blue);}
+  .role-typed{
+    font-size:19px;
+    color:var(--slate);
+    font-weight:500;
+    margin-bottom:18px;
+    min-height:28px;
+    opacity:0;animation:fadeUp .7s ease forwards .4s;
+  }
+  .role-typed .cursor{
+    display:inline-block;
+    width:2px;height:18px;
+    background:var(--teal);
+    margin-left:4px;
+    animation:blink 1s infinite;
+    vertical-align:middle;
+  }
+  .hero-desc{
+    color:var(--slate);
+    font-size:16px;
+    line-height:1.7;
+    max-width:480px;
+    margin-bottom:30px;
+    opacity:0;animation:fadeUp .7s ease forwards .55s;
+  }
+  .hero-btns{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeUp .7s ease forwards .7s;}
+  .btn{
+    padding:13px 24px;
+    border-radius:8px;
+    font-size:14px;
+    font-weight:600;
+    transition:all .25s ease;
+    display:inline-flex;align-items:center;gap:8px;
+  }
+  .btn-primary{background:var(--blue);color:white;}
+  .btn-primary:hover{background:#2563eb;transform:translateY(-2px);}
+  .btn-outline{border:1px solid var(--border);color:var(--offwhite);}
+  .btn-outline:hover{border-color:var(--teal);color:var(--teal);}
+
+  @keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+
+  /* FOTO PROFIL */
+  .photo-box{
+    width:260px;height:320px;
+    flex-shrink:0;
+    position:relative;
+    opacity:0;animation:fadeUp .8s ease forwards .3s;
+  }
+  .photo-frame{
+    width:100%;height:100%;
+    border-radius:16px;
+    overflow:hidden;
+    background:var(--navy-2);
+    border:1px solid var(--border);
+    position:relative;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .photo-frame::after{
+    content:'';
+    position:absolute;inset:0;
+    background:linear-gradient(135deg, rgba(59,130,246,.12), transparent 60%);
+    pointer-events:none;
+  }
+  /* ================================================================
+     LETAKKAN FOTO PROFIL DI SINI
+     Ganti <div class="photo-placeholder"> dengan:
+     <img src="foto-bagas.jpg" alt="Foto Bagas Aditya Nugraha" style="width:100%;height:100%;object-fit:cover;">
+     Disarankan rasio potret (mis. 600x740px)
+     ================================================================ */
+  .photo-placeholder{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    color:var(--slate);font-size:13px;gap:8px;text-align:center;
+  }
+  .photo-placeholder svg{width:42px;height:42px;opacity:.4;}
+  .photo-tick{
+    position:absolute;bottom:-14px;left:-14px;
+    background:var(--teal);color:var(--navy);
+    font-size:12px;font-weight:700;
+    padding:8px 14px;border-radius:8px;
+    box-shadow:0 6px 18px rgba(20,184,166,.3);
+  }
+
+  section{padding:80px 0;border-top:1px solid var(--border);}
+  .label{
+    font-size:12px;font-weight:700;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--teal);margin-bottom:10px;
+  }
+  .title{font-size:clamp(24px,3.5vw,32px);font-weight:700;margin-bottom:36px;}
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+
+  .about-body{color:var(--slate);font-size:16px;line-height:1.8;max-width:680px;}
+
+  .stack-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:14px;
+  }
+  .stack-item{
+    background:var(--navy-2);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:18px;
+    transition:border-color .25s ease, transform .25s ease;
+  }
+  .stack-item:hover{border-color:var(--blue);transform:translateY(-3px);}
+  .stack-item .name{font-weight:600;font-size:15px;margin-bottom:10px;}
+  .bar-track{height:5px;background:rgba(255,255,255,.08);border-radius:99px;overflow:hidden;}
+  .bar-fill{
+    height:100%;
+    background:linear-gradient(90deg, var(--blue), var(--teal));
+    width:0%;
+    border-radius:99px;
+    transition:width 1.2s cubic-bezier(.16,1,.3,1);
+  }
+
+  .exp-list{display:flex;flex-direction:column;gap:0;}
+  .exp-item{
+    display:grid;grid-template-columns:140px 1fr;gap:24px;
+    padding:26px 0;border-bottom:1px solid var(--border);
+  }
+  .exp-item:last-child{border-bottom:none;}
+  .exp-item .period{color:var(--slate);font-size:13px;font-weight:600;padding-top:2px;}
+  .exp-item h3{font-size:18px;font-weight:600;margin-bottom:4px;}
+  .exp-item .org{color:var(--blue);font-size:14px;font-weight:500;margin-bottom:8px;}
+  .exp-item p{color:var(--slate);font-size:14.5px;line-height:1.7;}
+
+  .edu-card{
+    background:var(--navy-2);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:28px;
+    display:flex;gap:20px;align-items:flex-start;
+  }
+  .edu-icon{
+    width:48px;height:48px;border-radius:10px;
+    background:linear-gradient(135deg,var(--blue),var(--teal));
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;font-size:20px;
+  }
+  .edu-card h3{font-size:17px;font-weight:600;margin-bottom:4px;}
+  .edu-card .org{color:var(--slate);font-size:14px;margin-bottom:8px;}
+  .edu-card p{color:var(--slate);font-size:14px;line-height:1.6;}
+
+  .proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;}
+  .proj-card{
+    background:var(--navy-2);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:26px;
+    transition:transform .3s ease, border-color .3s ease;
+  }
+  .proj-card:hover{transform:translateY(-5px);border-color:var(--blue);}
+  .proj-num{font-size:13px;color:var(--teal);font-weight:700;margin-bottom:12px;}
+  .proj-card h3{font-size:17px;font-weight:600;margin-bottom:8px;}
+  .proj-card p{color:var(--slate);font-size:14px;line-height:1.6;margin-bottom:14px;}
+  .proj-tags{display:flex;gap:8px;flex-wrap:wrap;}
+  .proj-tags span{
+    font-size:11px;background:rgba(59,130,246,.12);color:var(--blue);
+    padding:4px 10px;border-radius:99px;font-weight:600;
+  }
+
+  footer{
+    padding:80px 0 60px;
+    text-align:center;
+  }
+  footer h2{font-size:clamp(26px,4vw,36px);margin-bottom:14px;}
+  footer p{color:var(--slate);margin-bottom:30px;}
+  .contact-grid{
+    display:flex;gap:16px;justify-content:center;flex-wrap:wrap;
+  }
+  .contact-grid a{
+    background:var(--navy-2);border:1px solid var(--border);
+    padding:12px 22px;border-radius:8px;font-size:14px;
+    transition:border-color .25s ease;
+  }
+  .contact-grid a:hover{border-color:var(--teal);color:var(--teal);}
+
+  @media(max-width:640px){
+    .exp-item{grid-template-columns:1fr;gap:6px;}
+    .hero-grid{flex-direction:column-reverse;}
+  }
+</style>
+<style>
+  /* Mencegah seleksi teks */
+  body{
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+  }
+  /* Tetap izinkan seleksi di input/textarea jika ada */
+  input, textarea{ -webkit-user-select:text; user-select:text; }
+</style>
+
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">Bagas<span>.dev</span></div>
+    <div class="navlinks">
+      <a href="#tentang">Tentang</a>
+      <a href="#pengalaman">Pengalaman</a>
+      <a href="#proyek">Proyek</a>
+      <a href="#kontak">Kontak</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-info">
+        <div class="tag">TERSEDIA UNTUK PELUANG BARU</div>
+        <h1>Bagas Aditya<br>Nugraha</h1>
+        <div class="role-typed">Software Engineer — Backend & Cloud<span class="cursor"></span></div>
+        <p class="hero-desc">Lulusan Teknik Informatika Institut Teknologi Bandung (ITB) dengan 2 tahun pengalaman membangun sistem backend yang scalable untuk produk digital.</p>
+        <div class="hero-btns">
+          <a href="#kontak" class="btn btn-primary">Hubungi Saya</a>
+          <a href="#pengalaman" class="btn btn-outline">Lihat Pengalaman</a>
+        </div>
+      </div>
+      <div class="photo-box">
+        <div class="photo-frame">
+          <!-- GANTI DIV DI BAWAH INI DENGAN <img src="foto-anda.jpg" style="width:100%;height:100%;object-fit:cover;"> -->
+          <div class="photo-placeholder">
+            <img src="contoh2.jpg" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+        </div>
+        <div class="photo-tick">Bandung, ID</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="tentang">
+  <div class="wrap reveal">
+    <div class="label">Tentang</div>
+    <h2 class="title">Ringkasan Profil</h2>
+    <p class="about-body">
+      Saya lulusan S1 Teknik Informatika Institut Teknologi Bandung tahun 2022. Sejak semester akhir kuliah saya aktif magang sebagai backend developer, dan setelah lulus melanjutkan karier di bidang yang sama. Saya terbiasa bekerja dengan tim lintas fungsi menggunakan metodologi Agile, dan fokus pada penulisan kode yang bersih, teruji, dan mudah dirawat dalam jangka panjang.
+    </p>
+  </div>
+</section>
+
+<section id="keahlian">
+  <div class="wrap reveal">
+    <div class="label">Keahlian Teknis</div>
+    <h2 class="title">Tumpukan Teknologi</h2>
+    <div class="stack-grid">
+      <div class="stack-item"><div class="name">Golang</div><div class="bar-track"><div class="bar-fill" data-level="90"></div></div></div>
+      <div class="stack-item"><div class="name">Node.js</div><div class="bar-track"><div class="bar-fill" data-level="85"></div></div></div>
+      <div class="stack-item"><div class="name">PostgreSQL</div><div class="bar-track"><div class="bar-fill" data-level="82"></div></div></div>
+      <div class="stack-item"><div class="name">Docker & K8s</div><div class="bar-track"><div class="bar-fill" data-level="75"></div></div></div>
+      <div class="stack-item"><div class="name">AWS</div><div class="bar-track"><div class="bar-fill" data-level="70"></div></div></div>
+      <div class="stack-item"><div class="name">Redis</div><div class="bar-track"><div class="bar-fill" data-level="78"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="pendidikan">
+  <div class="wrap reveal">
+    <div class="label">Pendidikan</div>
+    <h2 class="title">Latar Belakang Akademik</h2>
+    <div class="edu-card">
+      <div class="edu-icon">🎓</div>
+      <div>
+        <h3>S1 Teknik Informatika</h3>
+        <div class="org">Institut Teknologi Bandung (ITB) · 2018 – 2022</div>
+        <p>IPK 3.62/4.00. Tugas akhir tentang optimasi query pada sistem basis data terdistribusi. Aktif sebagai asisten praktikum mata kuliah Struktur Data.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pengalaman">
+  <div class="wrap reveal">
+    <div class="label">Pengalaman Kerja</div>
+    <h2 class="title">Rekam Jejak Profesional</h2>
+    <div class="exp-list">
+      <div class="exp-item">
+        <div class="period">2023 — Sekarang</div>
+        <div>
+          <h3>Software Engineer</h3>
+          <div class="org">PT Digital Nusantara Teknologi, Jakarta</div>
+          <p>Mengembangkan dan memelihara layanan backend untuk platform pembayaran digital dengan lebih dari 500 ribu pengguna aktif bulanan. Menurunkan waktu respons API rata-rata sebesar 35% melalui optimasi caching.</p>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="period">2022 — 2023</div>
+        <div>
+          <h3>Backend Developer</h3>
+          <div class="org">Startup Fintech Lokal, Bandung</div>
+          <p>Membangun sistem manajemen transaksi dan integrasi dengan payment gateway pihak ketiga menggunakan arsitektur microservices.</p>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="period">2021 — 2022</div>
+        <div>
+          <h3>Software Engineer Intern</h3>
+          <div class="org">Perusahaan Teknologi, Jakarta</div>
+          <p>Membantu tim engineering membangun fitur internal dashboard analitik menggunakan Node.js dan React.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="proyek">
+  <div class="wrap reveal">
+    <div class="label">Proyek Terpilih</div>
+    <h2 class="title">Beberapa Proyek yang Pernah Dikerjakan</h2>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <div class="proj-num">01</div>
+        <h3>Sistem Antrian Pembayaran</h3>
+        <p>Merancang sistem antrian asinkron untuk memproses ribuan transaksi per menit tanpa kehilangan data.</p>
+        <div class="proj-tags"><span>Golang</span><span>Kafka</span><span>Redis</span></div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-num">02</div>
+        <h3>Dashboard Analitik Internal</h3>
+        <p>Membangun dashboard real-time untuk memantau performa transaksi dan kesehatan sistem.</p>
+        <div class="proj-tags"><span>Node.js</span><span>React</span><span>PostgreSQL</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="kontak">
+  <div class="wrap">
+    <h2 class="display">Mari terhubung</h2>
+    <p>Terbuka untuk diskusi peluang kerja, kolaborasi proyek, atau sekadar bertukar pikiran soal teknologi.</p>
+    <div class="contact-grid">
+      <a href="mailto:bagas.aditya.n@gmail.com">bagas.aditya.n@gmail.com</a>
+      <a href="tel:081234567891">0812-3456-7891</a>
+      <a href="#">linkedin.com/in/bagasadityan</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        e.target.querySelectorAll('.bar-fill').forEach(bar=>{
+          bar.style.width = bar.dataset.level + '%';
+        });
+      }
+    });
+  },{threshold:.2});
+  reveals.forEach(r=>obs.observe(r));
+</script>
+
+<script>
+  // ================= PROTEKSI DASAR =================
+  // Catatan: ini hanya menghalangi pengguna umum, bukan proteksi mutlak.
+
+  // Matikan klik kanan
+  document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+
+  // Matikan copy, cut, dan drag teks/gambar
+  document.addEventListener('copy', function(e){ e.preventDefault(); });
+  document.addEventListener('cut', function(e){ e.preventDefault(); });
+  document.addEventListener('dragstart', function(e){ e.preventDefault(); });
+
+  // Matikan shortcut umum: F12, Ctrl+Shift+I/J/C, Ctrl+U, Ctrl+S, Ctrl+P
+  document.addEventListener('keydown', function(e){
+    const key = e.key ? e.key.toUpperCase() : '';
+    if (
+      key === 'F12' ||
+      (e.ctrlKey && e.shiftKey && (key === 'I' || key === 'J' || key === 'C')) ||
+      (e.metaKey && e.altKey && (key === 'I' || key === 'J' || key === 'C')) ||
+      (e.ctrlKey && (key === 'U' || key === 'S' || key === 'P'))
+    ) {
+      e.preventDefault();
+    }
+  });
+
+  // Deteksi sederhana saat DevTools terbuka (berdasarkan perubahan ukuran jendela)
+  (function(){
+    const threshold = 160;
+    let devtoolsOpen = false;
+    setInterval(function(){
+      const widthDiff = window.outerWidth - window.innerWidth;
+      const heightDiff = window.outerHeight - window.innerHeight;
+      if (widthDiff > threshold || heightDiff > threshold) {
+        if (!devtoolsOpen) {
+          devtoolsOpen = true;
+          document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:sans-serif;text-align:center;padding:24px;">Konten tidak tersedia saat DevTools terbuka.</div>';
+        }
+      } else {
+        devtoolsOpen = false;
+      }
+    }, 800);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kirana Ayu Pratiwi — Content Creator & Desainer Grafis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FFF7F1;
+    --peach:#FFD9C7;
+    --coral:#FF8C6B;
+    --lavender:#C9B6E8;
+    --plum:#3A2A3D;
+    --plum-soft:#6E5A72;
+    --sage:#B7D9C4;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream);
+    color:var(--plum);
+    font-family:'Plus Jakarta Sans', sans-serif;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces', serif;
+  }
+  a{color:inherit;text-decoration:none;}
+
+  /* floating blobs background */
+  .blob{
+    position:fixed;
+    border-radius:50%;
+    filter:blur(60px);
+    opacity:.55;
+    z-index:0;
+    animation:float 14s ease-in-out infinite;
+  }
+  .blob1{width:380px;height:380px;background:var(--peach);top:-120px;right:-100px;animation-delay:0s;}
+  .blob2{width:300px;height:300px;background:var(--lavender);bottom:-100px;left:-80px;animation-delay:3s;}
+  .blob3{width:220px;height:220px;background:var(--sage);top:40%;right:10%;animation-delay:6s;}
+  @keyframes float{
+    0%,100%{transform:translate(0,0) scale(1);}
+    50%{transform:translate(-20px,30px) scale(1.08);}
+  }
+
+  header{
+    position:relative;
+    z-index:2;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px 24px;
+  }
+  .hero{
+    display:flex;
+    align-items:center;
+    gap:64px;
+    max-width:1000px;
+    width:100%;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+  .hero-text{flex:1;min-width:280px;}
+  .eyebrow{
+    display:inline-block;
+    background:white;
+    padding:6px 16px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:600;
+    color:var(--coral);
+    letter-spacing:.03em;
+    margin-bottom:20px;
+    opacity:0;
+    animation:riseIn .8s ease forwards .1s;
+    box-shadow:0 4px 14px rgba(255,140,107,.15);
+  }
+  h1{
+    font-size:clamp(38px,6vw,62px);
+    line-height:1.05;
+    font-weight:600;
+    margin-bottom:14px;
+    opacity:0;
+    animation:riseIn .8s ease forwards .3s;
+  }
+  h1 em{
+    font-style:italic;
+    color:var(--coral);
+  }
+  .hero-sub{
+    font-size:18px;
+    color:var(--plum-soft);
+    max-width:420px;
+    margin-bottom:28px;
+    opacity:0;
+    animation:riseIn .8s ease forwards .5s;
+  }
+  .hero-cta{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+    opacity:0;
+    animation:riseIn .8s ease forwards .7s;
+  }
+  .btn{
+    padding:14px 26px;
+    border-radius:999px;
+    font-weight:600;
+    font-size:15px;
+    transition:transform .25s ease, box-shadow .25s ease;
+    display:inline-block;
+  }
+  .btn-primary{
+    background:var(--coral);
+    color:white;
+    box-shadow:0 8px 20px rgba(255,140,107,.35);
+  }
+  .btn-secondary{
+    background:white;
+    color:var(--plum);
+    border:1px solid rgba(58,42,61,.12);
+  }
+  .btn:hover{transform:translateY(-3px);}
+
+  @keyframes riseIn{
+    from{opacity:0; transform:translateY(18px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+
+  /* FOTO PROFIL — GANTI DI SINI */
+  .photo-wrap{
+    position:relative;
+    width:280px;
+    height:280px;
+    flex-shrink:0;
+    opacity:0;
+    animation:riseIn .9s ease forwards .4s;
+  }
+  .photo-ring{
+    position:absolute;
+    inset:-14px;
+    border-radius:50%;
+    background:conic-gradient(from 0deg, var(--coral), var(--lavender), var(--sage), var(--coral));
+    animation:spin 8s linear infinite;
+  }
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+  .photo-frame{
+    position:absolute;
+    inset:0;
+    border-radius:50%;
+    overflow:hidden;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:6px solid var(--cream);
+  }
+  /* ================================================================
+     LETAKKAN FOTO PROFIL DI SINI
+     Ganti tag <div class="photo-placeholder"> di bawah ini dengan:
+     <img src="foto-kirana.jpg" alt="Foto Kirana Ayu Pratiwi" style="width:100%;height:100%;object-fit:cover;">
+     Ukuran foto yang disarankan: persegi (mis. 600x600px)
+     ================================================================ */
+  .photo-placeholder{
+    width:100%;height:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    color:#c9b6c9;
+    font-size:13px;
+    text-align:center;
+    gap:6px;
+    background:repeating-linear-gradient(45deg, #fff, #fff 10px, #fdf1ea 10px, #fdf1ea 20px);
+  }
+  .photo-placeholder svg{width:46px;height:46px;opacity:.5;}
+
+  section{
+    position:relative;
+    z-index:2;
+    max-width:900px;
+    margin:0 auto;
+    padding:90px 24px;
+  }
+  .section-label{
+    font-size:13px;
+    font-weight:700;
+    color:var(--coral);
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    margin-bottom:10px;
+  }
+  .section-title{
+    font-size:clamp(28px,4vw,38px);
+    font-weight:600;
+    margin-bottom:36px;
+  }
+  .reveal{
+    opacity:0;
+    transform:translateY(24px);
+    transition:opacity .7s ease, transform .7s ease;
+  }
+  .reveal.visible{opacity:1;transform:translateY(0);}
+
+  .about-text{
+    font-size:18px;
+    line-height:1.8;
+    color:var(--plum-soft);
+    max-width:680px;
+  }
+
+  .skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:18px;
+    margin-top:10px;
+  }
+  .skill-card{
+    background:white;
+    border-radius:20px;
+    padding:24px;
+    box-shadow:0 6px 24px rgba(58,42,61,.06);
+    transition:transform .3s ease;
+  }
+  .skill-card:hover{transform:translateY(-6px);}
+  .skill-card .icon{font-size:28px;margin-bottom:10px;display:block;}
+  .skill-card h3{font-size:17px;font-weight:600;margin-bottom:6px;}
+  .skill-card p{font-size:14px;color:var(--plum-soft);line-height:1.5;}
+
+  .timeline{
+    border-left:2px solid var(--peach);
+    padding-left:28px;
+    display:flex;
+    flex-direction:column;
+    gap:32px;
+  }
+  .timeline-item{position:relative;}
+  .timeline-item::before{
+    content:'';
+    position:absolute;
+    left:-34px;
+    top:4px;
+    width:12px;height:12px;
+    border-radius:50%;
+    background:var(--coral);
+    box-shadow:0 0 0 4px var(--cream);
+  }
+  .timeline-item .year{font-size:13px;font-weight:700;color:var(--coral);letter-spacing:.05em;}
+  .timeline-item h3{font-size:19px;margin:4px 0 6px;font-weight:600;}
+  .timeline-item p{color:var(--plum-soft);font-size:15px;line-height:1.6;}
+
+  .portfolio-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
+  }
+  .portfolio-card{
+    border-radius:20px;
+    padding:26px;
+    color:white;
+    min-height:160px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    transition:transform .3s ease;
+  }
+  .portfolio-card:hover{transform:scale(1.03);}
+  .portfolio-card h3{font-family:'Fraunces',serif;font-size:20px;margin-bottom:4px;}
+  .portfolio-card p{font-size:13px;opacity:.9;}
+  .p1{background:linear-gradient(135deg,#FF8C6B,#FFB199);}
+  .p2{background:linear-gradient(135deg,#C9B6E8,#A98FD4);}
+  .p3{background:linear-gradient(135deg,#B7D9C4,#8FBFA0);}
+
+  footer{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    padding:70px 24px 50px;
+  }
+  footer h2{font-size:clamp(26px,4vw,36px);margin-bottom:14px;}
+  footer p{color:var(--plum-soft);margin-bottom:26px;}
+  .contact-row{
+    display:flex;
+    gap:14px;
+    justify-content:center;
+    flex-wrap:wrap;
+    font-size:14px;
+    color:var(--plum-soft);
+  }
+  .contact-row span{
+    background:white;
+    padding:8px 16px;
+    border-radius:999px;
+  }
+
+  @media (max-width:640px){
+    .hero{flex-direction:column-reverse;text-align:center;}
+    .hero-cta,.contact-row{justify-content:center;}
+    .about-text{margin:0 auto;}
+  }
+</style>
+<style>
+  /* Mencegah seleksi teks */
+  body{
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+  }
+  /* Tetap izinkan seleksi di input/textarea jika ada */
+  input, textarea{ -webkit-user-select:text; user-select:text; }
+</style>
+
+</head>
+<body>
+
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+<div class="blob blob3"></div>
+
+<header>
+  <div class="hero">
+    <div class="hero-text">
+      <span class="eyebrow">Halo, saya</span>
+      <h1>Kirana Ayu<br><em>Pratiwi</em></h1>
+      <p class="hero-sub">Content creator & desainer grafis lepas dari Yogyakarta. Suka bikin visual yang enak dilihat dan cerita yang gampang nyambung ke orang.</p>
+      <div class="hero-cta">
+        <a href="#portofolio" class="btn btn-primary">Lihat Karya</a>
+        <a href="#kontak" class="btn btn-secondary">Hubungi Saya</a>
+      </div>
+    </div>
+    <div class="photo-wrap">
+      <div class="photo-ring"></div>
+      <div class="photo-frame">
+        <!-- GANTI DIV DI BAWAH INI DENGAN <img src="foto-anda.jpg" style="width:100%;height:100%;object-fit:cover;"> -->
+        <div class="photo-placeholder">
+          <img src="contoh1.jpg" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="tentang">
+  <div class="reveal">
+    <div class="section-label">Tentang Saya</div>
+    <h2 class="section-title">Sedikit cerita tentang perjalanan saya</h2>
+    <p class="about-text">
+      Saya lulusan SMA Negeri 3 Yogyakarta jurusan IPS tahun 2023. Sejak kelas 11 saya mulai belajar desain grafis otodidak lewat YouTube dan komunitas desain online, lalu perlahan mulai menerima proyek kecil dari teman dan UMKM di sekitar rumah. Sekarang saya fokus membantu bisnis kecil dan kreator personal membangun identitas visual yang hangat dan mudah diingat, mulai dari konten media sosial sampai desain kemasan sederhana.
+    </p>
+  </div>
+</section>
+
+<section id="keahlian">
+  <div class="reveal">
+    <div class="section-label">Keahlian</div>
+    <h2 class="section-title">Yang bisa saya bantu kerjakan</h2>
+    <div class="skills-grid">
+      <div class="skill-card"><span class="icon">🎨</span><h3>Desain Grafis</h3><p>Adobe Photoshop, Canva Pro, dan Adobe Illustrator dasar untuk kebutuhan konten dan promosi.</p></div>
+      <div class="skill-card"><span class="icon">📱</span><h3>Content Planning</h3><p>Menyusun konten Instagram & TikTok yang konsisten dan sesuai karakter brand.</p></div>
+      <div class="skill-card"><span class="icon">🎬</span><h3>Editing Video</h3><p>CapCut dan Adobe Premiere Rush untuk video pendek dan reels.</p></div>
+      <div class="skill-card"><span class="icon">✍️</span><h3>Copywriting Ringan</h3><p>Menulis caption dan naskah singkat yang enak dibaca dan tidak kaku.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="perjalanan">
+  <div class="reveal">
+    <div class="section-label">Perjalanan</div>
+    <h2 class="section-title">Jejak langkah singkat</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="year">2023 — Sekarang</div>
+        <h3>Freelance Content Creator & Desainer</h3>
+        <p>Mengerjakan proyek desain dan konten untuk lebih dari 15 UMKM dan kreator lokal di Yogyakarta.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2023</div>
+        <h3>Lulus SMA Negeri 3 Yogyakarta</h3>
+        <p>Jurusan IPS, aktif di ekstrakurikuler jurnalistik sekolah dan divisi desain OSIS.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2021</div>
+        <h3>Mulai Belajar Desain Otodidak</h3>
+        <p>Belajar dasar Photoshop dan Canva melalui tutorial online di sela waktu sekolah.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="portofolio">
+  <div class="reveal">
+    <div class="section-label">Portofolio</div>
+    <h2 class="section-title">Beberapa proyek yang pernah saya kerjakan</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-card p1"><h3>Kopi Senja</h3><p>Konten Instagram & desain menu</p></div>
+      <div class="portfolio-card p2"><h3>Batik Larasati</h3><p>Identitas visual & kemasan produk</p></div>
+      <div class="portfolio-card p3"><h3>Rumah Jahit Ayu</h3><p>Feed Instagram & video promosi</p></div>
+    </div>
+  </div>
+</section>
+
+<footer id="kontak">
+  <h2 class="display">Yuk, ngobrol soal proyek Anda</h2>
+  <p>Terbuka untuk kerja sama desain, konten, dan kolaborasi kreatif lainnya.</p>
+  <div class="contact-row">
+    <span>kirana.ayu.p@gmail.com</span>
+    <span>0812-3456-7890</span>
+    <span>Yogyakarta, Indonesia</span>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('visible'); }
+    });
+  },{threshold:.15});
+  reveals.forEach(r=>obs.observe(r));
+</script>
+
+<script>
+  // ================= PROTEKSI DASAR =================
+  // Catatan: ini hanya menghalangi pengguna umum, bukan proteksi mutlak.
+
+  // Matikan klik kanan
+  document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+
+  // Matikan copy, cut, dan drag teks/gambar
+  document.addEventListener('copy', function(e){ e.preventDefault(); });
+  document.addEventListener('cut', function(e){ e.preventDefault(); });
+  document.addEventListener('dragstart', function(e){ e.preventDefault(); });
+
+  // Matikan shortcut umum: F12, Ctrl+Shift+I/J/C, Ctrl+U, Ctrl+S, Ctrl+P
+  document.addEventListener('keydown', function(e){
+    const key = e.key ? e.key.toUpperCase() : '';
+    if (
+      key === 'F12' ||
+      (e.ctrlKey && e.shiftKey && (key === 'I' || key === 'J' || key === 'C')) ||
+      (e.metaKey && e.altKey && (key === 'I' || key === 'J' || key === 'C')) ||
+      (e.ctrlKey && (key === 'U' || key === 'S' || key === 'P'))
+    ) {
+      e.preventDefault();
+    }
+  });
+
+  // Deteksi sederhana saat DevTools terbuka (berdasarkan perubahan ukuran jendela)
+  (function(){
+    const threshold = 160;
+    let devtoolsOpen = false;
+    setInterval(function(){
+      const widthDiff = window.outerWidth - window.innerWidth;
+      const heightDiff = window.outerHeight - window.innerHeight;
+      if (widthDiff > threshold || heightDiff > threshold) {
+        if (!devtoolsOpen) {
+          devtoolsOpen = true;
+          document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:sans-serif;text-align:center;padding:24px;">Konten tidak tersedia saat DevTools terbuka.</div>';
+        }
+      } else {
+        devtoolsOpen = false;
+      }
+    }, 800);
+  })();
+</script>
+
+</body>
+</html>

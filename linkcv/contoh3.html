@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anisa Putri Wulandari — Staff Finance & Accounting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FDFCFB;
+    --ink:#1A1A1A;
+    --gray:#6B6B6B;
+    --line:#E4E1DC;
+    --accent:#5C6B4F;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    font-weight:300;
+  }
+  .serif{font-family:'Cormorant Garamond', serif;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 28px;}
+
+  header{
+    padding:100px 0 60px;
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{
+    display:flex;
+    align-items:center;
+    gap:48px;
+    flex-wrap:wrap;
+  }
+  /* FOTO PROFIL */
+  .photo-frame{
+    width:150px;height:150px;
+    border-radius:50%;
+    overflow:hidden;
+    flex-shrink:0;
+    background:#F1EFEA;
+    display:flex;align-items:center;justify-content:center;
+    opacity:0;
+    animation:fadeIn 1s ease forwards .1s;
+  }
+  /* ================================================================
+     LETAKKAN FOTO PROFIL DI SINI
+     Ganti <div class="photo-placeholder"> dengan:
+     <img src="foto-anisa.jpg" alt="Foto Anisa Putri Wulandari" style="width:100%;height:100%;object-fit:cover;">
+     Disarankan foto persegi (mis. 500x500px)
+     ================================================================ */
+  .photo-placeholder{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    color:#B5B0A6;font-size:11px;gap:6px;text-align:center;line-height:1.4;
+  }
+  .photo-placeholder svg{width:30px;height:30px;opacity:.5;}
+
+  .header-text{flex:1;min-width:260px;}
+  .eyebrow{
+    font-size:12px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--gray);
+    margin-bottom:14px;
+    opacity:0;
+    animation:fadeIn .8s ease forwards 0s;
+  }
+  h1{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:500;
+    font-size:clamp(38px,6vw,54px);
+    line-height:1.1;
+    margin-bottom:10px;
+    opacity:0;
+    animation:fadeIn .9s ease forwards .15s;
+  }
+  .role{
+    font-size:16px;
+    color:var(--accent);
+    font-weight:500;
+    margin-bottom:16px;
+    opacity:0;
+    animation:fadeIn .9s ease forwards .3s;
+  }
+  .header-desc{
+    font-size:15px;
+    color:var(--gray);
+    line-height:1.75;
+    max-width:440px;
+    opacity:0;
+    animation:fadeIn .9s ease forwards .45s;
+  }
+
+  @keyframes fadeIn{
+    from{opacity:0;transform:translateY(10px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+
+  nav.subnav{
+    position:sticky;top:0;
+    background:rgba(253,252,251,.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+    z-index:10;
+  }
+  nav.subnav .wrap{
+    display:flex;gap:32px;
+    height:54px;align-items:center;
+    font-size:13px;
+    color:var(--gray);
+    letter-spacing:.02em;
+  }
+  nav.subnav a{position:relative;padding:4px 0;transition:color .2s ease;}
+  nav.subnav a:hover{color:var(--ink);}
+  nav.subnav a::after{
+    content:'';position:absolute;left:0;bottom:-2px;
+    width:0;height:1px;background:var(--accent);
+    transition:width .25s ease;
+  }
+  nav.subnav a:hover::after{width:100%;}
+
+  section{padding:64px 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .num-label{
+    font-size:12px;
+    color:var(--gray);
+    letter-spacing:.1em;
+    margin-bottom:6px;
+  }
+  .sec-title{
+    font-family:'Cormorant Garamond', serif;
+    font-size:28px;
+    font-weight:500;
+    margin-bottom:28px;
+  }
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+
+  .about-p{
+    font-size:16px;
+    color:#3d3d3d;
+    line-height:1.85;
+    font-weight:300;
+  }
+
+  .row-list{display:flex;flex-direction:column;}
+  .row-item{
+    display:grid;
+    grid-template-columns:110px 1fr;
+    gap:24px;
+    padding:22px 0;
+    border-top:1px solid var(--line);
+  }
+  .row-item:first-child{border-top:none;}
+  .row-item .period{
+    font-size:13px;color:var(--gray);padding-top:2px;
+  }
+  .row-item h3{font-size:17px;font-weight:500;margin-bottom:4px;}
+  .row-item .org{font-size:14px;color:var(--accent);margin-bottom:8px;}
+  .row-item p{font-size:14.5px;color:var(--gray);line-height:1.7;font-weight:300;}
+
+  .skills-line{
+    display:flex;flex-wrap:wrap;gap:10px;
+  }
+  .skills-line span{
+    font-size:13px;
+    padding:8px 16px;
+    border:1px solid var(--line);
+    border-radius:2px;
+    color:#3d3d3d;
+    transition:border-color .25s ease, color .25s ease;
+  }
+  .skills-line span:hover{border-color:var(--accent);color:var(--accent);}
+
+  .edu-block{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+  }
+  .edu-block h3{font-size:19px;font-weight:500;margin-bottom:6px;}
+  .edu-block .org{color:var(--accent);font-size:14px;margin-bottom:10px;}
+  .edu-block p{color:var(--gray);font-size:14.5px;line-height:1.7;max-width:480px;font-weight:300;}
+  .edu-block .gpa{
+    font-family:'Cormorant Garamond',serif;
+    font-size:32px;
+    color:var(--ink);
+    text-align:right;
+    white-space:nowrap;
+  }
+  .edu-block .gpa small{
+    display:block;font-family:'Work Sans',sans-serif;
+    font-size:11px;color:var(--gray);letter-spacing:.08em;
+    text-transform:uppercase;margin-top:4px;
+  }
+
+  footer{padding:80px 0 90px;text-align:center;}
+  footer h2{
+    font-family:'Cormorant Garamond', serif;
+    font-size:clamp(28px,4vw,38px);
+    font-weight:500;
+    margin-bottom:16px;
+  }
+  footer p{color:var(--gray);font-size:15px;margin-bottom:34px;font-weight:300;}
+  .contact-line{
+    display:flex;justify-content:center;gap:28px;flex-wrap:wrap;
+    font-size:14px;
+  }
+  .contact-line a{
+    color:var(--ink);
+    border-bottom:1px solid var(--line);
+    padding-bottom:3px;
+    transition:border-color .25s ease, color .25s ease;
+  }
+  .contact-line a:hover{border-color:var(--accent);color:var(--accent);}
+
+  @media(max-width:640px){
+    .header-inner{flex-direction:column;text-align:center;}
+    .header-desc{margin:0 auto;}
+    .row-item, .edu-block{grid-template-columns:1fr;}
+    .edu-block .gpa{text-align:left;}
+    nav.subnav .wrap{gap:20px;overflow-x:auto;}
+  }
+</style>
+<style>
+  /* Mencegah seleksi teks */
+  body{
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+  }
+  /* Tetap izinkan seleksi di input/textarea jika ada */
+  input, textarea{ -webkit-user-select:text; user-select:text; }
+</style>
+
+</head>
+<body>
+
+<header>
+  <div class="wrap header-inner">
+    <div class="photo-frame">
+      <!-- GANTI DIV DI BAWAH INI DENGAN <img src="foto-anda.jpg" style="width:100%;height:100%;object-fit:cover;"> -->
+      <div class="photo-placeholder">
+        <img src="contoh3.jpg" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+    </div>
+    <div class="header-text">
+      <div class="eyebrow">Curriculum Vitae</div>
+      <h1>Anisa Putri Wulandari</h1>
+      <div class="role">Staff Finance & Accounting</div>
+      <p class="header-desc">Lulusan Akuntansi Universitas Gadjah Mada dengan ketelitian tinggi dalam pengelolaan laporan keuangan dan kepatuhan pajak perusahaan.</p>
+    </div>
+  </div>
+</header>
+
+<nav class="subnav">
+  <div class="wrap">
+    <a href="#tentang">Tentang</a>
+    <a href="#pengalaman">Pengalaman</a>
+    <a href="#pendidikan">Pendidikan</a>
+    <a href="#keahlian">Keahlian</a>
+    <a href="#kontak">Kontak</a>
+  </div>
+</nav>
+
+<section id="tentang">
+  <div class="wrap reveal">
+    <div class="num-label">01 — Tentang</div>
+    <h2 class="sec-title">Profil Singkat</h2>
+    <p class="about-p">Saya lulusan S1 Akuntansi Universitas Gadjah Mada (UGM) tahun 2023. Selama kuliah saya aktif magang di bidang audit dan perpajakan, dan setelah lulus melanjutkan karier sebagai staf finance di perusahaan manufaktur. Saya terbiasa bekerja dengan laporan keuangan bulanan, rekonsiliasi bank, serta pelaporan pajak sesuai peraturan yang berlaku, dan selalu mengutamakan ketelitian serta ketepatan waktu dalam setiap pekerjaan.</p>
+  </div>
+</section>
+
+<section id="pengalaman">
+  <div class="wrap reveal">
+    <div class="num-label">02 — Pengalaman</div>
+    <h2 class="sec-title">Riwayat Pekerjaan</h2>
+    <div class="row-list">
+      <div class="row-item">
+        <div class="period">2023 — Sekarang</div>
+        <div>
+          <h3>Staff Finance & Accounting</h3>
+          <div class="org">PT Sumber Makmur Industri, Semarang</div>
+          <p>Mengelola pencatatan transaksi harian, penyusunan laporan keuangan bulanan, dan rekonsiliasi kas dengan tingkat akurasi tinggi.</p>
+        </div>
+      </div>
+      <div class="row-item">
+        <div class="period">2022</div>
+        <div>
+          <h3>Magang Audit Internal</h3>
+          <div class="org">Kantor Akuntan Publik, Yogyakarta</div>
+          <p>Membantu proses audit laporan keuangan klien dari berbagai sektor usaha kecil dan menengah.</p>
+        </div>
+      </div>
+      <div class="row-item">
+        <div class="period">2021</div>
+        <div>
+          <h3>Asisten Riset Mahasiswa</h3>
+          <div class="org">Fakultas Ekonomika dan Bisnis UGM</div>
+          <p>Membantu pengumpulan dan pengolahan data untuk penelitian dosen bidang akuntansi keuangan.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pendidikan">
+  <div class="wrap reveal">
+    <div class="num-label">03 — Pendidikan</div>
+    <h2 class="sec-title">Latar Belakang Akademik</h2>
+    <div class="edu-block">
+      <div>
+        <h3>S1 Akuntansi</h3>
+        <div class="org">Universitas Gadjah Mada (UGM) · 2019 – 2023</div>
+        <p>Skripsi membahas pengaruh tata kelola perusahaan terhadap kualitas laporan keuangan pada perusahaan manufaktur terbuka.</p>
+      </div>
+      <div class="gpa">3.71<small>IPK / 4.00</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="keahlian">
+  <div class="wrap reveal">
+    <div class="num-label">04 — Keahlian</div>
+    <h2 class="sec-title">Kompetensi</h2>
+    <div class="skills-line">
+      <span>Laporan Keuangan</span>
+      <span>Rekonsiliasi Bank</span>
+      <span>Microsoft Excel Lanjutan</span>
+      <span>Perpajakan (Brevet A & B)</span>
+      <span>SAP Finance Module</span>
+      <span>Analisis Anggaran</span>
+    </div>
+  </div>
+</section>
+
+<footer id="kontak">
+  <div class="wrap">
+    <h2 class="serif">Terbuka untuk Peluang Baru</h2>
+    <p>Silakan hubungi saya untuk diskusi lebih lanjut mengenai peluang kerja atau kolaborasi profesional.</p>
+    <div class="contact-line">
+      <a href="mailto:anisa.putri.w@gmail.com">anisa.putri.w@gmail.com</a>
+      <a href="tel:081298765432">0812-9876-5432</a>
+      <a href="#">linkedin.com/in/anisaputriw</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); } });
+  },{threshold:.15});
+  reveals.forEach(r=>obs.observe(r));
+</script>
+
+<script>
+  // ================= PROTEKSI DASAR =================
+  // Catatan: ini hanya menghalangi pengguna umum, bukan proteksi mutlak.
+
+  // Matikan klik kanan
+  document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+
+  // Matikan copy, cut, dan drag teks/gambar
+  document.addEventListener('copy', function(e){ e.preventDefault(); });
+  document.addEventListener('cut', function(e){ e.preventDefault(); });
+  document.addEventListener('dragstart', function(e){ e.preventDefault(); });
+
+  // Matikan shortcut umum: F12, Ctrl+Shift+I/J/C, Ctrl+U, Ctrl+S, Ctrl+P
+  document.addEventListener('keydown', function(e){
+    const key = e.key ? e.key.toUpperCase() : '';
+    if (
+      key === 'F12' ||
+      (e.ctrlKey && e.shiftKey && (key === 'I' || key === 'J' || key === 'C')) ||
+      (e.metaKey && e.altKey && (key === 'I' || key === 'J' || key === 'C')) ||
+      (e.ctrlKey && (key === 'U' || key === 'S' || key === 'P'))
+    ) {
+      e.preventDefault();
+    }
+  });
+
+  // Deteksi sederhana saat DevTools terbuka (berdasarkan perubahan ukuran jendela)
+  (function(){
+    const threshold = 160;
+    let devtoolsOpen = false;
+    setInterval(function(){
+      const widthDiff = window.outerWidth - window.innerWidth;
+      const heightDiff = window.outerHeight - window.innerHeight;
+      if (widthDiff > threshold || heightDiff > threshold) {
+        if (!devtoolsOpen) {
+          devtoolsOpen = true;
+          document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:sans-serif;text-align:center;padding:24px;">Konten tidak tersedia saat DevTools terbuka.</div>';
+        }
+      } else {
+        devtoolsOpen = false;
+      }
+    }, 800);
+  })();
+</script>
+
+</body>
+</html>
